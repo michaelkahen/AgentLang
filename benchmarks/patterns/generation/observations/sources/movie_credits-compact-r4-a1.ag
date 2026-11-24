@@ -1,0 +1,32 @@
+def entries(cell):
+    xs = v(cell) if cell else None
+    return (item for item in xs if isinstance(item, dict)) if isinstance(xs, list) else ()
+
+eligible = {
+    row$id for row in c("movies.csv")
+    if row$id and any(g.get("name") in ("Science Fiction", "Sci-Fi") for g in entries(row$genres))
+}
+credited = set()
+counts = {}
+seen = {}
+appearances = 0
+for row in c("credits.csv"):
+    film = row$id
+    if film not in eligible:
+        continue
+    for member in entries(row$crew):
+        id = member.get("id")
+        if type(id) is not int or id <= 0:
+            continue
+        credited.add(film)
+        counts[id] = counts.get(id, 0) + 1
+        seen.setdefault(id, set()).add(film)
+        appearances += 1
+
+leaders = [
+    {"id": id, "credits": counts[id], "movies": len(seen[id])}
+    for id in t(counts, 5, lambda id: (-counts[id], -len(seen[id]), id))
+]
+films = len(eligible)
+credited_films = len(credited)
+wj(d{films,credited_films,appearances,leaders})

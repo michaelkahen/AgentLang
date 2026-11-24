@@ -1,0 +1,619 @@
+{
+  "results_manifest_sha256": "f87e0700b644c3650591d654ca1fd38b03ef6adefc7b7a50c725fe31235ad073",
+  "variants": [
+    "base",
+    "edges",
+    "profile",
+    "audit"
+  ],
+  "results": [
+    {
+      "round": 1,
+      "task": "movie_credits",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 1,
+      "task": "movie_credits",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 1,
+      "task": "knn_grid",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 1,
+      "task": "knn_grid",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 1,
+      "task": "fixture_pack",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 1,
+      "task": "fixture_pack",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 1,
+      "task": "replay_trace",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 1,
+      "task": "replay_trace",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 2,
+      "task": "knn_grid",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 2,
+      "task": "knn_grid",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 2,
+      "task": "fixture_pack",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 2,
+      "task": "fixture_pack",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 2,
+      "task": "replay_trace",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 2,
+      "task": "replay_trace",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 2,
+      "task": "movie_credits",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 2,
+      "task": "movie_credits",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 3,
+      "task": "fixture_pack",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 3,
+      "task": "fixture_pack",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 3,
+      "task": "replay_trace",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 3,
+      "task": "replay_trace",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 3,
+      "task": "movie_credits",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 3,
+      "task": "movie_credits",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 3,
+      "task": "knn_grid",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 3,
+      "task": "knn_grid",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 4,
+      "task": "replay_trace",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 4,
+      "task": "replay_trace",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 4,
+      "task": "movie_credits",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 4,
+      "task": "movie_credits",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 4,
+      "task": "knn_grid",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 4,
+      "task": "knn_grid",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 4,
+      "task": "fixture_pack",
+      "arm": "compact",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    },
+    {
+      "round": 4,
+      "task": "fixture_pack",
+      "arm": "python",
+      "attempts": [
+        {
+          "attempt": 1,
+          "accepted": true,
+          "passed_all_four": true,
+          "checks": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass",
+            "audit": "pass"
+          }
+        }
+      ],
+      "accepted_passes_all_four": true
+    }
+  ]
+}

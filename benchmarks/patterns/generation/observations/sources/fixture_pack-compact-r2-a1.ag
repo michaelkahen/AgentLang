@@ -1,0 +1,38 @@
+import csv
+import io
+from itertools import groupby
+from pathlib import Path
+
+n = int(input())
+out = {}
+
+def report(name, count, data, golden):
+    out[name] = {"records": count * n, "bytes": len(data),
+                 "input_sha256": h(data), "golden_sha256": h(golden)}
+
+def golden(name):
+    return Path(name + ".out").read_bytes()
+
+for name, path in (("late_flights", "data/tweets.csv"),
+                   ("goal_gap", "data/projects.csv")):
+    with open(path, encoding="utf-8", newline="") as f:
+        header, *rows = csv.reader(f)
+    buf = io.StringIO(newline="")
+    writer = csv.writer(buf, lineterminator="\n")
+    writer.writerow(header)
+    writer.writerows(rows * n)
+    g = golden(name)
+    if name == "late_flights":
+        g = f"{int(g) * n}\n".encode()
+    report(name, len(rows), buf.getvalue().encode(), g)
+
+rows = r("word_counts.in")
+report("word_counts", len(rows), b(rows * n), golden("word_counts"))
+
+rows = r("sort_scores.in")
+scaled = []
+for _, group in groupby(r("sort_scores.out"), key=lambda pair: pair[1]):
+    scaled.extend(list(group) * n)
+report("sort_scores", len(rows), b(rows * n), b(scaled))
+
+wj(out)

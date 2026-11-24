@@ -1,0 +1,34 @@
+from collections import Counter, defaultdict
+
+def entries(cell):
+    items = v(cell) if cell else None
+    return (item for item in (items if isinstance(items, list) else [])
+            if isinstance(item, dict))
+
+films = {row$id for row in c("movies.csv") if row$id and any(
+    genre.get("name") in ("Science Fiction", "Sci-Fi")
+    for genre in entries(row$genres)
+)}
+
+counts = Counter()
+person_films = defaultdict(set)
+credited = set()
+for row in c("credits.csv"):
+    film = row$id
+    if film not in films:
+        continue
+    for person in entries(row$crew):
+        pid = person.get("id")
+        if type(pid) is int and pid > 0:
+            counts[pid] += 1
+            person_films[pid].add(film)
+            credited.add(film)
+
+leaders = []
+for id in t(counts, 5, lambda pid: (-counts[pid], -len(person_films[pid]), pid)):
+    credits = counts[id]
+    movies = len(person_films[id])
+    leaders.append(d{id,credits,movies})
+
+wj(dict(films=len(films), credited_films=len(credited),
+        appearances=sum(counts.values()), leaders=leaders))

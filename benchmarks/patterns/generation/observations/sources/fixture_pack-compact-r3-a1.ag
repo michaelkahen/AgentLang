@@ -1,0 +1,43 @@
+import csv
+from io import StringIO
+from itertools import groupby
+from operator import itemgetter
+from pathlib import Path
+
+factor = int(input())
+results = {}
+
+def add(task, count, data, golden):
+    records = count * factor
+    size = len(data)
+    input_sha256 = h(data)
+    golden_sha256 = h(golden)
+    results[task] = dict(records=records, bytes=size,
+                         input_sha256=input_sha256, golden_sha256=golden_sha256)
+
+for task, path in (("late_flights", "data/tweets.csv"),
+                   ("goal_gap", "data/projects.csv")):
+    with open(path, encoding="utf-8", newline="") as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        rows = list(reader)
+    buf = StringIO(newline="")
+    writer = csv.writer(buf, lineterminator="\n")
+    writer.writerow(header)
+    for _ in range(factor):
+        writer.writerows(rows)
+    golden = Path(task + ".out").read_bytes()
+    if task == "late_flights":
+        golden = f"{int(golden) * factor}\n".encode()
+    add(task, len(rows), buf.getvalue().encode("utf-8"), golden)
+
+rows = r("word_counts.in")
+add("word_counts", len(rows), b(rows * factor), Path("word_counts.out").read_bytes())
+
+rows = r("sort_scores.in")
+golden = []
+for _, group in groupby(r("sort_scores.out"), itemgetter(1)):
+    golden.extend(list(group) * factor)
+add("sort_scores", len(rows), b(rows * factor), b(golden))
+
+wj(results)

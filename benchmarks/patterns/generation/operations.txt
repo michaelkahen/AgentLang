@@ -1,0 +1,1 @@
+Preloaded: c(path)=UTF-8 CSV rows as dicts; r([path])=JSON from file or stdin; wj(x)=print JSON; v(text,default=None)=parse JSON then Python literal, else default; b(x)=(json.dumps(x)+'\n').encode(); h(bytes)=SHA-256 hex; k(xs,key=None)/x(xs,key=None)=min/max item; t(xs,n,key=None)=first n items in stable sorted order (n>=0). Keys are optional positional callables.

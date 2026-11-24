@@ -1,0 +1,37 @@
+import csv
+import io
+from itertools import groupby
+from pathlib import Path
+
+n = int(input())
+
+def pack(rows, data, golden):
+    return dict(records=len(rows)*n, bytes=len(data),
+                input_sha256=h(data), golden_sha256=h(golden))
+
+def csv_pack(path, golden):
+    with open(path, encoding="utf-8", newline="") as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        rows = list(reader)
+    buf = io.StringIO(newline="")
+    writer = csv.writer(buf, lineterminator="\n")
+    writer.writerow(header)
+    writer.writerows(rows*n)
+    return pack(rows, buf.getvalue().encode("utf-8"), golden)
+
+def json_pack(task, golden):
+    rows = r(task + ".in")
+    return pack(rows, b(rows*n), golden)
+
+def out(task):
+    return Path(task + ".out").read_bytes()
+
+scores = [row for _, group in groupby(r("sort_scores.out"), lambda p: p[1])
+          for row in list(group)*n]
+wj(dict(
+    late_flights=csv_pack("data/tweets.csv", f"{int(out('late_flights'))*n}\n".encode()),
+    goal_gap=csv_pack("data/projects.csv", out("goal_gap")),
+    word_counts=json_pack("word_counts", out("word_counts")),
+    sort_scores=json_pack("sort_scores", b(scores)),
+))

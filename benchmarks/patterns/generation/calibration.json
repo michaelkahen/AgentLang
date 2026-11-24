@@ -1,0 +1,84 @@
+{
+  "time_utc": "2026-11-24T20:12:10.624076+00:00",
+  "model": "gpt-6.2-sol",
+  "prompt": "Return only the digit 4. Do not use tools.",
+  "observations": [
+    {
+      "profile": "standard",
+      "responded_four": true,
+      "error": null,
+      "wall_s": 4.06541,
+      "cpu_s": 1.33724,
+      "peak_rss_mib": 152.172,
+      "exit": 0,
+      "timed_out": false,
+      "service_usage": {
+        "input_tokens": 18452,
+        "cached_input_tokens": 13696,
+        "output_tokens": 5,
+        "cache_write_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "message_count": 1,
+      "non_message_items": []
+    },
+    {
+      "profile": "lean",
+      "responded_four": true,
+      "error": null,
+      "wall_s": 2.81741,
+      "cpu_s": 0.61014,
+      "peak_rss_mib": 124.031,
+      "exit": 0,
+      "timed_out": false,
+      "service_usage": {
+        "input_tokens": 6411,
+        "cached_input_tokens": 0,
+        "output_tokens": 5,
+        "cache_write_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "message_count": 1,
+      "non_message_items": []
+    },
+    {
+      "profile": "lean",
+      "responded_four": true,
+      "error": null,
+      "wall_s": 6.23588,
+      "cpu_s": 0.60587,
+      "peak_rss_mib": 120.703,
+      "exit": 0,
+      "timed_out": false,
+      "service_usage": {
+        "input_tokens": 6413,
+        "cached_input_tokens": 4736,
+        "output_tokens": 5,
+        "cache_write_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "message_count": 1,
+      "non_message_items": []
+    },
+    {
+      "profile": "standard",
+      "responded_four": true,
+      "error": null,
+      "wall_s": 3.48267,
+      "cpu_s": 1.17024,
+      "peak_rss_mib": 166.094,
+      "exit": 0,
+      "timed_out": false,
+      "service_usage": {
+        "input_tokens": 18454,
+        "cached_input_tokens": 13696,
+        "output_tokens": 5,
+        "cache_write_input_tokens": 0,
+        "reasoning_output_tokens": 0
+      },
+      "message_count": 1,
+      "non_message_items": []
+    }
+  ],
+  "selected_profile": "lean"
+}

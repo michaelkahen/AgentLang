@@ -1,0 +1,488 @@
+{
+  "model": "gpt-6.2-sol",
+  "profile": "lean",
+  "encoding": "o200k_base",
+  "started_utc": "2026-11-24T20:22:24+00:00",
+  "schedule": [
+    {
+      "round": 1,
+      "arm": "python",
+      "order": [
+        "movie_credits",
+        "knn_grid",
+        "fixture_pack",
+        "replay_trace"
+      ],
+      "first_request_sha256": "000f7e301d64e9d77fad448e118da610b0c273a560ed3a695b45f702f06776a5"
+    },
+    {
+      "round": 1,
+      "arm": "compact",
+      "order": [
+        "movie_credits",
+        "knn_grid",
+        "fixture_pack",
+        "replay_trace"
+      ],
+      "first_request_sha256": "f0716e06066739556da5423ce29246af557715e640c8ebebaa7e0c47e9ace8a0"
+    },
+    {
+      "round": 2,
+      "arm": "compact",
+      "order": [
+        "fixture_pack",
+        "replay_trace",
+        "movie_credits",
+        "knn_grid"
+      ],
+      "first_request_sha256": "bdb7a1290c10d94bdad5111f17add7e9912da7c38956dff63d35576c37136766"
+    },
+    {
+      "round": 2,
+      "arm": "python",
+      "order": [
+        "fixture_pack",
+        "replay_trace",
+        "movie_credits",
+        "knn_grid"
+      ],
+      "first_request_sha256": "664014946dc344c15f551c0a75d569d8a720326d9dfb19069033cc7ff0c5f230"
+    }
+  ],
+  "limits": {
+    "attempts": 3,
+    "request_s": 120,
+    "batch_s": 270
+  },
+  "batches": [
+    {
+      "arm": "python",
+      "round": 1,
+      "order": [
+        "movie_credits",
+        "knn_grid",
+        "fixture_pack",
+        "replay_trace"
+      ],
+      "attempts": [
+        {
+          "requested": [
+            "movie_credits",
+            "knn_grid",
+            "fixture_pack",
+            "replay_trace"
+          ],
+          "response": "python-r1-a1.txt",
+          "request_sha256": "000f7e301d64e9d77fad448e118da610b0c273a560ed3a695b45f702f06776a5",
+          "response_sha256": "0c300cc0b07bddc5b08346eee32aad7c40cbdc310eddd3d0f924a0d50af6a86b",
+          "prompt_tokens": 1348,
+          "visible_response_tokens": 1659,
+          "client": {
+            "wall_s": 37.59014,
+            "cpu_s": 0.96266,
+            "peak_rss_mib": 118.406,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 7747,
+              "cached_input_tokens": 4736,
+              "output_tokens": 1716,
+              "cache_write_input_tokens": 0,
+              "reasoning_output_tokens": 51
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "checks": {
+            "movie_credits": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "knn_grid": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "fixture_pack": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "replay_trace": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 38.37819,
+      "audit": {
+        "movie_credits": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "knn_grid": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "fixture_pack": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "replay_trace": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "arm": "compact",
+      "round": 1,
+      "order": [
+        "movie_credits",
+        "knn_grid",
+        "fixture_pack",
+        "replay_trace"
+      ],
+      "attempts": [
+        {
+          "requested": [
+            "movie_credits",
+            "knn_grid",
+            "fixture_pack",
+            "replay_trace"
+          ],
+          "response": "compact-r1-a1.txt",
+          "request_sha256": "f0716e06066739556da5423ce29246af557715e640c8ebebaa7e0c47e9ace8a0",
+          "response_sha256": "0dd1f3c11dd3d0c3abb051be2f1975f8ae842fc352dfcc8422294af81190aa58",
+          "prompt_tokens": 1405,
+          "visible_response_tokens": 1515,
+          "client": {
+            "wall_s": 34.67485,
+            "cpu_s": 0.83384,
+            "peak_rss_mib": 126.453,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 7806,
+              "cached_input_tokens": 0,
+              "output_tokens": 1577,
+              "cache_write_input_tokens": 0,
+              "reasoning_output_tokens": 56
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "checks": {
+            "movie_credits": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "knn_grid": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "fixture_pack": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "replay_trace": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 35.45636,
+      "audit": {
+        "movie_credits": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "knn_grid": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "fixture_pack": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "replay_trace": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "arm": "compact",
+      "round": 2,
+      "order": [
+        "fixture_pack",
+        "replay_trace",
+        "movie_credits",
+        "knn_grid"
+      ],
+      "attempts": [
+        {
+          "requested": [
+            "fixture_pack",
+            "replay_trace",
+            "movie_credits",
+            "knn_grid"
+          ],
+          "response": "compact-r2-a1.txt",
+          "request_sha256": "bdb7a1290c10d94bdad5111f17add7e9912da7c38956dff63d35576c37136766",
+          "response_sha256": "dcf2720d1b374231d8323f8bad7e6dd48c380c386115cd38124e40ac3168473f",
+          "prompt_tokens": 1405,
+          "visible_response_tokens": 1553,
+          "client": {
+            "wall_s": 34.17562,
+            "cpu_s": 0.81868,
+            "peak_rss_mib": 123.531,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 7806,
+              "cached_input_tokens": 4736,
+              "output_tokens": 1557,
+              "cache_write_input_tokens": 0,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "checks": {
+            "fixture_pack": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "replay_trace": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "movie_credits": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "knn_grid": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 34.9585,
+      "audit": {
+        "fixture_pack": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "replay_trace": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "movie_credits": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "knn_grid": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        }
+      }
+    },
+    {
+      "arm": "python",
+      "round": 2,
+      "order": [
+        "fixture_pack",
+        "replay_trace",
+        "movie_credits",
+        "knn_grid"
+      ],
+      "attempts": [
+        {
+          "requested": [
+            "fixture_pack",
+            "replay_trace",
+            "movie_credits",
+            "knn_grid"
+          ],
+          "response": "python-r2-a1.txt",
+          "request_sha256": "664014946dc344c15f551c0a75d569d8a720326d9dfb19069033cc7ff0c5f230",
+          "response_sha256": "b6d915e4275ae50eabc95f4198acd75e5c6acf4aa5f24d61618f33477a0c60a5",
+          "prompt_tokens": 1348,
+          "visible_response_tokens": 1770,
+          "client": {
+            "wall_s": 41.48862,
+            "cpu_s": 0.80387,
+            "peak_rss_mib": 122.562,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 7749,
+              "cached_input_tokens": 0,
+              "output_tokens": 1840,
+              "cache_write_input_tokens": 0,
+              "reasoning_output_tokens": 64
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "checks": {
+            "fixture_pack": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "replay_trace": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "movie_credits": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            },
+            "knn_grid": {
+              "problem": null,
+              "fixtures": {
+                "base": "pass",
+                "edges": "pass",
+                "profile": "pass"
+              }
+            }
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 42.26126,
+      "audit": {
+        "fixture_pack": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "replay_trace": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "movie_credits": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        },
+        "knn_grid": {
+          "attempt": 1,
+          "checks": {
+            "audit": "pass"
+          },
+          "passed": true
+        }
+      }
+    }
+  ],
+  "finished_utc": "2026-11-24T20:24:55+00:00"
+}

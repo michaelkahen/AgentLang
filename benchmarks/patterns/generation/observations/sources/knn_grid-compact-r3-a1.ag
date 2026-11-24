@@ -1,0 +1,41 @@
+from math import sqrt
+
+train, holdout = [], []
+for row in c("samples.csv"):
+    fold = row$fold
+    sample = (fold, int(row$x), int(row$y), row$label)
+    (holdout if fold == "test" else train).append(sample)
+
+def predict(row, pool, n, metric, weights):
+    _, px, py, _ = row
+
+    def distance(sample):
+        dx, dy = abs(px - sample[1]), abs(py - sample[2])
+        return sqrt(dx*dx + dy*dy) if metric == "euclidean" else dx + dy
+
+    neighbors = sorted(((distance(s), s[3]) for s in pool),
+                       key=lambda pair: pair[0])[:n]
+    zero_only = weights == "distance" and neighbors[0][0] == 0
+    scores = {}
+    for dist, label in neighbors:
+        if zero_only and dist != 0:
+            continue
+        vote = 1 if weights == "uniform" or zero_only else 1 / dist
+        scores[label] = scores.get(label, 0) + vote
+    return min(scores, key=lambda label: (-scores[label], label))
+
+pools = {fold: [s for s in train if s[0] != fold] for fold in ("0", "1", "2")}
+grid = []
+for n in (1, 3, 5):
+    for metric in ("euclidean", "manhattan"):
+        for weights in ("uniform", "distance"):
+            correct = sum(predict(s, pools[s[0]], n, metric, weights) == s[3]
+                          for s in train)
+            grid.append(dict(k=n, metric=metric, weights=weights, correct=correct))
+
+best = max(range(len(grid)), key=lambda i: grid[i]["correct"])
+config = grid[best]
+predictions = [predict(s, train, config$k, config$metric, config$weights)
+               for s in holdout]
+test_correct = sum(p == s[3] for p, s in zip(predictions, holdout))
+wj(d{grid,best,predictions,test_correct})

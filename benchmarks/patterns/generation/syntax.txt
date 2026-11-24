@@ -1,0 +1,1 @@
+Python plus obj$field for obj['field'] (chainable), d{a,b} for dict(a=a,b=b). Assignment/return RHS xs:k EXPR or xs:x EXPR keys by _; xs:t N,EXPR takes first N. Use when helpful.

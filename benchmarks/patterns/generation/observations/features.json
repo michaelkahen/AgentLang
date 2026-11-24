@@ -1,0 +1,1136 @@
+{
+  "encoding": "o200k_base",
+  "fixtures": [
+    "base",
+    "edges"
+  ],
+  "results": [
+    {
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 1,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r1-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "v": 1,
+        "c": 2,
+        "t": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "helper_parsevalue": 16,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "helper_parsevalue": 3,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 1,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+      "authored_tokens": 266,
+      "expanded_field_and_record_tokens": 271,
+      "syntax_sites": {
+        "field": 5
+      },
+      "helper_name_call_sites": {
+        "v": 1,
+        "c": 2,
+        "t": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "field": 42,
+            "helper_parsevalue": 16,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "field": 9,
+            "helper_parsevalue": 3,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 1,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r1-a1.ag",
+      "authored_tokens": 450,
+      "expanded_field_and_record_tokens": 468,
+      "syntax_sites": {
+        "field": 7,
+        "record": 2
+      },
+      "helper_name_call_sites": {
+        "c": 1,
+        "t": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "field": 126,
+            "helper_smallest": 258,
+            "record": 13,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "field": 60,
+            "helper_smallest": 180,
+            "record": 13,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 1,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/knn_grid-python-r1-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "c": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 1,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/fixture_pack-python-r1-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "r": 2,
+        "b": 2,
+        "h": 2,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_shahex": 8,
+            "helper_readjson": 3,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_shahex": 8,
+            "helper_readjson": 3,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 1,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+      "authored_tokens": 301,
+      "expanded_field_and_record_tokens": 301,
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "h": 2,
+        "r": 2,
+        "b": 2,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_readjson": 3,
+            "helper_shahex": 8,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_readjson": 3,
+            "helper_shahex": 8,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "replay_trace",
+      "arm": "compact",
+      "round": 1,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r1-a1.ag",
+      "authored_tokens": 458,
+      "expanded_field_and_record_tokens": 480,
+      "syntax_sites": {
+        "field": 2,
+        "record": 2
+      },
+      "helper_name_call_sites": {
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "field": 9,
+            "record": 4,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "record": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "replay_trace",
+      "arm": "python",
+      "round": 1,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r1-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 2,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/knn_grid-python-r2-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "c": 1,
+        "t": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "helper_smallest": 258,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "helper_smallest": 180,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 2,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r2-a1.ag",
+      "authored_tokens": 432,
+      "expanded_field_and_record_tokens": 450,
+      "syntax_sites": {
+        "field": 7,
+        "record": 2
+      },
+      "helper_name_call_sites": {
+        "c": 1,
+        "t": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "field": 126,
+            "helper_smallest": 258,
+            "record": 13,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "field": 60,
+            "helper_smallest": 180,
+            "record": 13,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 2,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r2-a1.ag",
+      "authored_tokens": 309,
+      "expanded_field_and_record_tokens": 309,
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "h": 2,
+        "r": 3,
+        "b": 3,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_shahex": 8,
+            "helper_readjson": 3,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_shahex": 8,
+            "helper_readjson": 3,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 2,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/fixture_pack-python-r2-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {},
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {}
+        },
+        "edges": {
+          "correct": true,
+          "operations": {}
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "replay_trace",
+      "arm": "python",
+      "round": 2,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r2-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "replay_trace",
+      "arm": "compact",
+      "round": 2,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r2-a1.ag",
+      "authored_tokens": 459,
+      "expanded_field_and_record_tokens": 485,
+      "syntax_sites": {
+        "field": 5,
+        "record": 2
+      },
+      "helper_name_call_sites": {
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "field": 18,
+            "record": 4,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "record": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 2,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+      "authored_tokens": 269,
+      "expanded_field_and_record_tokens": 280,
+      "syntax_sites": {
+        "field": 5,
+        "record": 1
+      },
+      "helper_name_call_sites": {
+        "v": 1,
+        "c": 2,
+        "t": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "field": 42,
+            "helper_parsevalue": 16,
+            "helper_smallest": 1,
+            "record": 5,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "field": 9,
+            "helper_parsevalue": 3,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 2,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r2-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "v": 1,
+        "c": 2,
+        "wj": 1,
+        "t": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "helper_parsevalue": 16,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "helper_parsevalue": 3,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 3,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/fixture_pack-python-r3-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "r": 2,
+        "b": 2,
+        "h": 2,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_shahex": 8,
+            "helper_readjson": 3,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_shahex": 8,
+            "helper_readjson": 3,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 3,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+      "authored_tokens": 354,
+      "expanded_field_and_record_tokens": 354,
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "h": 2,
+        "r": 3,
+        "b": 3,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_shahex": 8,
+            "helper_readjson": 3,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_shahex": 8,
+            "helper_readjson": 3,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "replay_trace",
+      "arm": "compact",
+      "round": 3,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r3-a1.ag",
+      "authored_tokens": 451,
+      "expanded_field_and_record_tokens": 476,
+      "syntax_sites": {
+        "field": 3,
+        "record": 2
+      },
+      "helper_name_call_sites": {
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "field": 14,
+            "record": 4,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "record": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "replay_trace",
+      "arm": "python",
+      "round": 3,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r3-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 3,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r3-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "v": 1,
+        "c": 2,
+        "t": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "helper_parsevalue": 16,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "helper_parsevalue": 3,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 3,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+      "authored_tokens": 276,
+      "expanded_field_and_record_tokens": 295,
+      "syntax_sites": {
+        "field": 5,
+        "record": 2
+      },
+      "helper_name_call_sites": {
+        "v": 1,
+        "c": 2,
+        "t": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "field": 42,
+            "helper_parsevalue": 16,
+            "helper_smallest": 1,
+            "record": 6,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "field": 9,
+            "helper_parsevalue": 3,
+            "helper_smallest": 1,
+            "record": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 3,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r3-a1.ag",
+      "authored_tokens": 457,
+      "expanded_field_and_record_tokens": 467,
+      "syntax_sites": {
+        "field": 7,
+        "record": 1
+      },
+      "helper_name_call_sites": {
+        "c": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "field": 126,
+            "record": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "field": 60,
+            "record": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 3,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/knn_grid-python-r3-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "c": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "replay_trace",
+      "arm": "python",
+      "round": 4,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r4-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "replay_trace",
+      "arm": "compact",
+      "round": 4,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r4-a1.ag",
+      "authored_tokens": 461,
+      "expanded_field_and_record_tokens": 486,
+      "syntax_sites": {
+        "field": 3,
+        "record": 2
+      },
+      "helper_name_call_sites": {
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "field": 11,
+            "record": 4,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "record": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 4,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r4-a1.ag",
+      "authored_tokens": 272,
+      "expanded_field_and_record_tokens": 286,
+      "syntax_sites": {
+        "field": 5,
+        "record": 1
+      },
+      "helper_name_call_sites": {
+        "v": 1,
+        "c": 2,
+        "t": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "field": 42,
+            "helper_parsevalue": 16,
+            "helper_smallest": 1,
+            "record": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "field": 9,
+            "helper_parsevalue": 3,
+            "helper_smallest": 1,
+            "record": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 4,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r4-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "v": 1,
+        "c": 2,
+        "t": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "helper_parsevalue": 16,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 2,
+            "helper_parsevalue": 3,
+            "helper_smallest": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 4,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/knn_grid-python-r4-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "c": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 4,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r4-a1.ag",
+      "authored_tokens": 462,
+      "expanded_field_and_record_tokens": 462,
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "c": 1,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_csvrows": 1,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 4,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r4-a1.ag",
+      "authored_tokens": 309,
+      "expanded_field_and_record_tokens": 309,
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "r": 2,
+        "b": 2,
+        "h": 2,
+        "wj": 1
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_readjson": 3,
+            "helper_shahex": 8,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_readjson": 3,
+            "helper_shahex": 8,
+            "helper_jsonbytes": 3,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 4,
+      "attempt": 1,
+      "accepted": true,
+      "source_path": "benchmarks/patterns/generation/observations/sources/fixture_pack-python-r4-a1.py",
+      "syntax_sites": {},
+      "helper_name_call_sites": {
+        "r": 2,
+        "b": 2,
+        "wj": 1,
+        "h": 2
+      },
+      "checks": {
+        "base": {
+          "correct": true,
+          "operations": {
+            "helper_readjson": 3,
+            "helper_jsonbytes": 3,
+            "helper_shahex": 8,
+            "helper_writejson": 1
+          }
+        },
+        "edges": {
+          "correct": true,
+          "operations": {
+            "helper_readjson": 3,
+            "helper_jsonbytes": 3,
+            "helper_shahex": 8,
+            "helper_writejson": 1
+          }
+        }
+      },
+      "status": "observed"
+    }
+  ]
+}

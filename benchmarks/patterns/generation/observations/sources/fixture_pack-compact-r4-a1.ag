@@ -1,0 +1,36 @@
+import csv
+import io
+from itertools import groupby
+from operator import itemgetter
+from pathlib import Path
+
+factor = int(input())
+
+def csv_input(path):
+    with open(path, encoding='utf-8', newline='') as f:
+        header, *rows = csv.reader(f)
+    buf = io.StringIO(newline='')
+    writer = csv.writer(buf, lineterminator='\n')
+    writer.writerow(header)
+    writer.writerows(rows * factor)
+    return len(rows) * factor, buf.getvalue().encode('utf-8')
+
+def json_input(path):
+    rows = r(path) * factor
+    return len(rows), b(rows)
+
+def checksums(scaled, golden):
+    records, data = scaled
+    return dict(records=records, bytes=len(data),
+                input_sha256=h(data), golden_sha256=h(golden))
+
+sorted_rows = [row for _, group in groupby(r('sort_scores.out'), itemgetter(1))
+               for row in list(group) * factor]
+
+wj(dict(
+    late_flights=checksums(csv_input('data/tweets.csv'),
+                           f"{int(Path('late_flights.out').read_bytes()) * factor}\n".encode()),
+    goal_gap=checksums(csv_input('data/projects.csv'), Path('goal_gap.out').read_bytes()),
+    word_counts=checksums(json_input('word_counts.in'), Path('word_counts.out').read_bytes()),
+    sort_scores=checksums(json_input('sort_scores.in'), b(sorted_rows)),
+))

@@ -1,0 +1,28 @@
+def entries(cell):
+    items = v(cell) if cell else None
+    return (item for item in (items if isinstance(items, list) else [])
+            if isinstance(item, dict))
+
+films = {row$id for row in c('movies.csv') if row$id and any(
+    g.get('name') in ('Science Fiction', 'Sci-Fi') for g in entries(row$genres)
+)}
+credited = set()
+counts = {}
+seen = {}
+for row in c('credits.csv'):
+    mid = row$id
+    if mid not in films:
+        continue
+    for member in entries(row$crew):
+        pid = member.get('id')
+        if type(pid) is int and pid > 0:
+            credited.add(mid)
+            counts[pid] = counts.get(pid, 0) + 1
+            seen.setdefault(pid, set()).add(mid)
+
+leaders = [
+    {'id': pid, 'credits': counts[pid], 'movies': len(seen[pid])}
+    for pid in t(counts, 5, lambda pid: (-counts[pid], -len(seen[pid]), pid))
+]
+wj({'films': len(films), 'credited_films': len(credited),
+    'appearances': sum(counts.values()), 'leaders': leaders})

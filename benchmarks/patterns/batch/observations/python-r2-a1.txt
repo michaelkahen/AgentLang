@@ -1,0 +1,204 @@
+@@ fixture_pack
+import csv
+import hashlib
+import io
+import itertools
+import json
+from pathlib import Path
+
+factor = int(input())
+
+def encode(value):
+    return (json.dumps(value) + '\n').encode('utf-8')
+
+def scaled_input(path):
+    if path.endswith('.csv'):
+        with open(path, encoding='utf-8', newline='') as f:
+            header, *rows = csv.reader(f)
+        out = io.StringIO(newline='')
+        writer = csv.writer(out, lineterminator='\n')
+        writer.writerow(header)
+        for _ in range(factor):
+            writer.writerows(rows)
+        return len(rows) * factor, out.getvalue().encode('utf-8')
+    rows = json.loads(Path(path).read_text(encoding='utf-8'))
+    return len(rows) * factor, encode(rows * factor)
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+report = {}
+for task, path in zip(
+    ('late_flights', 'goal_gap', 'word_counts', 'sort_scores'),
+    ('data/tweets.csv', 'data/projects.csv', 'word_counts.in', 'sort_scores.in'),
+):
+    count, data = scaled_input(path)
+    golden = Path(task + '.out').read_bytes()
+    if task == 'late_flights':
+        golden = f'{int(golden) * factor}\n'.encode('utf-8')
+    elif task == 'sort_scores':
+        rows = json.loads(golden.decode('utf-8'))
+        groups = itertools.groupby(rows, key=lambda row: row[1])
+        golden = encode(list(itertools.chain.from_iterable(
+            list(group) * factor for _, group in groups
+        )))
+    report[task] = dict(records=count, bytes=len(data),
+                        input_sha256=sha(data), golden_sha256=sha(golden))
+print(json.dumps(report))
+
+@@ replay_trace
+import json
+
+def reject_constant(value):
+    raise ValueError(value)
+
+def nonnegative(value):
+    return type(value) is int and value >= 0
+
+events = {}
+with open('events.jsonl', encoding='utf-8') as f:
+    for line in f:
+        try:
+            event = json.loads(line, parse_constant=reject_constant)
+        except (ValueError, RecursionError):
+            continue
+        if not isinstance(event, dict):
+            continue
+        run, seq, kind = (event.get(key) for key in ('run', 'seq', 'type'))
+        if (isinstance(run, str) and run and nonnegative(seq)
+                and kind in ('item.completed', 'turn.completed', 'turn.failed')):
+            events.setdefault(run, {}).setdefault(seq, event)
+
+runs = []
+totals = dict(ok=0, failed=0, open=0, commands=0, input_tokens=0, output_tokens=0)
+for run, entries in sorted(events.items()):
+    row = dict(run=run, status='open', last_message=None, commands=0,
+               input_tokens=0, output_tokens=0)
+    for _, event in sorted(entries.items()):
+        kind = event['type']
+        if kind == 'item.completed':
+            item = event.get('item')
+            if isinstance(item, dict):
+                if item.get('type') == 'command_execution':
+                    row['commands'] += 1
+                elif item.get('type') == 'agent_message' and isinstance(item.get('text'), str):
+                    row['last_message'] = item['text']
+            continue
+        row['status'] = 'ok' if kind == 'turn.completed' else 'failed'
+        usage = event.get('usage')
+        if row['status'] == 'ok' and isinstance(usage, dict):
+            for key in ('input_tokens', 'output_tokens'):
+                value = usage.get(key)
+                if nonnegative(value):
+                    row[key] = value
+        break
+    runs.append(row)
+    totals[row['status']] += 1
+    for key in ('commands', 'input_tokens', 'output_tokens'):
+        totals[key] += row[key]
+print(json.dumps(dict(runs=runs, totals=totals)))
+
+@@ movie_credits
+import ast
+import csv
+import json
+from collections import Counter, defaultdict
+
+def reject_constant(value):
+    raise ValueError(value)
+
+def entries(cell):
+    if not cell:
+        return []
+    try:
+        value = json.loads(cell, parse_constant=reject_constant)
+    except (ValueError, RecursionError):
+        try:
+            value = ast.literal_eval(cell)
+        except (ValueError, SyntaxError, RecursionError):
+            return []
+    return (entry for entry in value if isinstance(entry, dict)) if isinstance(value, list) else []
+
+def rows(path):
+    with open(path, encoding='utf-8', newline='') as f:
+        yield from csv.DictReader(f)
+
+films = {
+    row['id'] for row in rows('movies.csv')
+    if row['id'] and any(g.get('name') in ('Science Fiction', 'Sci-Fi')
+                         for g in entries(row['genres']))
+}
+credited = set()
+counts = Counter()
+movies = defaultdict(set)
+for row in rows('credits.csv'):
+    film = row['id']
+    if film not in films:
+        continue
+    for member in entries(row['crew']):
+        person = member.get('id')
+        if type(person) is int and person > 0:
+            credited.add(film)
+            counts[person] += 1
+            movies[person].add(film)
+
+leaders = sorted(counts, key=lambda p: (-counts[p], -len(movies[p]), p))[:5]
+print(json.dumps(dict(
+    films=len(films), credited_films=len(credited), appearances=sum(counts.values()),
+    leaders=[dict(id=p, credits=counts[p], movies=len(movies[p])) for p in leaders],
+)))
+
+@@ knn_grid
+import csv
+import json
+import math
+from collections import defaultdict
+from itertools import product
+
+training, holdout = [], []
+with open('samples.csv', encoding='utf-8', newline='') as f:
+    for row in csv.DictReader(f):
+        fold = row['fold']
+        target = holdout if fold == 'test' else training
+        target.append((fold if fold == 'test' else int(fold),
+                       int(row['x']), int(row['y']), row['label']))
+
+def neighbors(sample, pool, metric):
+    _, x, y, _ = sample
+    ranked = []
+    for _, nx, ny, label in pool:
+        dx, dy = x - nx, y - ny
+        distance = math.sqrt(dx * dx + dy * dy) if metric == 'euclidean' else abs(dx) + abs(dy)
+        ranked.append((distance, label))
+    ranked.sort(key=lambda pair: pair[0])
+    return ranked[:5]
+
+def predict(ranked, k, weights):
+    votes = defaultdict(int)
+    zeros_only = weights == 'distance' and ranked[0][0] == 0
+    for distance, label in ranked[:k]:
+        if zeros_only and distance != 0:
+            break
+        votes[label] += 1 if weights == 'uniform' or zeros_only else 1 / distance
+    return min(votes, key=lambda label: (-votes[label], label))
+
+metrics = ('euclidean', 'manhattan')
+pools = {fold: [row for row in training if row[0] != fold] for fold in range(3)}
+rankings = {
+    metric: [neighbors(row, pools[row[0]], metric) for row in training]
+    for metric in metrics
+}
+grid = []
+for k, metric, weights in product((1, 3, 5), metrics, ('uniform', 'distance')):
+    correct = sum(predict(ranked, k, weights) == row[3]
+                  for ranked, row in zip(rankings[metric], training))
+    grid.append(dict(k=k, metric=metric, weights=weights, correct=correct))
+
+best = max(range(len(grid)), key=lambda i: grid[i]['correct'])
+config = grid[best]
+predictions = [predict(neighbors(row, training, config['metric']),
+                       config['k'], config['weights']) for row in holdout]
+print(json.dumps(dict(
+    grid=grid, best=best, predictions=predictions,
+    test_correct=sum(label == row[3] for label, row in zip(predictions, holdout)),
+)))
