@@ -1,6 +1,8 @@
 # AgentLang
 
-AgentLang is a small language for agents that write one-off scripts. It compiles to standalone Python and uses the Python standard library. The experiment asks whether an agent can reach a correct result sooner by generating fewer tokens, even when ordinary Python gets the same helpers.
+I kept seeing coding agents write one-off Python scripts to get things done. Could an agent use fewer tokens and reach a correct result faster if it could write common operations in just one or two letters? I built AgentLang to test that idea against Python with the same helpers.
+
+AgentLang compiles to standalone Python and uses the Python standard library.
 
 ```text
 p r():w _$paid:u _$cents
