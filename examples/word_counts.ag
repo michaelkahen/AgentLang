@@ -1,0 +1,2 @@
+top = readjson() | flat _.split() | common 1 | first
+emit top[0]

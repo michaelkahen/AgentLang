@@ -1,0 +1,6 @@
+projects = csvrows("data/projects.csv")
+
+def mean_goal(state):
+    return projects | where _["state"] == state | mean float(_["usd_goal_real"])
+
+emit f"{mean_goal('failed') - mean_goal('successful'):.2f}"

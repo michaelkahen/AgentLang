@@ -1,0 +1,419 @@
+{
+  "model": "gpt-6.2-sol",
+  "reasoning_effort": "low",
+  "codex": "codex-cli 0.170.0",
+  "platform": "macOS-14.8.2-arm64-arm-64bit",
+  "rounds": 2,
+  "grammar_tokens_o200k": 194,
+  "tasks": {
+    "late_flights": "Read the UTF-8 CSV data/tweets.csv with header airline,airline_sentiment,negativereason. Print the integer count of rows where airline equals 'US Airways', airline_sentiment equals 'negative', and negativereason equals 'Late Flight'.",
+    "goal_gap": "Read the UTF-8 CSV data/projects.csv with header state,usd_goal_real. For each of the two states 'failed' and 'successful' there is at least one row. The goal field is numeric. Subtract the mean goal of successful projects from the mean goal of failed projects. Ignore other states. Print the difference to exactly two decimal places.",
+    "word_counts": "Read a JSON array of strings from stdin. Split the strings on Python-style whitespace. Print the most frequent word across all strings, breaking ties by earliest occurrence. There is at least one word. Preserve case and punctuation.",
+    "sort_scores": "Read a JSON array of [string, number] pairs from stdin. Stable-sort ascending by the second element of each pair. Print the resulting JSON array using Python json.dumps defaults."
+  },
+  "common": "Return only the complete, concise runnable source code. Use no tools, Markdown, or explanation. Use the standard library only. Handle all inputs matching the specification, and write only the specified output followed by a newline.",
+  "grammar": "This language accepts ordinary Python and the following shorthand. Use its compact forms when helpful.\nA pipeline occupies one physical line: x = SRC | STAGE | STAGE, emit SRC | STAGE, or jsonout SRC | STAGE. emit expr prints the expression; jsonout expr prints json.dumps(expr). Stages: where EXPR, map EXPR, flat EXPR (flatten one iterable per input), count, sum [EXPR], mean [EXPR], sort [EXPR] (stable), common N (Counter.most_common result), first, list. _ is the current item. csvrows(path) reads a UTF-8 CSV into a list of dictionaries. readjson() reads stdin; readjson(path) reads UTF-8 JSON. No stages inside parentheses or nested expressions; parenthesize any | inside a stage expression. Ordinary Python assignments, imports, loops, comprehensions and formatting are allowed. Shorthand helpers require no imports.",
+  "trials": [
+    {
+      "round": 1,
+      "task": "late_flights",
+      "arm": "python",
+      "wall_s": 5.7294,
+      "client_cpu_s": 1.2904,
+      "user_prompt_tokens_o200k": 104,
+      "visible_source_tokens_o200k": 76,
+      "source": "import csv\n\nwith open(\"data/tweets.csv\", encoding=\"utf-8\", newline=\"\") as file:\n    print(sum(\n        row[\"airline\"] == \"US Airways\"\n        and row[\"airline_sentiment\"] == \"negative\"\n        and row[\"negativereason\"] == \"Late Flight\"\n        for row in csv.DictReader(file)\n    ))",
+      "usage": {
+        "input_tokens": 18548,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 80,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.051
+    },
+    {
+      "round": 1,
+      "task": "late_flights",
+      "arm": "compact",
+      "wall_s": 4.2537,
+      "client_cpu_s": 1.2418,
+      "user_prompt_tokens_o200k": 300,
+      "visible_source_tokens_o200k": 48,
+      "source": "emit csvrows(\"data/tweets.csv\") | where _[\"airline\"] == \"US Airways\" and _[\"airline_sentiment\"] == \"negative\" and _[\"negativereason\"] == \"Late Flight\" | count",
+      "usage": {
+        "input_tokens": 18744,
+        "cached_input_tokens": 18304,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 52,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0473
+    },
+    {
+      "round": 1,
+      "task": "goal_gap",
+      "arm": "compact",
+      "wall_s": 4.406,
+      "client_cpu_s": 1.1073,
+      "user_prompt_tokens_o200k": 319,
+      "visible_source_tokens_o200k": 63,
+      "source": "rows = csvrows(\"data/projects.csv\")\nfailed = rows | where _[\"state\"] == \"failed\" | mean float(_[\"usd_goal_real\"])\nsuccessful = rows | where _[\"state\"] == \"successful\" | mean float(_[\"usd_goal_real\"])\nemit f\"{failed - successful:.2f}\"",
+      "usage": {
+        "input_tokens": 18763,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 67,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0535
+    },
+    {
+      "round": 1,
+      "task": "goal_gap",
+      "arm": "python",
+      "wall_s": 6.5948,
+      "client_cpu_s": 1.5063,
+      "user_prompt_tokens_o200k": 123,
+      "visible_source_tokens_o200k": 160,
+      "source": "import csv\nfrom fractions import Fraction\n\ntotals = {\"failed\": Fraction(0), \"successful\": Fraction(0)}\ncounts = dict.fromkeys(totals, 0)\n\nwith open(\"data/projects.csv\", encoding=\"utf-8\", newline=\"\") as file:\n    for row in csv.DictReader(file):\n        state = row[\"state\"]\n        if state in totals:\n            totals[state] += Fraction(row[\"usd_goal_real\"])\n            counts[state] += 1\n\ndifference = totals[\"failed\"] / counts[\"failed\"] - totals[\"successful\"] / counts[\"successful\"]\nwhole, cents = divmod(round(abs(difference) * 100), 100)\nsign = \"-\" if difference < 0 else \"\"\nprint(f\"{sign}{whole}.{cents:02d}\")",
+      "usage": {
+        "input_tokens": 18567,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 164,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0504
+    },
+    {
+      "round": 1,
+      "task": "word_counts",
+      "arm": "python",
+      "wall_s": 4.4439,
+      "client_cpu_s": 1.0312,
+      "user_prompt_tokens_o200k": 95,
+      "visible_source_tokens_o200k": 42,
+      "source": "import json\nimport sys\nfrom collections import Counter\n\ncounts = Counter(word for line in json.load(sys.stdin) for word in line.split())\nprint(counts.most_common(1)[0][0])",
+      "usage": {
+        "input_tokens": 18539,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 46,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0474
+    },
+    {
+      "round": 1,
+      "task": "word_counts",
+      "arm": "compact",
+      "wall_s": 3.6696,
+      "client_cpu_s": 1.035,
+      "user_prompt_tokens_o200k": 291,
+      "visible_source_tokens_o200k": 22,
+      "source": "words = readjson() | flat _.split() | common 1 | first\nemit words[0]",
+      "usage": {
+        "input_tokens": 18735,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 26,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0497
+    },
+    {
+      "round": 1,
+      "task": "sort_scores",
+      "arm": "compact",
+      "wall_s": 3.9109,
+      "client_cpu_s": 1.0669,
+      "user_prompt_tokens_o200k": 283,
+      "visible_source_tokens_o200k": 11,
+      "source": "jsonout readjson() | sort _[1]",
+      "usage": {
+        "input_tokens": 18727,
+        "cached_input_tokens": 18304,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 15,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0479
+    },
+    {
+      "round": 1,
+      "task": "sort_scores",
+      "arm": "python",
+      "wall_s": 3.9348,
+      "client_cpu_s": 1.0808,
+      "user_prompt_tokens_o200k": 87,
+      "visible_source_tokens_o200k": 29,
+      "source": "import json\nimport sys\n\npairs = json.load(sys.stdin)\npairs.sort(key=lambda pair: pair[1])\nprint(json.dumps(pairs))",
+      "usage": {
+        "input_tokens": 18531,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 33,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0471
+    },
+    {
+      "round": 2,
+      "task": "goal_gap",
+      "arm": "python",
+      "wall_s": 6.7511,
+      "client_cpu_s": 1.0938,
+      "user_prompt_tokens_o200k": 123,
+      "visible_source_tokens_o200k": 161,
+      "source": "import csv\nfrom fractions import Fraction\n\ntotals = {\"failed\": Fraction(0), \"successful\": Fraction(0)}\ncounts = dict.fromkeys(totals, 0)\n\nwith open(\"data/projects.csv\", encoding=\"utf-8\", newline=\"\") as file:\n    for row in csv.DictReader(file):\n        state = row[\"state\"]\n        if state in totals:\n            totals[state] += Fraction(row[\"usd_goal_real\"])\n            counts[state] += 1\n\ndifference = totals[\"failed\"] / counts[\"failed\"] - totals[\"successful\"] / counts[\"successful\"]\ncents = round(abs(difference) * 100)\nsign = \"-\" if difference < 0 else \"\"\nprint(f\"{sign}{cents // 100}.{cents % 100:02d}\")",
+      "usage": {
+        "input_tokens": 18567,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 165,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0498
+    },
+    {
+      "round": 2,
+      "task": "goal_gap",
+      "arm": "compact",
+      "wall_s": 7.1123,
+      "client_cpu_s": 1.0569,
+      "user_prompt_tokens_o200k": 319,
+      "visible_source_tokens_o200k": 130,
+      "source": "from fractions import Fraction\n\ntotals = dict.fromkeys((\"failed\", \"successful\"), 0)\ncounts = totals.copy()\nfor row in csvrows(\"data/projects.csv\"):\n    state = row[\"state\"]\n    if state in totals:\n        totals[state] += Fraction(row[\"usd_goal_real\"])\n        counts[state] += 1\n\ndifference = totals[\"failed\"] / counts[\"failed\"] - totals[\"successful\"] / counts[\"successful\"]\nwhole, cents = divmod(round(abs(difference) * 100), 100)\nsign = \"-\" if difference < 0 else \"\"\nprint(f\"{sign}{whole}.{cents:02d}\")",
+      "usage": {
+        "input_tokens": 18763,
+        "cached_input_tokens": 17536,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 180,
+        "reasoning_output_tokens": 44
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0511
+    },
+    {
+      "round": 2,
+      "task": "word_counts",
+      "arm": "compact",
+      "wall_s": 3.9132,
+      "client_cpu_s": 1.0529,
+      "user_prompt_tokens_o200k": 291,
+      "visible_source_tokens_o200k": 29,
+      "source": "from collections import Counter\nwords = readjson() | flat _.split()\nprint(Counter(words).most_common(1)[0][0])",
+      "usage": {
+        "input_tokens": 18735,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 33,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0487
+    },
+    {
+      "round": 2,
+      "task": "word_counts",
+      "arm": "python",
+      "wall_s": 3.7516,
+      "client_cpu_s": 1.064,
+      "user_prompt_tokens_o200k": 95,
+      "visible_source_tokens_o200k": 39,
+      "source": "import json\nimport sys\nfrom collections import Counter\n\nwords = Counter(word for line in json.load(sys.stdin) for word in line.split())\nprint(max(words, key=words.__getitem__))",
+      "usage": {
+        "input_tokens": 18539,
+        "cached_input_tokens": 18304,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 43,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0478
+    },
+    {
+      "round": 2,
+      "task": "sort_scores",
+      "arm": "python",
+      "wall_s": 3.8889,
+      "client_cpu_s": 1.0786,
+      "user_prompt_tokens_o200k": 87,
+      "visible_source_tokens_o200k": 29,
+      "source": "import json\nimport sys\n\npairs = json.load(sys.stdin)\npairs.sort(key=lambda pair: pair[1])\nprint(json.dumps(pairs))",
+      "usage": {
+        "input_tokens": 18531,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 33,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0479
+    },
+    {
+      "round": 2,
+      "task": "sort_scores",
+      "arm": "compact",
+      "wall_s": 3.2309,
+      "client_cpu_s": 1.0668,
+      "user_prompt_tokens_o200k": 283,
+      "visible_source_tokens_o200k": 11,
+      "source": "jsonout readjson() | sort _[1]",
+      "usage": {
+        "input_tokens": 18727,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 15,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0477
+    },
+    {
+      "round": 2,
+      "task": "late_flights",
+      "arm": "compact",
+      "wall_s": 3.6089,
+      "client_cpu_s": 1.0887,
+      "user_prompt_tokens_o200k": 300,
+      "visible_source_tokens_o200k": 44,
+      "source": "emit csvrows(\"data/tweets.csv\") | where (_[\"airline\"], _[\"airline_sentiment\"], _[\"negativereason\"]) == (\"US Airways\", \"negative\", \"Late Flight\") | count",
+      "usage": {
+        "input_tokens": 18744,
+        "cached_input_tokens": 18304,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 48,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0472
+    },
+    {
+      "round": 2,
+      "task": "late_flights",
+      "arm": "python",
+      "wall_s": 5.4215,
+      "client_cpu_s": 1.0509,
+      "user_prompt_tokens_o200k": 104,
+      "visible_source_tokens_o200k": 80,
+      "source": "import csv\n\nwith open(\"data/tweets.csv\", encoding=\"utf-8\", newline=\"\") as file:\n    count = sum(\n        row[\"airline\"] == \"US Airways\"\n        and row[\"airline_sentiment\"] == \"negative\"\n        and row[\"negativereason\"] == \"Late Flight\"\n        for row in csv.DictReader(file)\n    )\n\nprint(count)",
+      "usage": {
+        "input_tokens": 18548,
+        "cached_input_tokens": 13696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 84,
+        "reasoning_output_tokens": 0
+      },
+      "non_message_items": [],
+      "message_count": 1,
+      "fixture_verdicts": {
+        "base": "pass",
+        "alternate": "pass"
+      },
+      "passed": true,
+      "verification_s": 0.0473
+    }
+  ],
+  "tiktoken": "0.14.0"
+}

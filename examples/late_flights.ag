@@ -1,0 +1,2 @@
+rows = csvrows("data/tweets.csv")
+emit rows | where _["airline"] == "US Airways" and _["airline_sentiment"] == "negative" and _["negativereason"] == "Late Flight" | count
