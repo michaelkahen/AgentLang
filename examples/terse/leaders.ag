@@ -1,0 +1,4 @@
+rows = r()
+leaders = rows:t 3, -_$score
+names = leaders:m _$name:l
+j d{names,leaders}

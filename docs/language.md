@@ -23,10 +23,26 @@ The compact and long spellings produce the same operations. A compact stage star
 | `:c N` | `\| common N` | Return up to N value/count pairs using `Counter.most_common`. |
 | `:h` | `\| first` | Take the next item. Empty input raises `StopIteration`. |
 | `:l` | `\| list` | Materialize the iterable as a list. |
+| `:k EXPR`, `:x EXPR` | `\| min EXPR`, `\| max EXPR` | Select the first lowest- or highest-ranked item. Omit the expression to compare items directly. |
+| `:t N, EXPR` | `\| top N, EXPR` | Take up to N lowest-ranked items in stable order. N is a nonnegative integer. The comma and key expression are optional. |
 
 Filter, map, and flat-map are lazy. Collect the result with `:l` before JSON serialization or to iterate over it more than once. Assign a pipeline to a variable before using its result inside a larger expression. Use parentheses for Python bitwise expressions inside a stage. Python slices, dictionary literals, strings, and comments can contain colons.
 
-## Input and output
+## Working with records
+
+`obj$field` means `obj["field"]`. Lookups can be chained or used in comprehensions, assignment targets, and pipeline expressions. The key must be an identifier touching the dollar sign on both sides (`row$person$name`). Use ordinary subscripts for dynamic keys, non-identifier keys, or integer indices. Inside formatted-string expressions, the shorthand requires Python 3.12 or later.
+
+`d{a,b}` constructs `{"a": a, "b": b}`. Fields are variable names in insertion order. For computed values, assign a variable first or use an ordinary dictionary.
+
+```text
+rows = r()
+best = rows:x _$score
+ids = rows:t 3, -_$score
+top_ids = ids:m _$id:l
+j d{best,top_ids}
+```
+
+## Input, output and shared functions
 
 | Compact | Long | Behavior |
 | --- | --- | --- |
@@ -35,16 +51,21 @@ Filter, map, and flat-map are lazy. Collect the result with `:l` before JSON ser
 | `wj(x)` | `writejson(x)` | Print one value using Python's default JSON formatting. |
 | `p expr` | `emit expr` | Print the result of an expression or pipeline. |
 | `j expr` | `jsonout expr` | Print the result as JSON. |
+| `v(text, default=None)` | `parsevalue` | Parse JSON first, then Python literal syntax. Return the default on invalid input. Use `json.loads` when the input contract requires strict JSON syntax. |
+| `b(value)` | `jsonbytes` | Serialize with Python's default JSON formatting followed by LF, encoded as UTF-8. |
+| `h(data)` | `shahex` | SHA-256 hexadecimal digest of bytes. |
+| `k(items, key=None)`, `x(items, key=None)` | `least`, `greatest` | Select the minimum or maximum item using an optional positional key function. Empty input raises `ValueError`. |
+| `t(items, n, key=None)` | `smallest` | Stable selection of the n smallest items. Equivalent output to sorting and taking the first n for ordinary orderable keys. |
 
 Use the short helper names in function calls. The same functions are importable from `agentlang.helpers` in ordinary Python. A short output command requires whitespace after its name. For example, `p x` prints a value and `p(x)` calls an ordinary Python name. Names beginning with `_ag_` are reserved for generated code.
 
 ## Compilation
 
-The compiler tokenizes each statement, identifies outer pipeline boundaries, and lowers stages to Python generator expressions, built-ins, or standard-library calls. It embeds the definitions of the I/O helpers it needs. The resulting file runs on Python without installing AgentLang.
+The compiler expands record expressions, identifies outer pipeline boundaries, and lowers stages to Python generator expressions, built-ins, or standard-library calls. The `compile` command embeds the helper definitions in a standalone Python file. The `run` command compiles in memory and binds those functions directly, which avoids emitting and reparsing an intermediate file.
 
 ```sh
 python3 -m agentlang compile examples/terse/paid_total.ag
 python3 -m agentlang compile examples/terse/paid_total.ag -o /tmp/paid_total.py
 ```
 
-For a model prompt, the [short reference](agent-reference.txt) collects the compact vocabulary on five lines.
+For a model prompt, the [short reference](agent-reference.txt) collects the compact vocabulary. The measured comparison used a [shared helper card](../benchmarks/patterns/generation/operations.txt) and a [dialect addendum](../benchmarks/patterns/generation/syntax.txt).

@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 from types import ModuleType
 
-from . import compile_source
+from .compiler import compile_source, prepare_run
 
 
 def main():
@@ -20,10 +20,11 @@ def main():
     args = parser.parse_args()
     source = args.source.resolve()
     try:
-        output = compile_source(source.read_text(encoding="utf-8"), str(source))
-        # Validate before writing output, including scope errors ast.parse permits.
-        code = compile(output, str(source) + " (compiled)", "exec")
+        text = source.read_text(encoding="utf-8")
         if args.command == "compile":
+            output = compile_source(text, str(source))
+            # Validate scope errors before writing output.
+            compile(output, str(source), "exec")
             if args.output is None:
                 sys.stdout.write(output)
             elif args.output.resolve() == source:
@@ -31,6 +32,7 @@ def main():
             else:
                 args.output.write_text(output, encoding="utf-8")
             return
+        code, helpers = prepare_run(text, str(source))
     except (OSError, SyntaxError) as exc:
         parser.exit(1, f"{exc}\n")
 
@@ -39,6 +41,7 @@ def main():
     script = ModuleType("__main__")
     script.__file__ = str(source)
     sys.modules["__main__"] = script
+    script.__dict__.update(helpers)
     exec(code, script.__dict__)
 
 

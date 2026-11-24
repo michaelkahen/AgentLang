@@ -1,23 +1,27 @@
 """Compile a small Python dialect with collection pipelines to standalone Python."""
 
 import ast
+import builtins
 import io
+import keyword
 import tokenize
 from functools import lru_cache
 from pathlib import Path
+from .helpers import SHARED_HELPERS
 
 
-_IO_HELPERS = {"csvrows", "readjson", "writejson"}
-_SHORT_HELPERS = {"r": "readjson", "c": "csvrows", "wj": "writejson"}
+_FULL_HELPERS = {fn.__name__ for fn in SHARED_HELPERS.values()}
+_SHORT_HELPERS = {name: fn.__name__ for name, fn in SHARED_HELPERS.items() if name != fn.__name__}
 _SHORT_STAGES = {"w": "where", "m": "map", "f": "flat", "n": "count", "u": "sum",
-                 "a": "mean", "s": "sort", "c": "common", "h": "first", "l": "list"}
+                 "a": "mean", "s": "sort", "c": "common", "h": "first", "l": "list",
+                 "k": "min", "x": "max", "t": "top"}
 _COMMANDS = {"emit": "emit", "jsonout": "jsonout", "p": "emit", "j": "jsonout"}
 _STAGE_IMPORTS = {
     "_ag_mean": "from statistics import mean as _ag_mean\n",
     "_ag_counter": "from collections import Counter as _ag_counter\n",
 }
 
-_STAGES = {"where", "map", "flat", "count", "sum", "mean", "sort", "common", "first", "list"}
+_STAGES = set(_SHORT_STAGES.values())
 _TRIVIA = {tokenize.COMMENT, tokenize.INDENT, tokenize.DEDENT, tokenize.NL}
 
 
@@ -54,6 +58,19 @@ def _stage(source, name, arg):
     if name == "sort":
         key = f", key=lambda _: ({arg})" if arg else ""
         return f"_ag_builtins.sorted({source}{key})"
+    if name in {"min", "max"}:
+        key = f", key=lambda _: ({arg})" if arg else ""
+        return f"_ag_builtins.{name}({source}{key})"
+    if name == "top":
+        if not arg:
+            raise ValueError("top needs a count and optional key expression")
+        spec = ast.parse(arg, mode="eval").body
+        if isinstance(spec, ast.Tuple):
+            if len(spec.elts) != 2:
+                raise ValueError("top takes a count and one key expression")
+            size, key = map(ast.unparse, spec.elts)
+            return f"_ag_smallest({source}, ({size}), lambda _: ({key}))"
+        return f"_ag_smallest({source}, ({arg}))"
     if name == "common":
         return f"_ag_counter({source}).most_common({arg})"
     if name == "first":
@@ -182,7 +199,68 @@ def count_short_stages(source):
     return count
 
 
+def _expand_fields(source, filename):
+    """Expand postfix string keys and record literals, preserving other source text."""
+    if "$" not in source and "d{" not in source:
+        return source
+    offsets = [0]
+    for line in io.StringIO(source):
+        offsets.append(offsets[-1] + len(line))
+
+    def offset(pos):
+        return offsets[pos[0] - 1] + pos[1]
+
+    def bad(message, token):
+        raise SyntaxError(message, (filename, token.start[0], token.start[1] + 1, token.line))
+
+    tokens = [t for t in tokenize.generate_tokens(io.StringIO(source).readline) if t.type not in _TRIVIA]
+    changes = []
+    i = 0
+    while i + 1 < len(tokens):
+        token, following = tokens[i:i + 2]
+        if token.type in (tokenize.OP, tokenize.ERRORTOKEN) and token.string == "$":
+            previous = tokens[i - 1] if i else None
+            if (previous is None or previous.end != token.start or token.end != following.start
+                    or following.type != tokenize.NAME):
+                bad("use value$field for a literal string key", token)
+            ends_atom = (previous.type in (tokenize.NAME, tokenize.NUMBER, tokenize.STRING)
+                         or previous.string in (")", "]", "}")
+                         or previous.type == getattr(tokenize, "FSTRING_END", -1))
+            if not ends_atom or (previous.type == tokenize.NAME and keyword.iskeyword(previous.string)
+                                 and previous.string not in {"True", "False", "None"}):
+                bad("a field lookup needs a value before '$'", token)
+            changes.append((offset(token.start), offset(following.end), f"[{following.string!r}]"))
+        elif (token.type == tokenize.NAME and token.string == "d" and following.string == "{"
+              and token.end == following.start):
+            changes.append((offset(token.start), offset(token.end), ""))
+            i += 2
+            while tokens[i].string != "}":
+                field = tokens[i]
+                if field.type != tokenize.NAME or keyword.iskeyword(field.string):
+                    bad("d{...} takes comma-separated variable names", field)
+                changes.append((offset(field.start), offset(field.end), f"{field.string!r}: {field.string}"))
+                i += 1
+                if tokens[i].string == "}":
+                    break
+                if tokens[i].string != ",":
+                    bad("expected ',' or '}' in record literal", tokens[i])
+                i += 1
+        i += 1
+    pieces = []
+    start = 0
+    for left, right, replacement in changes:
+        pieces.extend((source[start:left], replacement))
+        start = right
+    pieces.append(source[start:])
+    return "".join(pieces)
+
+
 def _translate(source, filename):
+    try:
+        source = _expand_fields(source, filename)
+    except tokenize.TokenError as exc:
+        message, (line, col) = exc.args
+        raise SyntaxError(message, (filename, line, col + 1, "")) from None
     offsets = [0]
     for line in io.StringIO(source):
         offsets.append(offsets[-1] + len(line))
@@ -220,12 +298,7 @@ def compile_python(source, filename="<python>"):
 
 def _with_helpers(output, filename, stages):
     tree = ast.parse(output, filename)
-    names = {node.id for node in ast.walk(tree) if isinstance(node, ast.Name)}
-    shared = _IO_HELPERS.intersection(names)
-    # Short names are common loop variables. Only a direct function call requests an alias.
-    callees = {node.func.id for node in ast.walk(tree) if isinstance(node, ast.Call) and isinstance(node.func, ast.Name)}
-    aliases = {name: target for name, target in _SHORT_HELPERS.items() if name in callees}
-    shared.update(aliases.values())
+    names, aliases, shared = _bindings(tree, output, filename, stages)
     helpers = []
     if shared or (stages and "_ag_builtins" in names):
         helpers.append("import builtins as _ag_builtins\n")
@@ -242,6 +315,60 @@ def _with_helpers(output, filename, stages):
             index += 1
         after = tree.body[index - 1].end_lineno if index else 0
         lines = output.splitlines(keepends=True)
-        lines.insert(after, ("\n" if after else "") + prelude + "\n")
+        if index and index < len(tree.body) and tree.body[index].lineno == after:
+            # A docstring or future import can share a line with executable code.
+            # AST columns are UTF-8 byte positions, even for non-ASCII docstrings.
+            line = lines[after - 1].encode("utf-8")
+            column = tree.body[index - 1].end_col_offset
+            rest = line[column:].decode("utf-8").lstrip(" \t").removeprefix(";").lstrip(" \t")
+            lines[after - 1] = line[:column].decode("utf-8") + "\n" + prelude + "\n" + rest
+        else:
+            lines.insert(after, ("\n" if after else "") + prelude + "\n")
         output = "".join(lines)
     return output
+
+
+def _bindings(tree, source, filename, stages):
+    names, aliases = set(), {}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Name):
+            names.add(node.id)
+        elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
+            name = node.func.id
+            if name in _SHORT_HELPERS:
+                aliases[name] = _SHORT_HELPERS[name]
+    # A helper can also be passed as a key function. Resolve first-class references
+    # by lexical scope so a comprehension's local variable never pulls in a helper.
+    possible = names.intersection(_SHORT_HELPERS).difference(aliases)
+    if possible:
+        import symtable
+        scopes = [symtable.symtable(source, filename, "exec")]
+        while scopes and possible:
+            scope = scopes.pop()
+            for name in possible.intersection(scope.get_identifiers()):
+                symbol = scope.lookup(name)
+                if symbol.is_global() and symbol.is_referenced() and not symbol.is_assigned():
+                    aliases[name] = _SHORT_HELPERS[name]
+                    possible.remove(name)
+            scopes.extend(scope.get_children())
+    if stages and "_ag_smallest" in names:
+        aliases["_ag_smallest"] = "smallest"
+    return names, aliases, _FULL_HELPERS.intersection(names).union(aliases.values())
+
+
+def prepare_run(source, filename):
+    """Compile once in memory and bind the same helpers used in standalone output."""
+    output, _ = _translate(source, filename)
+    tree = ast.parse(output, filename)
+    names, aliases, shared = _bindings(tree, output, filename, stages=True)
+    namespace = {name: SHARED_HELPERS[name] for name in shared}
+    namespace.update((name, SHARED_HELPERS[target]) for name, target in aliases.items())
+    if shared or "_ag_builtins" in names:
+        namespace["_ag_builtins"] = builtins
+    if "_ag_mean" in names:
+        from statistics import mean
+        namespace["_ag_mean"] = mean
+    if "_ag_counter" in names:
+        from collections import Counter
+        namespace["_ag_counter"] = Counter
+    return compile(tree, filename, "exec"), namespace

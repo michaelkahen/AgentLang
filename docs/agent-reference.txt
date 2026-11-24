@@ -3,3 +3,5 @@ _ = current item. w=filter m=map f=flat-map n=count u=sum a=mean s=stable-sort c
 u/a/s take an optional item expression. w/m/f are lazy. Use :l before emitting an iterable as JSON.
 r() reads stdin JSON, r(path) reads JSON file, c(path) reads CSV dict rows, wj(x) prints JSON.
 p r():w _["paid"]:u _["cents"]
+obj$field = obj["field"]. d{a,b} = {"a":a,"b":b}. :k/:x EXPR select min/max by key. :t N,EXPR selects N smallest.
+v(text,default=None) parses JSON then a Python literal. b(value) gives default JSON + LF as UTF-8 bytes. h(data) gives SHA-256 hex.

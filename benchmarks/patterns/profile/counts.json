@@ -1,0 +1,846 @@
+{
+  "encoding": "o200k_base",
+  "tiktoken": "0.12.0",
+  "arms": {
+    "python": {
+      "programs": [
+        {
+          "series": "observations",
+          "task": "movie_credits",
+          "round": 1,
+          "tokens": 360,
+          "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r1-a1.py",
+          "sha256": "cce32ee070e86ffc8416b76115203f0d3fb97a92763574559eead5e28ea3521b"
+        },
+        {
+          "series": "observations",
+          "task": "knn_grid",
+          "round": 1,
+          "tokens": 496,
+          "path": "benchmarks/long/generation/observations/sources/knn_grid-python-r1-a1.py",
+          "sha256": "2c9249c3e57f7dce70ae357d801b1d148970bddb76f8ef1891174b59c50e1964"
+        },
+        {
+          "series": "observations",
+          "task": "fixture_pack",
+          "round": 1,
+          "tokens": 445,
+          "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r1-a1.py",
+          "sha256": "a9fafeac0687d6becffa667fddbae59d3f8692ffa3a37e769fc9724dacb6d3e8"
+        },
+        {
+          "series": "observations",
+          "task": "knn_grid",
+          "round": 2,
+          "tokens": 567,
+          "path": "benchmarks/long/generation/observations/sources/knn_grid-python-r2-a1.py",
+          "sha256": "61dae899cf03c2a1361a4ad2c4b889fe04c5178ef3562e514f3f588ec4318635"
+        },
+        {
+          "series": "observations",
+          "task": "fixture_pack",
+          "round": 2,
+          "tokens": 456,
+          "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r2-a1.py",
+          "sha256": "5887816bd726502c84e38826c640cf5ef75bf0396fa35787cb81734e13e90981"
+        },
+        {
+          "series": "observations",
+          "task": "movie_credits",
+          "round": 2,
+          "tokens": 355,
+          "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r2-a1.py",
+          "sha256": "268e183e2be2e5e0d4722f2754001627570175d6f24a79da3c1405922b0e4f56"
+        },
+        {
+          "series": "observations",
+          "task": "fixture_pack",
+          "round": 3,
+          "tokens": 450,
+          "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r3-a1.py",
+          "sha256": "63f1c3148e8f39479bde6545967609c0bfaa61ea32d0f78ece641eed7bdd1846"
+        },
+        {
+          "series": "observations",
+          "task": "movie_credits",
+          "round": 3,
+          "tokens": 347,
+          "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r3-a1.py",
+          "sha256": "efeb2fdc76dbe4be39727f6624144625219b7c95fd236c15e02a4f4a2040fe35"
+        },
+        {
+          "series": "observations",
+          "task": "knn_grid",
+          "round": 3,
+          "tokens": 815,
+          "path": "benchmarks/long/generation/observations/sources/knn_grid-python-r3-a1.py",
+          "sha256": "dc1a347be4418decc19fe3815740445e57f47f242e3c5d9959788abbd233f69c"
+        },
+        {
+          "series": "required",
+          "task": "movie_credits",
+          "round": 1,
+          "tokens": 385,
+          "path": "benchmarks/long/generation/required/sources/movie_credits-python-r1-a1.py",
+          "sha256": "8381e42f9c39c20f59e172102e119c3a962d44ca6f5f7d9586953b60c11af70e"
+        },
+        {
+          "series": "required",
+          "task": "knn_grid",
+          "round": 1,
+          "tokens": 660,
+          "path": "benchmarks/long/generation/required/sources/knn_grid-python-r1-a1.py",
+          "sha256": "bc828df98bfac0b1cdc38d979e77bb081f805f30d66cc94cf475d315d944a50e"
+        },
+        {
+          "series": "required",
+          "task": "fixture_pack",
+          "round": 1,
+          "tokens": 376,
+          "path": "benchmarks/long/generation/required/sources/fixture_pack-python-r1-a1.py",
+          "sha256": "afebfe2f9d9b4af523c075e9819401b788f8dc573337113b08a4cb55dac1b0ef"
+        },
+        {
+          "series": "required",
+          "task": "knn_grid",
+          "round": 2,
+          "tokens": 491,
+          "path": "benchmarks/long/generation/required/sources/knn_grid-python-r2-a1.py",
+          "sha256": "1e3f636069290034419f8173dbe63b08ad7f6da9c5871ee8306ed9d49f1cf4c2"
+        },
+        {
+          "series": "required",
+          "task": "fixture_pack",
+          "round": 2,
+          "tokens": 393,
+          "path": "benchmarks/long/generation/required/sources/fixture_pack-python-r2-a1.py",
+          "sha256": "fa787ba0f7566bdc97ba54bcb0714c0384dd86310a92e15d60e047b61e78e83e"
+        },
+        {
+          "series": "required",
+          "task": "movie_credits",
+          "round": 2,
+          "tokens": 332,
+          "path": "benchmarks/long/generation/required/sources/movie_credits-python-r2-a1.py",
+          "sha256": "7c50ff0baf1d3ea323dda900d98e79790aa772b774e4ceba3b5e7798858e1905"
+        }
+      ],
+      "lexical": {
+        "keywords": 605,
+        "names": 2055,
+        "layout": 738,
+        "operators": 2342,
+        "strings": 1045,
+        "numbers": 117,
+        "comments": 26
+      },
+      "patterns": {
+        "tuple, list and set literals": {
+          "sites": 124,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 978,
+          "exclusive_tokens": 743,
+          "example": "(-credits[person], -len(person_films[person]), person)"
+        },
+        "comprehensions and generator expressions": {
+          "sites": 65,
+          "programs": 11,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 1425,
+          "exclusive_tokens": 642,
+          "example": "(item for item in value if isinstance(item, dict))"
+        },
+        "positional, dynamic or slice indexing": {
+          "sites": 125,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 524,
+          "exclusive_tokens": 464,
+          "example": "person_films[person]"
+        },
+        "comparisons": {
+          "sites": 85,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 611,
+          "exclusive_tokens": 365,
+          "example": "genre.get(\"name\") in (\"Science Fiction\", \"Sci-Fi\")"
+        },
+        "dictionary literals": {
+          "sites": 28,
+          "programs": 14,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 637,
+          "exclusive_tokens": 352,
+          "example": "{\"id\": person, \"credits\": credits[person], \"movies\": len(person_films[person])}"
+        },
+        "loop headers": {
+          "sites": 56,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 663,
+          "exclusive_tokens": 266,
+          "example": "for member in entries(row[\"crew\"]):"
+        },
+        "literal string field lookups": {
+          "sites": 69,
+          "programs": 10,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 261,
+          "exclusive_tokens": 246,
+          "example": "row[\"genres\"]"
+        },
+        "function headers": {
+          "sites": 31,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 202,
+          "exclusive_tokens": 202,
+          "example": "def entries(cell):"
+        },
+        "container construction": {
+          "sites": 30,
+          "programs": 14,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 249,
+          "exclusive_tokens": 195,
+          "example": "defaultdict(set)"
+        },
+        "text/bytes encoding calls": {
+          "sites": 15,
+          "programs": 5,
+          "tasks": [
+            "fixture_pack"
+          ],
+          "gross_tokens": 211,
+          "exclusive_tokens": 172,
+          "example": "(json.dumps(value) + \"\\n\").encode(\"utf-8\")"
+        },
+        "built-in aggregations": {
+          "sites": 64,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 615,
+          "exclusive_tokens": 160,
+          "example": "len(person_films[person])"
+        },
+        "JSON or literal codecs": {
+          "sites": 27,
+          "programs": 9,
+          "tasks": [
+            "fixture_pack",
+            "movie_credits"
+          ],
+          "gross_tokens": 220,
+          "exclusive_tokens": 156,
+          "example": "ast.literal_eval(cell.strip())"
+        },
+        "if and elif headers": {
+          "sites": 47,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 373,
+          "exclusive_tokens": 137,
+          "example": "if type(person) is int and person > 0:"
+        },
+        "collection mutation calls": {
+          "sites": 27,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 279,
+          "exclusive_tokens": 127,
+          "example": "person_films[person].add(film)"
+        },
+        "shared JSON and CSV I/O helpers": {
+          "sites": 25,
+          "programs": 10,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 635,
+          "exclusive_tokens": 120,
+          "example": "csvrows(\"credits.csv\")"
+        },
+        "conditional expressions": {
+          "sites": 15,
+          "programs": 7,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 220,
+          "exclusive_tokens": 115,
+          "example": "(item for item in value if isinstance(item, dict)) if isinstance(value, list) else ()"
+        },
+        "iteration helpers": {
+          "sites": 23,
+          "programs": 10,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid"
+          ],
+          "gross_tokens": 160,
+          "exclusive_tokens": 106,
+          "example": "zip(predictions, holdout)"
+        },
+        "dictionary access methods": {
+          "sites": 21,
+          "programs": 9,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 103,
+          "exclusive_tokens": 100,
+          "example": "genre.get(\"name\")"
+        },
+        "context manager headers": {
+          "sites": 7,
+          "programs": 6,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid"
+          ],
+          "gross_tokens": 100,
+          "exclusive_tokens": 100,
+          "example": "with open(path, encoding=\"utf-8\", newline=\"\") as source:"
+        },
+        "keyed min, max or sort": {
+          "sites": 16,
+          "programs": 9,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 313,
+          "exclusive_tokens": 90,
+          "example": "sorted( credits, key=lambda person: (-credits[person], -len(person_films[person]), person) )"
+        },
+        "SHA-256 and hex digest calls": {
+          "sites": 18,
+          "programs": 5,
+          "tasks": [
+            "fixture_pack"
+          ],
+          "gross_tokens": 79,
+          "exclusive_tokens": 79,
+          "example": "hashlib.sha256(golden).hexdigest()"
+        },
+        "scalar conversions": {
+          "sites": 21,
+          "programs": 10,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid"
+          ],
+          "gross_tokens": 107,
+          "exclusive_tokens": 77,
+          "example": "int(row[\"x\"])"
+        },
+        "type tests": {
+          "sites": 16,
+          "programs": 5,
+          "tasks": [
+            "movie_credits"
+          ],
+          "gross_tokens": 71,
+          "exclusive_tokens": 71,
+          "example": "isinstance(value, list)"
+        },
+        "lambda expressions": {
+          "sites": 25,
+          "programs": 14,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 218,
+          "exclusive_tokens": 50,
+          "example": "lambda person: (-credits[person], -len(person_films[person]), person)"
+        },
+        "exception handler headers": {
+          "sites": 10,
+          "programs": 6,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 109,
+          "exclusive_tokens": 13,
+          "example": "except (ValueError, RecursionError):"
+        }
+      },
+      "source_tokens": 6928,
+      "unattributed_pattern_tokens": 1780
+    },
+    "compact": {
+      "programs": [
+        {
+          "series": "observations",
+          "task": "movie_credits",
+          "round": 1,
+          "tokens": 377,
+          "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+          "sha256": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd"
+        },
+        {
+          "series": "observations",
+          "task": "knn_grid",
+          "round": 1,
+          "tokens": 649,
+          "path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r1-a1.ag",
+          "sha256": "df09b07b23645f1e247446604762736a05496a1dab735ee9921b6da062cfe353"
+        },
+        {
+          "series": "observations",
+          "task": "fixture_pack",
+          "round": 1,
+          "tokens": 413,
+          "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+          "sha256": "58379d98124ea8e849f1ef099ca2711bff71451a77a6c29a4c61c2179c7cf085"
+        },
+        {
+          "series": "observations",
+          "task": "knn_grid",
+          "round": 2,
+          "tokens": 477,
+          "path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r2-a1.ag",
+          "sha256": "cb5f600754f3028d0f27418bf7d4f5fe548771f782ddee1e41fcab729029e7fe"
+        },
+        {
+          "series": "observations",
+          "task": "fixture_pack",
+          "round": 2,
+          "tokens": 377,
+          "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r2-a1.ag",
+          "sha256": "d7b43bc0608f3da44eca23d90ea4c7b234cd2ef0dccb1df2591e6c96027c7cbf"
+        },
+        {
+          "series": "observations",
+          "task": "movie_credits",
+          "round": 2,
+          "tokens": 330,
+          "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+          "sha256": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c"
+        },
+        {
+          "series": "observations",
+          "task": "fixture_pack",
+          "round": 3,
+          "tokens": 381,
+          "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+          "sha256": "05374116dbae654ba4a8abb88b4897958398991f43bc5d3596e060571b5807ec"
+        },
+        {
+          "series": "observations",
+          "task": "movie_credits",
+          "round": 3,
+          "tokens": 331,
+          "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+          "sha256": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c"
+        },
+        {
+          "series": "observations",
+          "task": "knn_grid",
+          "round": 3,
+          "tokens": 487,
+          "path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r3-a1.ag",
+          "sha256": "442e6b111ab1c47acb44270f03bbf927581ed73bb75f979c46de8d4487da45f4"
+        },
+        {
+          "series": "required",
+          "task": "movie_credits",
+          "round": 1,
+          "tokens": 372,
+          "path": "benchmarks/long/generation/required/sources/movie_credits-compact-r1-a1.ag",
+          "sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7"
+        },
+        {
+          "series": "required",
+          "task": "knn_grid",
+          "round": 1,
+          "tokens": 495,
+          "path": "benchmarks/long/generation/required/sources/knn_grid-compact-r1-a1.ag",
+          "sha256": "f32af592e7aef312c5949ab6ce087285dee91fe99f1f4d64475399ad6f3c219b"
+        },
+        {
+          "series": "required",
+          "task": "fixture_pack",
+          "round": 1,
+          "tokens": 393,
+          "path": "benchmarks/long/generation/required/sources/fixture_pack-compact-r1-a1.ag",
+          "sha256": "34709a1caa172feab70ecf59f356c1222ea11bac180d64eef29e1d0dc79a265e"
+        },
+        {
+          "series": "required",
+          "task": "knn_grid",
+          "round": 2,
+          "tokens": 465,
+          "path": "benchmarks/long/generation/required/sources/knn_grid-compact-r2-a1.ag",
+          "sha256": "3bfeceec9e13a3ff836307b87de25fa23a0bd02b52c43a973beae692b5a18747"
+        },
+        {
+          "series": "required",
+          "task": "fixture_pack",
+          "round": 2,
+          "tokens": 361,
+          "path": "benchmarks/long/generation/required/sources/fixture_pack-compact-r2-a1.ag",
+          "sha256": "c2418f47b20d9af34fbe91674234d40e1877e4ed6f6fa9c8b7a7da96b89532a3"
+        },
+        {
+          "series": "required",
+          "task": "movie_credits",
+          "round": 2,
+          "tokens": 351,
+          "path": "benchmarks/long/generation/required/sources/movie_credits-compact-r2-a1.ag",
+          "sha256": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49"
+        }
+      ],
+      "lexical": {
+        "keywords": 519,
+        "names": 1853,
+        "layout": 634,
+        "operators": 2171,
+        "strings": 966,
+        "numbers": 116
+      },
+      "patterns": {
+        "tuple, list and set literals": {
+          "sites": 114,
+          "programs": 14,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 785,
+          "exclusive_tokens": 577,
+          "example": "(-credits[person], -len(person_films[person]), person)"
+        },
+        "dictionary literals": {
+          "sites": 30,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 756,
+          "exclusive_tokens": 494,
+          "example": "{\"id\": person, \"credits\": credits[person], \"movies\": len(person_films[person])}"
+        },
+        "comprehensions and generator expressions": {
+          "sites": 47,
+          "programs": 10,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 974,
+          "exclusive_tokens": 429,
+          "example": "[ {\"id\": person, \"credits\": credits[person], \"movies\": len(person_films[person])} for person in leaders ]"
+        },
+        "positional, dynamic or slice indexing": {
+          "sites": 112,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 496,
+          "exclusive_tokens": 416,
+          "example": "person_films[person]"
+        },
+        "comparisons": {
+          "sites": 70,
+          "programs": 13,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 478,
+          "exclusive_tokens": 305,
+          "example": "genre.get(\"name\") in (\"Science Fiction\", \"Sci-Fi\")"
+        },
+        "loop headers": {
+          "sites": 51,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 628,
+          "exclusive_tokens": 235,
+          "example": "for entry in parse_list(row[\"crew\"]):"
+        },
+        "literal string field lookups": {
+          "sites": 66,
+          "programs": 10,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 248,
+          "exclusive_tokens": 233,
+          "example": "row[\"genres\"]"
+        },
+        "container construction": {
+          "sites": 33,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 288,
+          "exclusive_tokens": 213,
+          "example": "set()"
+        },
+        "function headers": {
+          "sites": 31,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 191,
+          "exclusive_tokens": 191,
+          "example": "def parse_list(cell):"
+        },
+        "text/bytes encoding calls": {
+          "sites": 16,
+          "programs": 5,
+          "tasks": [
+            "fixture_pack"
+          ],
+          "gross_tokens": 227,
+          "exclusive_tokens": 177,
+          "example": "f\"{int(read_bytes(golden_path)) * factor}\\n\".encode(\"utf-8\")"
+        },
+        "shared JSON and CSV I/O helpers": {
+          "sites": 39,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 707,
+          "exclusive_tokens": 170,
+          "example": "csvrows(\"credits.csv\")"
+        },
+        "built-in aggregations": {
+          "sites": 57,
+          "programs": 15,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 565,
+          "exclusive_tokens": 139,
+          "example": "len(person_films[person])"
+        },
+        "conditional expressions": {
+          "sites": 17,
+          "programs": 9,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 246,
+          "exclusive_tokens": 136,
+          "example": "value if isinstance(value, list) else []"
+        },
+        "dictionary access methods": {
+          "sites": 23,
+          "programs": 10,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 133,
+          "exclusive_tokens": 124,
+          "example": "person_films.setdefault(person, set())"
+        },
+        "collection mutation calls": {
+          "sites": 28,
+          "programs": 13,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 296,
+          "exclusive_tokens": 117,
+          "example": "person_films.setdefault(person, set()).add(film)"
+        },
+        "if and elif headers": {
+          "sites": 38,
+          "programs": 13,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 342,
+          "exclusive_tokens": 110,
+          "example": "if type(person) is not int or person <= 0:"
+        },
+        "iteration helpers": {
+          "sites": 22,
+          "programs": 10,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid"
+          ],
+          "gross_tokens": 167,
+          "exclusive_tokens": 99,
+          "example": "zip(validation[metric], train)"
+        },
+        "context manager headers": {
+          "sites": 6,
+          "programs": 5,
+          "tasks": [
+            "fixture_pack"
+          ],
+          "gross_tokens": 90,
+          "exclusive_tokens": 90,
+          "example": "with open(path, encoding=\"utf-8\", newline=\"\") as source:"
+        },
+        "keyed min, max or sort": {
+          "sites": 16,
+          "programs": 9,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 269,
+          "exclusive_tokens": 83,
+          "example": "sorted(credits, key=lambda person: (-credits[person], -len(person_films[person]), person))"
+        },
+        "type tests": {
+          "sites": 18,
+          "programs": 5,
+          "tasks": [
+            "movie_credits"
+          ],
+          "gross_tokens": 80,
+          "exclusive_tokens": 80,
+          "example": "isinstance(value, list)"
+        },
+        "scalar conversions": {
+          "sites": 21,
+          "programs": 10,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid"
+          ],
+          "gross_tokens": 110,
+          "exclusive_tokens": 80,
+          "example": "int(row[\"x\"])"
+        },
+        "JSON or literal codecs": {
+          "sites": 15,
+          "programs": 9,
+          "tasks": [
+            "fixture_pack",
+            "movie_credits"
+          ],
+          "gross_tokens": 77,
+          "exclusive_tokens": 70,
+          "example": "ast.literal_eval(cell)"
+        },
+        "SHA-256 and hex digest calls": {
+          "sites": 16,
+          "programs": 5,
+          "tasks": [
+            "fixture_pack"
+          ],
+          "gross_tokens": 67,
+          "exclusive_tokens": 67,
+          "example": "hashlib.sha256(golden).hexdigest()"
+        },
+        "lambda expressions": {
+          "sites": 24,
+          "programs": 14,
+          "tasks": [
+            "fixture_pack",
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 214,
+          "exclusive_tokens": 48,
+          "example": "lambda person: (-credits[person], -len(person_films[person]), person)"
+        },
+        "exception handler headers": {
+          "sites": 10,
+          "programs": 6,
+          "tasks": [
+            "knn_grid",
+            "movie_credits"
+          ],
+          "gross_tokens": 109,
+          "exclusive_tokens": 13,
+          "example": "except (ValueError, SyntaxError, RecursionError):"
+        }
+      },
+      "source_tokens": 6259,
+      "unattributed_pattern_tokens": 1563
+    }
+  }
+}

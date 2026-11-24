@@ -1,0 +1,2373 @@
+{
+  "encoding": "o200k_base",
+  "fixtures_checked": [
+    "base",
+    "edges",
+    "profile",
+    "audit"
+  ],
+  "programs": [
+    {
+      "series": "observations",
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 1,
+      "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r1-a1.py",
+      "original_tokens": 360,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 360,
+          "rewrites": {},
+          "utf8_bytes": 1462,
+          "sha256": "cce32ee070e86ffc8416b76115203f0d3fb97a92763574559eead5e28ea3521b"
+        },
+        "serialization_and_hash": {
+          "tokens": 360,
+          "rewrites": {},
+          "utf8_bytes": 1462,
+          "sha256": "cce32ee070e86ffc8416b76115203f0d3fb97a92763574559eead5e28ea3521b"
+        },
+        "helpers_only": {
+          "tokens": 360,
+          "rewrites": {},
+          "utf8_bytes": 1462,
+          "sha256": "cce32ee070e86ffc8416b76115203f0d3fb97a92763574559eead5e28ea3521b"
+        },
+        "add_extrema_stages": {
+          "tokens": 360,
+          "rewrites": {},
+          "utf8_bytes": 1462,
+          "sha256": "cce32ee070e86ffc8416b76115203f0d3fb97a92763574559eead5e28ea3521b"
+        },
+        "add_selectors": {
+          "tokens": 355,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1447,
+          "sha256": "9e3435ba11496616b6bf1d93d8cc2ebe64169f9073850d948f76fd1b85f8af7a"
+        },
+        "helpers_and_language": {
+          "tokens": 355,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1447,
+          "sha256": "9e3435ba11496616b6bf1d93d8cc2ebe64169f9073850d948f76fd1b85f8af7a"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 357,
+          "rewrites": {
+            "shared keyed selection": 1
+          },
+          "utf8_bytes": 1446,
+          "sha256": "eb40d0015904abfe698d7d55624b504a4df5b2b4609e3f21b8d3973c1d3d300d"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 345,
+          "rewrites": {
+            "keyed top stage": 1,
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1398,
+          "sha256": "4c7cb262a18de1feb5a525cfdbd26b39d73dac8a10350533a064b1f6981b44f3"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 1,
+      "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+      "original_tokens": 377,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 1
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 377,
+          "rewrites": {},
+          "utf8_bytes": 1510,
+          "sha256": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd"
+        },
+        "serialization_and_hash": {
+          "tokens": 377,
+          "rewrites": {},
+          "utf8_bytes": 1510,
+          "sha256": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd"
+        },
+        "helpers_only": {
+          "tokens": 377,
+          "rewrites": {},
+          "utf8_bytes": 1510,
+          "sha256": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd"
+        },
+        "add_extrema_stages": {
+          "tokens": 377,
+          "rewrites": {},
+          "utf8_bytes": 1510,
+          "sha256": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd"
+        },
+        "add_selectors": {
+          "tokens": 372,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1495,
+          "sha256": "2e13b79a39808a5bc23d48746e071463e55431e48879f4ab403c9c14fb9ba0de"
+        },
+        "helpers_and_language": {
+          "tokens": 372,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1495,
+          "sha256": "2e13b79a39808a5bc23d48746e071463e55431e48879f4ab403c9c14fb9ba0de"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 376,
+          "rewrites": {
+            "shared keyed selection": 1
+          },
+          "utf8_bytes": 1500,
+          "sha256": "854c3794945010e07003ffe1eb45eb4028004a6b58e25aa6fca1064b8b668b9b"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 364,
+          "rewrites": {
+            "keyed top stage": 1,
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1452,
+          "sha256": "9bc2ae1f0230742835b3b30a19b76d47419b62438954ebe06475ceb3e25a7aff"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 1,
+      "path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r1-a1.ag",
+      "original_tokens": 649,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 3
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 649,
+          "rewrites": {},
+          "utf8_bytes": 2536,
+          "sha256": "df09b07b23645f1e247446604762736a05496a1dab735ee9921b6da062cfe353"
+        },
+        "serialization_and_hash": {
+          "tokens": 649,
+          "rewrites": {},
+          "utf8_bytes": 2536,
+          "sha256": "df09b07b23645f1e247446604762736a05496a1dab735ee9921b6da062cfe353"
+        },
+        "helpers_only": {
+          "tokens": 647,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 2535,
+          "sha256": "2d8baeff41d9960e7948baac8e8f0046521494d43c16e327f8abdcd3846da728"
+        },
+        "add_extrema_stages": {
+          "tokens": 640,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 2488,
+          "sha256": "456ca5eefa0394624a309daa543590db152fbba9b8afc6f6b206877d2c9413d6"
+        },
+        "add_selectors": {
+          "tokens": 640,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 2464,
+          "sha256": "ed0f9ed6293d7ce9a8bd75cbec06b547c8dc34612243ebe392fdfca0f83091c8"
+        },
+        "helpers_and_language": {
+          "tokens": 633,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 2436,
+          "sha256": "e2a5ea99778b14231810e4d1225f93a6920e693f80f9c5c7996711f6aa809902"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 647,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 2535,
+          "sha256": "2d8baeff41d9960e7948baac8e8f0046521494d43c16e327f8abdcd3846da728"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 633,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 2436,
+          "sha256": "e2a5ea99778b14231810e4d1225f93a6920e693f80f9c5c7996711f6aa809902"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 1,
+      "path": "benchmarks/long/generation/observations/sources/knn_grid-python-r1-a1.py",
+      "original_tokens": 496,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 3
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 496,
+          "rewrites": {},
+          "utf8_bytes": 1898,
+          "sha256": "2c9249c3e57f7dce70ae357d801b1d148970bddb76f8ef1891174b59c50e1964"
+        },
+        "serialization_and_hash": {
+          "tokens": 496,
+          "rewrites": {},
+          "utf8_bytes": 1898,
+          "sha256": "2c9249c3e57f7dce70ae357d801b1d148970bddb76f8ef1891174b59c50e1964"
+        },
+        "helpers_only": {
+          "tokens": 494,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1897,
+          "sha256": "11da6d22e32146e7428689162dc1f516b7cd535d8061eaef31101f00ef344917"
+        },
+        "add_extrema_stages": {
+          "tokens": 487,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 1850,
+          "sha256": "230af888c16aa314566c0621c19718ec8a9948bd67c7baf00ab49bec165d190c"
+        },
+        "add_selectors": {
+          "tokens": 487,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 1826,
+          "sha256": "8b399a059aa6402693d49ca8e466749579a29590455acde0fb65a4ed658b5300"
+        },
+        "helpers_and_language": {
+          "tokens": 480,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 1798,
+          "sha256": "7b399af113816cde895ac62a0a57987d942f3334b5cabda08b43ca3144881344"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 494,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1897,
+          "sha256": "11da6d22e32146e7428689162dc1f516b7cd535d8061eaef31101f00ef344917"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 480,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 1798,
+          "sha256": "7b399af113816cde895ac62a0a57987d942f3334b5cabda08b43ca3144881344"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 1,
+      "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r1-a1.py",
+      "original_tokens": 445,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 445,
+          "rewrites": {},
+          "utf8_bytes": 1834,
+          "sha256": "a9fafeac0687d6becffa667fddbae59d3f8692ffa3a37e769fc9724dacb6d3e8"
+        },
+        "serialization_and_hash": {
+          "tokens": 423,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1750,
+          "sha256": "8bcc6804eddb6d0eb2d35d6df9e7573c9909b492cb63cb191d56bfb86f755845"
+        },
+        "helpers_only": {
+          "tokens": 423,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1750,
+          "sha256": "8bcc6804eddb6d0eb2d35d6df9e7573c9909b492cb63cb191d56bfb86f755845"
+        },
+        "add_extrema_stages": {
+          "tokens": 423,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1750,
+          "sha256": "8bcc6804eddb6d0eb2d35d6df9e7573c9909b492cb63cb191d56bfb86f755845"
+        },
+        "add_selectors": {
+          "tokens": 423,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1750,
+          "sha256": "8bcc6804eddb6d0eb2d35d6df9e7573c9909b492cb63cb191d56bfb86f755845"
+        },
+        "helpers_and_language": {
+          "tokens": 423,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1750,
+          "sha256": "8bcc6804eddb6d0eb2d35d6df9e7573c9909b492cb63cb191d56bfb86f755845"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 423,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1750,
+          "sha256": "8bcc6804eddb6d0eb2d35d6df9e7573c9909b492cb63cb191d56bfb86f755845"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 423,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1750,
+          "sha256": "8bcc6804eddb6d0eb2d35d6df9e7573c9909b492cb63cb191d56bfb86f755845"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 1,
+      "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+      "original_tokens": 413,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 1
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 413,
+          "rewrites": {},
+          "utf8_bytes": 1647,
+          "sha256": "58379d98124ea8e849f1ef099ca2711bff71451a77a6c29a4c61c2179c7cf085"
+        },
+        "serialization_and_hash": {
+          "tokens": 391,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1563,
+          "sha256": "53be6e97c93b4266d8d61dd8b20ef03ff5bb97784734b61dcb046ab67975f7b7"
+        },
+        "helpers_only": {
+          "tokens": 391,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1563,
+          "sha256": "53be6e97c93b4266d8d61dd8b20ef03ff5bb97784734b61dcb046ab67975f7b7"
+        },
+        "add_extrema_stages": {
+          "tokens": 391,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1563,
+          "sha256": "53be6e97c93b4266d8d61dd8b20ef03ff5bb97784734b61dcb046ab67975f7b7"
+        },
+        "add_selectors": {
+          "tokens": 391,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1563,
+          "sha256": "53be6e97c93b4266d8d61dd8b20ef03ff5bb97784734b61dcb046ab67975f7b7"
+        },
+        "helpers_and_language": {
+          "tokens": 391,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1563,
+          "sha256": "53be6e97c93b4266d8d61dd8b20ef03ff5bb97784734b61dcb046ab67975f7b7"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 391,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1563,
+          "sha256": "53be6e97c93b4266d8d61dd8b20ef03ff5bb97784734b61dcb046ab67975f7b7"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 391,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1563,
+          "sha256": "53be6e97c93b4266d8d61dd8b20ef03ff5bb97784734b61dcb046ab67975f7b7"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 2,
+      "path": "benchmarks/long/generation/observations/sources/knn_grid-python-r2-a1.py",
+      "original_tokens": 567,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 3
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 567,
+          "rewrites": {},
+          "utf8_bytes": 2118,
+          "sha256": "61dae899cf03c2a1361a4ad2c4b889fe04c5178ef3562e514f3f588ec4318635"
+        },
+        "serialization_and_hash": {
+          "tokens": 567,
+          "rewrites": {},
+          "utf8_bytes": 2118,
+          "sha256": "61dae899cf03c2a1361a4ad2c4b889fe04c5178ef3562e514f3f588ec4318635"
+        },
+        "helpers_only": {
+          "tokens": 565,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 2117,
+          "sha256": "f1e9fc28e6f8c99ca5e46bd647e4426045ddd3ceaa13ca75cf53f8e089284e8b"
+        },
+        "add_extrema_stages": {
+          "tokens": 558,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 2062,
+          "sha256": "3dea622a70dd7783ac5bee777b73b0cafcfdb38a19eb51568422579408368164"
+        },
+        "add_selectors": {
+          "tokens": 558,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "string-key selector": 8
+          },
+          "utf8_bytes": 2038,
+          "sha256": "920e6707bfb113c943f72116c02a44f1690c3d3a3b45570225eb7a8e98c6b1eb"
+        },
+        "helpers_and_language": {
+          "tokens": 551,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "string-key selector": 8,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 2010,
+          "sha256": "4cad96c11bb47b017d0d5832897f5fb8677a31cc1ecfdab86ca468b0267f1ff8"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 565,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 2117,
+          "sha256": "f1e9fc28e6f8c99ca5e46bd647e4426045ddd3ceaa13ca75cf53f8e089284e8b"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 551,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "string-key selector": 8,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 2010,
+          "sha256": "4cad96c11bb47b017d0d5832897f5fb8677a31cc1ecfdab86ca468b0267f1ff8"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 2,
+      "path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r2-a1.ag",
+      "original_tokens": 477,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 3
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 477,
+          "rewrites": {},
+          "utf8_bytes": 1854,
+          "sha256": "cb5f600754f3028d0f27418bf7d4f5fe548771f782ddee1e41fcab729029e7fe"
+        },
+        "serialization_and_hash": {
+          "tokens": 477,
+          "rewrites": {},
+          "utf8_bytes": 1854,
+          "sha256": "cb5f600754f3028d0f27418bf7d4f5fe548771f782ddee1e41fcab729029e7fe"
+        },
+        "helpers_only": {
+          "tokens": 475,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1853,
+          "sha256": "5f596a548e3ec6abc8f541b97438d63a5bea6b6e1124b6e2750f2e6aab6e4d7a"
+        },
+        "add_extrema_stages": {
+          "tokens": 468,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 1806,
+          "sha256": "3168b1ef258dca0d43ac62c82599729c8ad070d39314df25792810fb87c32aa8"
+        },
+        "add_selectors": {
+          "tokens": 468,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 1782,
+          "sha256": "f74a4ac5f0d5c302d765f3ddef3c2f7cccc549b238ffc8c7009616749b85b657"
+        },
+        "helpers_and_language": {
+          "tokens": 461,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 1754,
+          "sha256": "de8761e7030918f66d807a622c886a46a4ce58ed6217b656a0c713725a349f8f"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 475,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1853,
+          "sha256": "5f596a548e3ec6abc8f541b97438d63a5bea6b6e1124b6e2750f2e6aab6e4d7a"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 461,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 1754,
+          "sha256": "de8761e7030918f66d807a622c886a46a4ce58ed6217b656a0c713725a349f8f"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 2,
+      "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r2-a1.ag",
+      "original_tokens": 377,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 377,
+          "rewrites": {},
+          "utf8_bytes": 1578,
+          "sha256": "d7b43bc0608f3da44eca23d90ea4c7b234cd2ef0dccb1df2591e6c96027c7cbf"
+        },
+        "serialization_and_hash": {
+          "tokens": 355,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1494,
+          "sha256": "88c421803bbeb1c7fd702267217464d85fb08e6ee76e627c2e719be1eb3a51d5"
+        },
+        "helpers_only": {
+          "tokens": 355,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1494,
+          "sha256": "88c421803bbeb1c7fd702267217464d85fb08e6ee76e627c2e719be1eb3a51d5"
+        },
+        "add_extrema_stages": {
+          "tokens": 355,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1494,
+          "sha256": "88c421803bbeb1c7fd702267217464d85fb08e6ee76e627c2e719be1eb3a51d5"
+        },
+        "add_selectors": {
+          "tokens": 355,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1494,
+          "sha256": "88c421803bbeb1c7fd702267217464d85fb08e6ee76e627c2e719be1eb3a51d5"
+        },
+        "helpers_and_language": {
+          "tokens": 355,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1494,
+          "sha256": "88c421803bbeb1c7fd702267217464d85fb08e6ee76e627c2e719be1eb3a51d5"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 355,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1494,
+          "sha256": "88c421803bbeb1c7fd702267217464d85fb08e6ee76e627c2e719be1eb3a51d5"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 355,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1494,
+          "sha256": "88c421803bbeb1c7fd702267217464d85fb08e6ee76e627c2e719be1eb3a51d5"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 2,
+      "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r2-a1.py",
+      "original_tokens": 456,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 1
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 456,
+          "rewrites": {},
+          "utf8_bytes": 1903,
+          "sha256": "5887816bd726502c84e38826c640cf5ef75bf0396fa35787cb81734e13e90981"
+        },
+        "serialization_and_hash": {
+          "tokens": 434,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1819,
+          "sha256": "4185a0e19650f2d8c2b94dfdfe50c7b64901c5516c254e7a75300d26782efeb6"
+        },
+        "helpers_only": {
+          "tokens": 434,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1819,
+          "sha256": "4185a0e19650f2d8c2b94dfdfe50c7b64901c5516c254e7a75300d26782efeb6"
+        },
+        "add_extrema_stages": {
+          "tokens": 434,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1819,
+          "sha256": "4185a0e19650f2d8c2b94dfdfe50c7b64901c5516c254e7a75300d26782efeb6"
+        },
+        "add_selectors": {
+          "tokens": 434,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1819,
+          "sha256": "4185a0e19650f2d8c2b94dfdfe50c7b64901c5516c254e7a75300d26782efeb6"
+        },
+        "helpers_and_language": {
+          "tokens": 434,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1819,
+          "sha256": "4185a0e19650f2d8c2b94dfdfe50c7b64901c5516c254e7a75300d26782efeb6"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 434,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1819,
+          "sha256": "4185a0e19650f2d8c2b94dfdfe50c7b64901c5516c254e7a75300d26782efeb6"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 434,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1819,
+          "sha256": "4185a0e19650f2d8c2b94dfdfe50c7b64901c5516c254e7a75300d26782efeb6"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 2,
+      "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+      "original_tokens": 330,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 330,
+          "rewrites": {},
+          "utf8_bytes": 1330,
+          "sha256": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c"
+        },
+        "serialization_and_hash": {
+          "tokens": 330,
+          "rewrites": {},
+          "utf8_bytes": 1330,
+          "sha256": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c"
+        },
+        "helpers_only": {
+          "tokens": 330,
+          "rewrites": {},
+          "utf8_bytes": 1330,
+          "sha256": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c"
+        },
+        "add_extrema_stages": {
+          "tokens": 330,
+          "rewrites": {},
+          "utf8_bytes": 1330,
+          "sha256": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c"
+        },
+        "add_selectors": {
+          "tokens": 324,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1315,
+          "sha256": "366c7b46eb25704b4a980de0eae2552545ff976c9926c0e15c646965f55de55b"
+        },
+        "helpers_and_language": {
+          "tokens": 324,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1315,
+          "sha256": "366c7b46eb25704b4a980de0eae2552545ff976c9926c0e15c646965f55de55b"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 329,
+          "rewrites": {
+            "shared keyed selection": 1
+          },
+          "utf8_bytes": 1320,
+          "sha256": "02ca8e62455994e336d93d59d6c47e108c6685832ea27b7d17bbf624fd50ec11"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 316,
+          "rewrites": {
+            "keyed top stage": 1,
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1272,
+          "sha256": "116e1bdb7bf6c57518096d491e6c1da951ecae112ef4edb6714c7f8e2d0c11ec"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 2,
+      "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r2-a1.py",
+      "original_tokens": 355,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 355,
+          "rewrites": {},
+          "utf8_bytes": 1451,
+          "sha256": "268e183e2be2e5e0d4722f2754001627570175d6f24a79da3c1405922b0e4f56"
+        },
+        "serialization_and_hash": {
+          "tokens": 355,
+          "rewrites": {},
+          "utf8_bytes": 1451,
+          "sha256": "268e183e2be2e5e0d4722f2754001627570175d6f24a79da3c1405922b0e4f56"
+        },
+        "helpers_only": {
+          "tokens": 355,
+          "rewrites": {},
+          "utf8_bytes": 1451,
+          "sha256": "268e183e2be2e5e0d4722f2754001627570175d6f24a79da3c1405922b0e4f56"
+        },
+        "add_extrema_stages": {
+          "tokens": 355,
+          "rewrites": {},
+          "utf8_bytes": 1451,
+          "sha256": "268e183e2be2e5e0d4722f2754001627570175d6f24a79da3c1405922b0e4f56"
+        },
+        "add_selectors": {
+          "tokens": 350,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1436,
+          "sha256": "a345cd1d20f07e659e3d12986c89a1d3f298aeb3844dbcae69451e64bd707ae2"
+        },
+        "helpers_and_language": {
+          "tokens": 350,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1436,
+          "sha256": "a345cd1d20f07e659e3d12986c89a1d3f298aeb3844dbcae69451e64bd707ae2"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 352,
+          "rewrites": {
+            "shared keyed selection": 1
+          },
+          "utf8_bytes": 1435,
+          "sha256": "890226e72422c095526cccfa25d3da1faf387cf94f4fbe2958d71d99461862ac"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 340,
+          "rewrites": {
+            "keyed top stage": 1,
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1387,
+          "sha256": "017321eeb6ac8122e12efccf38fc77b5ccb051f6188d2a1b4c4f6c5ed71b3826"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 3,
+      "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r3-a1.py",
+      "original_tokens": 450,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 1
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 450,
+          "rewrites": {},
+          "utf8_bytes": 1869,
+          "sha256": "63f1c3148e8f39479bde6545967609c0bfaa61ea32d0f78ece641eed7bdd1846"
+        },
+        "serialization_and_hash": {
+          "tokens": 433,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1810,
+          "sha256": "49a701160d1342814f1b06414551cc281e97103f2b7412c79ec66f1ee8318d31"
+        },
+        "helpers_only": {
+          "tokens": 433,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1810,
+          "sha256": "49a701160d1342814f1b06414551cc281e97103f2b7412c79ec66f1ee8318d31"
+        },
+        "add_extrema_stages": {
+          "tokens": 433,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1810,
+          "sha256": "49a701160d1342814f1b06414551cc281e97103f2b7412c79ec66f1ee8318d31"
+        },
+        "add_selectors": {
+          "tokens": 433,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1810,
+          "sha256": "49a701160d1342814f1b06414551cc281e97103f2b7412c79ec66f1ee8318d31"
+        },
+        "helpers_and_language": {
+          "tokens": 433,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1810,
+          "sha256": "49a701160d1342814f1b06414551cc281e97103f2b7412c79ec66f1ee8318d31"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 433,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1810,
+          "sha256": "49a701160d1342814f1b06414551cc281e97103f2b7412c79ec66f1ee8318d31"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 433,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1810,
+          "sha256": "49a701160d1342814f1b06414551cc281e97103f2b7412c79ec66f1ee8318d31"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 3,
+      "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+      "original_tokens": 381,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 1
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 381,
+          "rewrites": {},
+          "utf8_bytes": 1603,
+          "sha256": "05374116dbae654ba4a8abb88b4897958398991f43bc5d3596e060571b5807ec"
+        },
+        "serialization_and_hash": {
+          "tokens": 364,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1544,
+          "sha256": "3e6d5ee8abdc7145207c474f3c1586c5a0c22bb22b5551df55ef9970104bce5c"
+        },
+        "helpers_only": {
+          "tokens": 364,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1544,
+          "sha256": "3e6d5ee8abdc7145207c474f3c1586c5a0c22bb22b5551df55ef9970104bce5c"
+        },
+        "add_extrema_stages": {
+          "tokens": 364,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1544,
+          "sha256": "3e6d5ee8abdc7145207c474f3c1586c5a0c22bb22b5551df55ef9970104bce5c"
+        },
+        "add_selectors": {
+          "tokens": 364,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1544,
+          "sha256": "3e6d5ee8abdc7145207c474f3c1586c5a0c22bb22b5551df55ef9970104bce5c"
+        },
+        "helpers_and_language": {
+          "tokens": 364,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1544,
+          "sha256": "3e6d5ee8abdc7145207c474f3c1586c5a0c22bb22b5551df55ef9970104bce5c"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 364,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1544,
+          "sha256": "3e6d5ee8abdc7145207c474f3c1586c5a0c22bb22b5551df55ef9970104bce5c"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 364,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1544,
+          "sha256": "3e6d5ee8abdc7145207c474f3c1586c5a0c22bb22b5551df55ef9970104bce5c"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 3,
+      "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r3-a1.py",
+      "original_tokens": 347,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 347,
+          "rewrites": {},
+          "utf8_bytes": 1405,
+          "sha256": "efeb2fdc76dbe4be39727f6624144625219b7c95fd236c15e02a4f4a2040fe35"
+        },
+        "serialization_and_hash": {
+          "tokens": 347,
+          "rewrites": {},
+          "utf8_bytes": 1405,
+          "sha256": "efeb2fdc76dbe4be39727f6624144625219b7c95fd236c15e02a4f4a2040fe35"
+        },
+        "helpers_only": {
+          "tokens": 347,
+          "rewrites": {},
+          "utf8_bytes": 1405,
+          "sha256": "efeb2fdc76dbe4be39727f6624144625219b7c95fd236c15e02a4f4a2040fe35"
+        },
+        "add_extrema_stages": {
+          "tokens": 347,
+          "rewrites": {},
+          "utf8_bytes": 1405,
+          "sha256": "efeb2fdc76dbe4be39727f6624144625219b7c95fd236c15e02a4f4a2040fe35"
+        },
+        "add_selectors": {
+          "tokens": 342,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1390,
+          "sha256": "1f72a74fdbe2db7dabe8a8646e457c9d15e1a77226d3df644f72c73d9a2a4c85"
+        },
+        "helpers_and_language": {
+          "tokens": 342,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1390,
+          "sha256": "1f72a74fdbe2db7dabe8a8646e457c9d15e1a77226d3df644f72c73d9a2a4c85"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 347,
+          "rewrites": {},
+          "utf8_bytes": 1405,
+          "sha256": "efeb2fdc76dbe4be39727f6624144625219b7c95fd236c15e02a4f4a2040fe35"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 342,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1390,
+          "sha256": "1f72a74fdbe2db7dabe8a8646e457c9d15e1a77226d3df644f72c73d9a2a4c85"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 3,
+      "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+      "original_tokens": 331,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 331,
+          "rewrites": {},
+          "utf8_bytes": 1349,
+          "sha256": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c"
+        },
+        "serialization_and_hash": {
+          "tokens": 331,
+          "rewrites": {},
+          "utf8_bytes": 1349,
+          "sha256": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c"
+        },
+        "helpers_only": {
+          "tokens": 331,
+          "rewrites": {},
+          "utf8_bytes": 1349,
+          "sha256": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c"
+        },
+        "add_extrema_stages": {
+          "tokens": 331,
+          "rewrites": {},
+          "utf8_bytes": 1349,
+          "sha256": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c"
+        },
+        "add_selectors": {
+          "tokens": 326,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1334,
+          "sha256": "297a5501adfe51068a07f998661a80e7b2a2063d062aab96b304330b461b5edf"
+        },
+        "helpers_and_language": {
+          "tokens": 326,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1334,
+          "sha256": "297a5501adfe51068a07f998661a80e7b2a2063d062aab96b304330b461b5edf"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 330,
+          "rewrites": {
+            "shared keyed selection": 1
+          },
+          "utf8_bytes": 1339,
+          "sha256": "4cb6a36fb084654fd4e5481b9315fb3e965003a3f126fa776dbe75136ff7e9e1"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 318,
+          "rewrites": {
+            "keyed top stage": 1,
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1291,
+          "sha256": "049dcd64fc9f56e710a503c4b93fd244210f41bf5e742144806add2cddde36ae"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 3,
+      "path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r3-a1.ag",
+      "original_tokens": 487,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 3
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 487,
+          "rewrites": {},
+          "utf8_bytes": 1896,
+          "sha256": "442e6b111ab1c47acb44270f03bbf927581ed73bb75f979c46de8d4487da45f4"
+        },
+        "serialization_and_hash": {
+          "tokens": 487,
+          "rewrites": {},
+          "utf8_bytes": 1896,
+          "sha256": "442e6b111ab1c47acb44270f03bbf927581ed73bb75f979c46de8d4487da45f4"
+        },
+        "helpers_only": {
+          "tokens": 485,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1895,
+          "sha256": "9c2e3fd98dc46db05b99f0df9d861b392be320d41f5003ec11db3ecfeb05bf37"
+        },
+        "add_extrema_stages": {
+          "tokens": 478,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 1848,
+          "sha256": "b3129b01d5f4837501dcfb2a1cf92c85926be5966bc3fc0ec06a2c14a5b3aec1"
+        },
+        "add_selectors": {
+          "tokens": 478,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 1824,
+          "sha256": "4164cf5e513c70d84b8822ca84ee7db2357bfa7df9fc15855d1a8cc0e828450c"
+        },
+        "helpers_and_language": {
+          "tokens": 471,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 1796,
+          "sha256": "72cca3dfd582a17a383eae8827630c77e80ac6f3500ba832f91ff6bc12587c84"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 485,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1895,
+          "sha256": "9c2e3fd98dc46db05b99f0df9d861b392be320d41f5003ec11db3ecfeb05bf37"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 471,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 1796,
+          "sha256": "72cca3dfd582a17a383eae8827630c77e80ac6f3500ba832f91ff6bc12587c84"
+        }
+      }
+    },
+    {
+      "series": "observations",
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 3,
+      "path": "benchmarks/long/generation/observations/sources/knn_grid-python-r3-a1.py",
+      "original_tokens": 815,
+      "mixed_records": {
+        "records": 2,
+        "same_named_fields": 6
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 815,
+          "rewrites": {},
+          "utf8_bytes": 3087,
+          "sha256": "dc1a347be4418decc19fe3815740445e57f47f242e3c5d9959788abbd233f69c"
+        },
+        "serialization_and_hash": {
+          "tokens": 815,
+          "rewrites": {},
+          "utf8_bytes": 3087,
+          "sha256": "dc1a347be4418decc19fe3815740445e57f47f242e3c5d9959788abbd233f69c"
+        },
+        "helpers_only": {
+          "tokens": 813,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 3086,
+          "sha256": "d9b51076c596777c82280348059d5d5224c53dd35591b38b57ac4583cbdb7186"
+        },
+        "add_extrema_stages": {
+          "tokens": 805,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 3031,
+          "sha256": "d90a21675a6d47fc6a4bc6b6c4634dc1ede5240bdded62e5e121fbd45b7fc3cb"
+        },
+        "add_selectors": {
+          "tokens": 804,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 12,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 2995,
+          "sha256": "ddd2d072913f94a4fc76889d3d6904b9cf6e4d9ead989bdc2c53d4b498085841"
+        },
+        "helpers_and_language": {
+          "tokens": 804,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 12,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 2995,
+          "sha256": "ddd2d072913f94a4fc76889d3d6904b9cf6e4d9ead989bdc2c53d4b498085841"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 813,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 3086,
+          "sha256": "d9b51076c596777c82280348059d5d5224c53dd35591b38b57ac4583cbdb7186"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 804,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 12,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 2995,
+          "sha256": "ddd2d072913f94a4fc76889d3d6904b9cf6e4d9ead989bdc2c53d4b498085841"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 1,
+      "path": "benchmarks/long/generation/required/sources/movie_credits-python-r1-a1.py",
+      "original_tokens": 385,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 1
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 385,
+          "rewrites": {},
+          "utf8_bytes": 1543,
+          "sha256": "8381e42f9c39c20f59e172102e119c3a962d44ca6f5f7d9586953b60c11af70e"
+        },
+        "serialization_and_hash": {
+          "tokens": 385,
+          "rewrites": {},
+          "utf8_bytes": 1543,
+          "sha256": "8381e42f9c39c20f59e172102e119c3a962d44ca6f5f7d9586953b60c11af70e"
+        },
+        "helpers_only": {
+          "tokens": 385,
+          "rewrites": {},
+          "utf8_bytes": 1543,
+          "sha256": "8381e42f9c39c20f59e172102e119c3a962d44ca6f5f7d9586953b60c11af70e"
+        },
+        "add_extrema_stages": {
+          "tokens": 385,
+          "rewrites": {},
+          "utf8_bytes": 1543,
+          "sha256": "8381e42f9c39c20f59e172102e119c3a962d44ca6f5f7d9586953b60c11af70e"
+        },
+        "add_selectors": {
+          "tokens": 380,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1528,
+          "sha256": "46de665a62fcc6f74aecf7d240efc86de3bb681cf9d5395ff05873d73be1b73b"
+        },
+        "helpers_and_language": {
+          "tokens": 380,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1528,
+          "sha256": "46de665a62fcc6f74aecf7d240efc86de3bb681cf9d5395ff05873d73be1b73b"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 384,
+          "rewrites": {
+            "shared keyed selection": 1
+          },
+          "utf8_bytes": 1533,
+          "sha256": "8ca92c749836b2f8ad0d37257f7e4f990be112d4e1d66acf4b6c6a79f697a102"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 372,
+          "rewrites": {
+            "keyed top stage": 1,
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1485,
+          "sha256": "3c3a85e1a97295f715a6b7d9791603de4c1fca4cc246efc1655584c7fecd6a7f"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 1,
+      "path": "benchmarks/long/generation/required/sources/movie_credits-compact-r1-a1.ag",
+      "original_tokens": 372,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 1
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 372,
+          "rewrites": {},
+          "utf8_bytes": 1506,
+          "sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7"
+        },
+        "serialization_and_hash": {
+          "tokens": 372,
+          "rewrites": {},
+          "utf8_bytes": 1506,
+          "sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7"
+        },
+        "helpers_only": {
+          "tokens": 372,
+          "rewrites": {},
+          "utf8_bytes": 1506,
+          "sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7"
+        },
+        "add_extrema_stages": {
+          "tokens": 372,
+          "rewrites": {},
+          "utf8_bytes": 1506,
+          "sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7"
+        },
+        "add_selectors": {
+          "tokens": 368,
+          "rewrites": {
+            "string-key selector": 7
+          },
+          "utf8_bytes": 1485,
+          "sha256": "5f27a78d392b54c86634a3948b0ec1f7bc3490306dffd980297a8095c6a869ec"
+        },
+        "helpers_and_language": {
+          "tokens": 368,
+          "rewrites": {
+            "string-key selector": 7
+          },
+          "utf8_bytes": 1485,
+          "sha256": "5f27a78d392b54c86634a3948b0ec1f7bc3490306dffd980297a8095c6a869ec"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 372,
+          "rewrites": {},
+          "utf8_bytes": 1506,
+          "sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 368,
+          "rewrites": {
+            "string-key selector": 7
+          },
+          "utf8_bytes": 1485,
+          "sha256": "5f27a78d392b54c86634a3948b0ec1f7bc3490306dffd980297a8095c6a869ec"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 1,
+      "path": "benchmarks/long/generation/required/sources/knn_grid-compact-r1-a1.ag",
+      "original_tokens": 495,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 495,
+          "rewrites": {},
+          "utf8_bytes": 1816,
+          "sha256": "f32af592e7aef312c5949ab6ce087285dee91fe99f1f4d64475399ad6f3c219b"
+        },
+        "serialization_and_hash": {
+          "tokens": 495,
+          "rewrites": {},
+          "utf8_bytes": 1816,
+          "sha256": "f32af592e7aef312c5949ab6ce087285dee91fe99f1f4d64475399ad6f3c219b"
+        },
+        "helpers_only": {
+          "tokens": 493,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1808,
+          "sha256": "c6bb8f01364e6bde6920b22f2ae147857c8483cb1bbcc5b2b1c2a5b456e72761"
+        },
+        "add_extrema_stages": {
+          "tokens": 486,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 1768,
+          "sha256": "7acc7e4e8c39c6b166259741d5607ea8c13baf0e56403cf983fff6e6caab2ffd"
+        },
+        "add_selectors": {
+          "tokens": 485,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "string-key selector": 8
+          },
+          "utf8_bytes": 1744,
+          "sha256": "9639626fb02ee3e99bf65eef84e77e2f252031e0b8333fbb97b1a213ff4d7189"
+        },
+        "helpers_and_language": {
+          "tokens": 470,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "pack named fields": 2,
+            "string-key selector": 8
+          },
+          "utf8_bytes": 1678,
+          "sha256": "bec5d110a90d95f07a6b119cff6e18f0083929c2cdd38d265de3dd126809e08f"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 493,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1808,
+          "sha256": "c6bb8f01364e6bde6920b22f2ae147857c8483cb1bbcc5b2b1c2a5b456e72761"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 470,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "pack named fields": 2,
+            "string-key selector": 8
+          },
+          "utf8_bytes": 1678,
+          "sha256": "bec5d110a90d95f07a6b119cff6e18f0083929c2cdd38d265de3dd126809e08f"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 1,
+      "path": "benchmarks/long/generation/required/sources/knn_grid-python-r1-a1.py",
+      "original_tokens": 660,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 660,
+          "rewrites": {},
+          "utf8_bytes": 2751,
+          "sha256": "bc828df98bfac0b1cdc38d979e77bb081f805f30d66cc94cf475d315d944a50e"
+        },
+        "serialization_and_hash": {
+          "tokens": 660,
+          "rewrites": {},
+          "utf8_bytes": 2751,
+          "sha256": "bc828df98bfac0b1cdc38d979e77bb081f805f30d66cc94cf475d315d944a50e"
+        },
+        "helpers_only": {
+          "tokens": 658,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 2750,
+          "sha256": "fdd3ce8ed56cf7eafa83adaa43837f9dfb119ce087c0f2dd85a7fa10f2c4daa7"
+        },
+        "add_extrema_stages": {
+          "tokens": 651,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 2695,
+          "sha256": "181b30bba14ccfb11acb59c4fa98528104a9d772b49fe4361efbf6a73459c54a"
+        },
+        "add_selectors": {
+          "tokens": 650,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 2671,
+          "sha256": "c56dbeb6a25fca39369adf4bd4391b844c1e586a26a4fd653153eb17003a0fe5"
+        },
+        "helpers_and_language": {
+          "tokens": 635,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1,
+            "pack named fields": 2
+          },
+          "utf8_bytes": 2605,
+          "sha256": "b796e1b8a0d97dbcdcd52252003f33799abc8b20049c86139ce9c05ecc934fd6"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 658,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 2750,
+          "sha256": "fdd3ce8ed56cf7eafa83adaa43837f9dfb119ce087c0f2dd85a7fa10f2c4daa7"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 635,
+          "rewrites": {
+            "keyed max stage": 1,
+            "string-key selector": 8,
+            "keyed min stage": 1,
+            "pack named fields": 2
+          },
+          "utf8_bytes": 2605,
+          "sha256": "b796e1b8a0d97dbcdcd52252003f33799abc8b20049c86139ce9c05ecc934fd6"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 1,
+      "path": "benchmarks/long/generation/required/sources/fixture_pack-python-r1-a1.py",
+      "original_tokens": 376,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 376,
+          "rewrites": {},
+          "utf8_bytes": 1619,
+          "sha256": "afebfe2f9d9b4af523c075e9819401b788f8dc573337113b08a4cb55dac1b0ef"
+        },
+        "serialization_and_hash": {
+          "tokens": 354,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1535,
+          "sha256": "f70d05c85fb501888d5d9b434ee1633fe6a12915eaeb0ee0f00511f73491d3e3"
+        },
+        "helpers_only": {
+          "tokens": 354,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1535,
+          "sha256": "f70d05c85fb501888d5d9b434ee1633fe6a12915eaeb0ee0f00511f73491d3e3"
+        },
+        "add_extrema_stages": {
+          "tokens": 354,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1535,
+          "sha256": "f70d05c85fb501888d5d9b434ee1633fe6a12915eaeb0ee0f00511f73491d3e3"
+        },
+        "add_selectors": {
+          "tokens": 354,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1535,
+          "sha256": "f70d05c85fb501888d5d9b434ee1633fe6a12915eaeb0ee0f00511f73491d3e3"
+        },
+        "helpers_and_language": {
+          "tokens": 354,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1535,
+          "sha256": "f70d05c85fb501888d5d9b434ee1633fe6a12915eaeb0ee0f00511f73491d3e3"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 354,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1535,
+          "sha256": "f70d05c85fb501888d5d9b434ee1633fe6a12915eaeb0ee0f00511f73491d3e3"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 354,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1535,
+          "sha256": "f70d05c85fb501888d5d9b434ee1633fe6a12915eaeb0ee0f00511f73491d3e3"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 1,
+      "path": "benchmarks/long/generation/required/sources/fixture_pack-compact-r1-a1.ag",
+      "original_tokens": 393,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 393,
+          "rewrites": {},
+          "utf8_bytes": 1588,
+          "sha256": "34709a1caa172feab70ecf59f356c1222ea11bac180d64eef29e1d0dc79a265e"
+        },
+        "serialization_and_hash": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1504,
+          "sha256": "54276f18599fad8f186497044c0040d6021119cda133bfd644bfa227bcef69f6"
+        },
+        "helpers_only": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1504,
+          "sha256": "54276f18599fad8f186497044c0040d6021119cda133bfd644bfa227bcef69f6"
+        },
+        "add_extrema_stages": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1504,
+          "sha256": "54276f18599fad8f186497044c0040d6021119cda133bfd644bfa227bcef69f6"
+        },
+        "add_selectors": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1504,
+          "sha256": "54276f18599fad8f186497044c0040d6021119cda133bfd644bfa227bcef69f6"
+        },
+        "helpers_and_language": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1504,
+          "sha256": "54276f18599fad8f186497044c0040d6021119cda133bfd644bfa227bcef69f6"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1504,
+          "sha256": "54276f18599fad8f186497044c0040d6021119cda133bfd644bfa227bcef69f6"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1504,
+          "sha256": "54276f18599fad8f186497044c0040d6021119cda133bfd644bfa227bcef69f6"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 2,
+      "path": "benchmarks/long/generation/required/sources/knn_grid-python-r2-a1.py",
+      "original_tokens": 491,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 3
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 491,
+          "rewrites": {},
+          "utf8_bytes": 1876,
+          "sha256": "1e3f636069290034419f8173dbe63b08ad7f6da9c5871ee8306ed9d49f1cf4c2"
+        },
+        "serialization_and_hash": {
+          "tokens": 491,
+          "rewrites": {},
+          "utf8_bytes": 1876,
+          "sha256": "1e3f636069290034419f8173dbe63b08ad7f6da9c5871ee8306ed9d49f1cf4c2"
+        },
+        "helpers_only": {
+          "tokens": 489,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1875,
+          "sha256": "2857635d700fa43d20a7688664fcff5de6ccc79eb63e136b5426f41cdf77e716"
+        },
+        "add_extrema_stages": {
+          "tokens": 482,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 1820,
+          "sha256": "7e21e6b5ba6084ee1eb797767c59acbb1f6003bca7bd9a6365fe74ae8209f8a2"
+        },
+        "add_selectors": {
+          "tokens": 482,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "string-key selector": 8
+          },
+          "utf8_bytes": 1796,
+          "sha256": "513ec3f5262bcdd09b121a6a166589972aa1851918f9439df1abdc52424bd1e9"
+        },
+        "helpers_and_language": {
+          "tokens": 475,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "string-key selector": 8,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 1768,
+          "sha256": "c0a180e12bb12bc82b531039072142987e70f26e0ab33881254a343797d103ee"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 489,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1875,
+          "sha256": "2857635d700fa43d20a7688664fcff5de6ccc79eb63e136b5426f41cdf77e716"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 475,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "string-key selector": 8,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 1768,
+          "sha256": "c0a180e12bb12bc82b531039072142987e70f26e0ab33881254a343797d103ee"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 2,
+      "path": "benchmarks/long/generation/required/sources/knn_grid-compact-r2-a1.ag",
+      "original_tokens": 465,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 3
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 465,
+          "rewrites": {},
+          "utf8_bytes": 1698,
+          "sha256": "3bfeceec9e13a3ff836307b87de25fa23a0bd02b52c43a973beae692b5a18747"
+        },
+        "serialization_and_hash": {
+          "tokens": 465,
+          "rewrites": {},
+          "utf8_bytes": 1698,
+          "sha256": "3bfeceec9e13a3ff836307b87de25fa23a0bd02b52c43a973beae692b5a18747"
+        },
+        "helpers_only": {
+          "tokens": 463,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1697,
+          "sha256": "df769d3d8090b2811ab283b5c08237a456e8a48642b8ee73d33accf0eb15ce38"
+        },
+        "add_extrema_stages": {
+          "tokens": 456,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1
+          },
+          "utf8_bytes": 1642,
+          "sha256": "22bfe115fec7ecfdafb7fe695c8bbae183588349e1a9f6e71cea20a047b48541"
+        },
+        "add_selectors": {
+          "tokens": 456,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "string-key selector": 8
+          },
+          "utf8_bytes": 1618,
+          "sha256": "32ff1f16b89165b860e1a85f38220d690d67376474a00a05c8636c72a10ad694"
+        },
+        "helpers_and_language": {
+          "tokens": 449,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "string-key selector": 8,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 1590,
+          "sha256": "cd3a570079698b0b55c985c8e4a0ea8b320597f9252e836a3b0eaecde5a656a2"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 463,
+          "rewrites": {
+            "shared keyed selection": 2
+          },
+          "utf8_bytes": 1697,
+          "sha256": "df769d3d8090b2811ab283b5c08237a456e8a48642b8ee73d33accf0eb15ce38"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 449,
+          "rewrites": {
+            "keyed max stage": 1,
+            "keyed min stage": 1,
+            "string-key selector": 8,
+            "pack named fields": 1
+          },
+          "utf8_bytes": 1590,
+          "sha256": "cd3a570079698b0b55c985c8e4a0ea8b320597f9252e836a3b0eaecde5a656a2"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 2,
+      "path": "benchmarks/long/generation/required/sources/fixture_pack-compact-r2-a1.ag",
+      "original_tokens": 361,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 361,
+          "rewrites": {},
+          "utf8_bytes": 1474,
+          "sha256": "c2418f47b20d9af34fbe91674234d40e1877e4ed6f6fa9c8b7a7da96b89532a3"
+        },
+        "serialization_and_hash": {
+          "tokens": 344,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1415,
+          "sha256": "15e7cead21576726ceb21b3dfb6da08d4c006c5ed8223da8dde601c7067666bc"
+        },
+        "helpers_only": {
+          "tokens": 344,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1415,
+          "sha256": "15e7cead21576726ceb21b3dfb6da08d4c006c5ed8223da8dde601c7067666bc"
+        },
+        "add_extrema_stages": {
+          "tokens": 344,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1415,
+          "sha256": "15e7cead21576726ceb21b3dfb6da08d4c006c5ed8223da8dde601c7067666bc"
+        },
+        "add_selectors": {
+          "tokens": 344,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1415,
+          "sha256": "15e7cead21576726ceb21b3dfb6da08d4c006c5ed8223da8dde601c7067666bc"
+        },
+        "helpers_and_language": {
+          "tokens": 344,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1415,
+          "sha256": "15e7cead21576726ceb21b3dfb6da08d4c006c5ed8223da8dde601c7067666bc"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 344,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1415,
+          "sha256": "15e7cead21576726ceb21b3dfb6da08d4c006c5ed8223da8dde601c7067666bc"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 344,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 1
+          },
+          "utf8_bytes": 1415,
+          "sha256": "15e7cead21576726ceb21b3dfb6da08d4c006c5ed8223da8dde601c7067666bc"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 2,
+      "path": "benchmarks/long/generation/required/sources/fixture_pack-python-r2-a1.py",
+      "original_tokens": 393,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 1
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 393,
+          "rewrites": {},
+          "utf8_bytes": 1586,
+          "sha256": "fa787ba0f7566bdc97ba54bcb0714c0384dd86310a92e15d60e047b61e78e83e"
+        },
+        "serialization_and_hash": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1502,
+          "sha256": "788c8efc2dc3a1f572923f638dca864cd7d4e7f15a8740b7d6f8e9376726de27"
+        },
+        "helpers_only": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1502,
+          "sha256": "788c8efc2dc3a1f572923f638dca864cd7d4e7f15a8740b7d6f8e9376726de27"
+        },
+        "add_extrema_stages": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1502,
+          "sha256": "788c8efc2dc3a1f572923f638dca864cd7d4e7f15a8740b7d6f8e9376726de27"
+        },
+        "add_selectors": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1502,
+          "sha256": "788c8efc2dc3a1f572923f638dca864cd7d4e7f15a8740b7d6f8e9376726de27"
+        },
+        "helpers_and_language": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1502,
+          "sha256": "788c8efc2dc3a1f572923f638dca864cd7d4e7f15a8740b7d6f8e9376726de27"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1502,
+          "sha256": "788c8efc2dc3a1f572923f638dca864cd7d4e7f15a8740b7d6f8e9376726de27"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 371,
+          "rewrites": {
+            "JSON plus LF bytes": 1,
+            "SHA-256 hex": 2
+          },
+          "utf8_bytes": 1502,
+          "sha256": "788c8efc2dc3a1f572923f638dca864cd7d4e7f15a8740b7d6f8e9376726de27"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 2,
+      "path": "benchmarks/long/generation/required/sources/movie_credits-compact-r2-a1.ag",
+      "original_tokens": 351,
+      "mixed_records": {
+        "records": 1,
+        "same_named_fields": 1
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 351,
+          "rewrites": {},
+          "utf8_bytes": 1435,
+          "sha256": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49"
+        },
+        "serialization_and_hash": {
+          "tokens": 351,
+          "rewrites": {},
+          "utf8_bytes": 1435,
+          "sha256": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49"
+        },
+        "helpers_only": {
+          "tokens": 351,
+          "rewrites": {},
+          "utf8_bytes": 1435,
+          "sha256": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49"
+        },
+        "add_extrema_stages": {
+          "tokens": 351,
+          "rewrites": {},
+          "utf8_bytes": 1435,
+          "sha256": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49"
+        },
+        "add_selectors": {
+          "tokens": 347,
+          "rewrites": {
+            "string-key selector": 4
+          },
+          "utf8_bytes": 1423,
+          "sha256": "5972f4a0f9e06a23720b0f05e05fbd8fcd52bcc7b9935b84d7729cb8569dd3e7"
+        },
+        "helpers_and_language": {
+          "tokens": 347,
+          "rewrites": {
+            "string-key selector": 4
+          },
+          "utf8_bytes": 1423,
+          "sha256": "5972f4a0f9e06a23720b0f05e05fbd8fcd52bcc7b9935b84d7729cb8569dd3e7"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 350,
+          "rewrites": {
+            "shared keyed selection": 1
+          },
+          "utf8_bytes": 1425,
+          "sha256": "f229765b961725a00229bb64b7b0ec00c5e5da7ca2bf6d6f840a892637568a0e"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 338,
+          "rewrites": {
+            "keyed top stage": 1,
+            "string-key selector": 4
+          },
+          "utf8_bytes": 1380,
+          "sha256": "b1937909d73cd44dcddb52d9b962d2fd4a31199ef36e4deb7766043410eabb9b"
+        }
+      }
+    },
+    {
+      "series": "required",
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 2,
+      "path": "benchmarks/long/generation/required/sources/movie_credits-python-r2-a1.py",
+      "original_tokens": 332,
+      "mixed_records": {
+        "records": 0,
+        "same_named_fields": 0
+      },
+      "variants": {
+        "as_written": {
+          "tokens": 332,
+          "rewrites": {},
+          "utf8_bytes": 1349,
+          "sha256": "7c50ff0baf1d3ea323dda900d98e79790aa772b774e4ceba3b5e7798858e1905"
+        },
+        "serialization_and_hash": {
+          "tokens": 332,
+          "rewrites": {},
+          "utf8_bytes": 1349,
+          "sha256": "7c50ff0baf1d3ea323dda900d98e79790aa772b774e4ceba3b5e7798858e1905"
+        },
+        "helpers_only": {
+          "tokens": 332,
+          "rewrites": {},
+          "utf8_bytes": 1349,
+          "sha256": "7c50ff0baf1d3ea323dda900d98e79790aa772b774e4ceba3b5e7798858e1905"
+        },
+        "add_extrema_stages": {
+          "tokens": 332,
+          "rewrites": {},
+          "utf8_bytes": 1349,
+          "sha256": "7c50ff0baf1d3ea323dda900d98e79790aa772b774e4ceba3b5e7798858e1905"
+        },
+        "add_selectors": {
+          "tokens": 326,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1334,
+          "sha256": "7fb678ffb0781e07738fbc35635ef08432de8e0e9b62ca29a47b689abe729a53"
+        },
+        "helpers_and_language": {
+          "tokens": 326,
+          "rewrites": {
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1334,
+          "sha256": "7fb678ffb0781e07738fbc35635ef08432de8e0e9b62ca29a47b689abe729a53"
+        },
+        "helpers_only_with_heap_top": {
+          "tokens": 331,
+          "rewrites": {
+            "shared keyed selection": 1
+          },
+          "utf8_bytes": 1339,
+          "sha256": "8080276a3a2c5a084d263ef5b34426082246d2a1ef81fb40df260d0547e700ab"
+        },
+        "helpers_and_language_with_heap_top": {
+          "tokens": 320,
+          "rewrites": {
+            "keyed top stage": 1,
+            "string-key selector": 5
+          },
+          "utf8_bytes": 1311,
+          "sha256": "76b9cf1d2652c4d9caea26d4bfabec992ad3a133bff4c5a8cd739c07d258d339"
+        }
+      }
+    }
+  ]
+}

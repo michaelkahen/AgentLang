@@ -21,6 +21,84 @@ def output(source):
 
 
 class PipelineTests(unittest.TestCase):
+    def test_record_fields_in_python_expressions(self):
+        source = '''
+rows = [{"crew": {"id": 2}}, {"crew": {"id": 1}}]
+ids = [row$crew$id for row in rows]
+label = "$crew d{ids}"  # d{label} and invalid $ are literal here
+j d{ids, label}
+'''
+        self.assertEqual(output(source), '{"ids": [2, 1], "label": "$crew d{ids}"}\n')
+        self.assertEqual(output('v={"class":0}\nv$class += 1\np v$class'), "1\n")
+        with self.assertRaises(SyntaxError):
+            compile_python('x = row$field')
+        for bad in ['x = $missing', 'x = row$2', 'x = row$ key', 'x = d{a + b}']:
+            with self.subTest(bad=bad), self.assertRaises(SyntaxError):
+                compile_source(bad)
+
+    def test_rankings_keep_ties_and_evaluate_count(self):
+        source = '''
+rows = [{"score":2,"id":1},{"score":1,"id":2},{"score":1,"id":3}]
+n = 1
+subset = rows:t n + 1, _$score
+best = rows:k _$score
+last = rows:x _$score
+j [subset, best$id, last$id]
+'''
+        self.assertEqual(output(source), '[[{"score": 1, "id": 2}, {"score": 1, "id": 3}], 2, 1]\n')
+        self.assertEqual(output("p []:t 0"), "[]\n")
+        with self.assertRaises(ValueError):
+            output("p [1]:t -1")
+        with self.assertRaises(ValueError):
+            output("p []:k")
+
+    def test_structured_value_bytes_and_hash_in_both_front_ends(self):
+        import hashlib
+        source = '''values = [v("true"), v("{'x': 2}"), v('bogus', 'fallback')]
+digest = h(b(values))
+wj([values, digest, t([4,1,1,2],2), k([3,1]), x([3,1])])
+'''
+        import json
+        values = [True, {"x": 2}, "fallback"]
+        digest = hashlib.sha256((json.dumps(values) + "\n").encode()).hexdigest()
+        for build in (compile_python, compile_source):
+            buf = io.StringIO()
+            with contextlib.redirect_stdout(buf):
+                exec(build(source), {})
+            self.assertEqual(json.loads(buf.getvalue()), [values, digest, [1, 1], 1, 3])
+        self.assertEqual(output('f = h\np f(b(1))'), hashlib.sha256(b"1\n").hexdigest() + "\n")
+
+    def test_in_memory_and_standalone_use_same_bindings(self):
+        from agentlang.compiler import prepare_run
+        source = '''"docstring"
+from __future__ import annotations
+items = [{"s":1}, {"s":2}, {"s":3}]
+first = items:t 2, -_$s
+score = first:a _$s
+common = [3,3,2]:c 1
+j d{first,score,common}
+'''
+        program, namespace = prepare_run(source, "demo.ag")
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            exec(program, namespace)
+        self.assertEqual(buf.getvalue(), output(source))
+        self.assertEqual(namespace["__doc__"], "docstring")
+
+    def test_helper_insertion_and_builtin_shadowing(self):
+        from agentlang.compiler import prepare_run
+        source = '''"données"; from __future__ import annotations; print(v("true"))
+ValueError = TypeError = RecursionError = None
+print(v("not valid","fallback"))
+'''
+        self.assertEqual(output(source), "True\nfallback\n")
+        code, env = prepare_run(source, "demo.ag")
+        stream = io.StringIO()
+        with contextlib.redirect_stdout(stream):
+            exec(code, env)
+        self.assertEqual(stream.getvalue(), output(source))
+        self.assertEqual(env["__doc__"], "données")
+
     def test_fused_stages(self):
         source = 'p ["ab","ac"]:f _:w _ != "c":c 1:h'
         self.assertEqual(output(source), "('a', 2)\n")
