@@ -7,7 +7,7 @@ import sys
 import tempfile
 import unittest
 
-from agentlang import compile_source
+from agentlang import compile_python, compile_source, count_short_stages
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +21,49 @@ def output(source):
 
 
 class PipelineTests(unittest.TestCase):
+    def test_fused_stages(self):
+        source = 'p ["ab","ac"]:f _:w _ != "c":c 1:h'
+        self.assertEqual(output(source), "('a', 2)\n")
+        self.assertEqual(count_short_stages(source), 4)
+        self.assertEqual(output("j [3,1,2]:m _*2:s:l"), "[2, 4, 6]\n")
+        self.assertEqual(output("p [1,2,3]:a"), "2\n")
+        self.assertEqual(output("p [1,2,3]:u"), "6\n")
+        self.assertEqual(output('p ["a:n","b"]:where _.endswith(":n"):n'), "1\n")
+
+    def test_abbreviations_preserve_python_bindings(self):
+        source = 's = {1}\nj = 0\nj += 1\np = [j]\np[0] = 4\nx: int = p[0]\nresult = {2} | s\n'
+        self.assertEqual(compile_source(source), source)
+        self.assertEqual(count_short_stages('x = ":n"  # :c 1\n' + source), 0)
+        self.assertEqual(output('def classify(a):\n    return a:m _[1:]:l\nj classify(["pa"])'), '["a"]\n')
+
+    def test_short_helper_calls_in_both_languages(self):
+        for build in (compile_source, compile_python):
+            source = 'wj(sorted(r()))'
+            completed = subprocess.run([sys.executable, "-I", "-c", build(source)],
+                                       input=b"[3, 1]", capture_output=True, check=True)
+            self.assertEqual(completed.stdout, b"[1, 3]\n")
+            source = "xs = [r for r in range(4)]\n"
+            self.assertEqual(build(source), source)
+
+    def test_native_control_preserves_python(self):
+        source = 'count = {2}\nresult = {1} | count\n'
+        self.assertEqual(compile_python(source), source)
+        with self.assertRaises(SyntaxError):
+            compile_python("emit readjson() | first")
+
+    def test_both_front_ends_embed_shared_helpers(self):
+        with tempfile.TemporaryDirectory() as directory:
+            csv_file = Path(directory) / "items.csv"
+            csv_file.write_bytes(b'name,value\r\n"hello, world",3\r\n')
+            source = f'writejson(csvrows({str(csv_file)!r}))'
+            expected = '[{"name": "hello, world", "value": "3"}]\n'
+            for build in (compile_python, compile_source):
+                generated = build(source)
+                self.assertNotIn("def readjson", generated)
+                proc = subprocess.run([sys.executable, "-I", "-c", generated], cwd=directory,
+                                      text=True, capture_output=True, check=True)
+                self.assertEqual(proc.stdout, expected)
+
     def test_stages(self):
         self.assertEqual(output("emit [1, 2, 3] | where _ % 2 | map _ * 2 | sum"), "8\n")
         self.assertEqual(output("emit [1, 2, 3] | sum _ * 2"), "12\n")

@@ -1,0 +1,5 @@
+Python + one-line pipelines. x = SRC:op EXPR:op, return SRC:op, p SRC:op (print), j SRC:op (JSON).
+_ = current item. w=filter m=map f=flat-map n=count u=sum a=mean s=stable-sort c N=most-common pairs h=first l=list.
+u/a/s take an optional item expression. w/m/f are lazy. Use :l before emitting an iterable as JSON.
+r() reads stdin JSON, r(path) reads JSON file, c(path) reads CSV dict rows, wj(x) prints JSON.
+p r():w _["paid"]:u _["cents"]
