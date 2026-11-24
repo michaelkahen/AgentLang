@@ -23,6 +23,10 @@ _STAGE_IMPORTS = {
 
 _STAGES = set(_SHORT_STAGES.values())
 _TRIVIA = {tokenize.COMMENT, tokenize.INDENT, tokenize.DEDENT, tokenize.NL}
+_NESTED_SCOPES = (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef, ast.Lambda,
+                  ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp)
+if hasattr(ast, "TypeAlias"):
+    _NESTED_SCOPES += (ast.TypeAlias,)
 
 
 @lru_cache(maxsize=1)
@@ -116,17 +120,17 @@ def _rewrite(statement, offsets, source, filename):
     # Function annotations and the left of an assignment use ordinary Python unions.
     if first.string in {"def", "class", "async", "for", "while", "if", "elif", "with", "assert", "match", "case", "type"}:
         return None
-    assignments = [i for i, t in enumerate(top) if t.string == "="]
+    assignments = [i for i, t in enumerate(top) if t.type == tokenize.OP and t.string == "="]
     head_end = assignments[0] + 1 if assignments else 0
     command = _command(statement)
     colon_allowed = bool(command or assignments or first.string == "return")
-    if not colon_allowed and any(t.string == ":" for t in top):
+    if not colon_allowed and any(t.type == tokenize.OP and t.string == ":" for t in top):
         return None
     separators = []
     in_lambda = False
     for i in range(head_end, len(top) - 1):
         token = top[i]
-        if token.string == "lambda":
+        if token.type == tokenize.NAME and token.string == "lambda":
             in_lambda = True
         if token.type != tokenize.OP:
             continue
@@ -147,7 +151,7 @@ def _rewrite(statement, offsets, source, filename):
         if first.string == "return":
             prefix = "return "
     else:
-        assignments = [t for t in head if t.string == "="]
+        assignments = [t for t in head if t.type == tokenize.OP and t.string == "="]
         if assignments:
             expr_start = pos(assignments[-1].end)
             prefix = source[start:expr_start] + " "
@@ -163,7 +167,7 @@ def _rewrite(statement, offsets, source, filename):
     try:
         if not expr:
             raise ValueError("expected an expression")
-        if pipes and any(t.string == "lambda" for t in head):
+        if pipes and any(t.type == tokenize.NAME and t.string == "lambda" for t in head):
             raise ValueError("place the pipeline on a return line in a function, or parenthesize a lambda used as input")
         for n, pipe in enumerate(pipes):
             if pipe + 1 == len(top):
@@ -329,17 +333,21 @@ def _with_helpers(output, filename, stages):
 
 
 def _bindings(tree, source, filename, stages):
-    names, aliases = set(), {}
-    for node in ast.walk(tree):
+    names, direct = set(), set()
+    # Calls in a nested scope can be callbacks or comprehension targets. Only a
+    # call in module scope may bypass lexical resolution of its function name.
+    pending = [(tree, True)]
+    while pending:
+        node, module_scope = pending.pop()
         if isinstance(node, ast.Name):
             names.add(node.id)
-        elif isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
-            name = node.func.id
-            if name in _SHORT_HELPERS:
-                aliases[name] = _SHORT_HELPERS[name]
-    # A helper can also be passed as a key function. Resolve first-class references
-    # by lexical scope so a comprehension's local variable never pulls in a helper.
-    possible = names.intersection(_SHORT_HELPERS).difference(aliases)
+        elif module_scope and isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
+            direct.add(node.func.id)
+        child_scope = module_scope and not isinstance(node, _NESTED_SCOPES)
+        pending.extend((child, child_scope) for child in ast.iter_child_nodes(node))
+    candidates = SHARED_HELPERS.keys() & names
+    needed = candidates & direct
+    possible = candidates - needed
     if possible:
         import symtable
         scopes = [symtable.symtable(source, filename, "exec")]
@@ -347,13 +355,15 @@ def _bindings(tree, source, filename, stages):
             scope = scopes.pop()
             for name in possible.intersection(scope.get_identifiers()):
                 symbol = scope.lookup(name)
-                if symbol.is_global() and symbol.is_referenced() and not symbol.is_assigned():
-                    aliases[name] = _SHORT_HELPERS[name]
+                if (symbol.is_global() and symbol.is_referenced()
+                        and (not symbol.is_assigned() or symbol.is_declared_global())):
+                    needed.add(name)
                     possible.remove(name)
             scopes.extend(scope.get_children())
+    aliases = {name: _SHORT_HELPERS[name] for name in sorted(needed & _SHORT_HELPERS.keys())}
     if stages and "_ag_smallest" in names:
         aliases["_ag_smallest"] = "smallest"
-    return names, aliases, _FULL_HELPERS.intersection(names).union(aliases.values())
+    return names, aliases, _FULL_HELPERS.intersection(needed).union(aliases.values())
 
 
 def prepare_run(source, filename):

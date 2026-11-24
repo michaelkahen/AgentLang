@@ -21,6 +21,16 @@ def output(source):
 
 
 class PipelineTests(unittest.TestCase):
+    def test_fstring_text_does_not_change_pipeline_parsing(self):
+        source = '''n = 2
+first = f"={n}":n
+second = f"lambda{n}":n
+third = f"{n}:":n
+j [first, second, third]
+'''
+        self.assertEqual(output(source), "[2, 7, 2]\n")
+        self.assertEqual(count_short_stages(source), 3)
+
     def test_record_fields_in_python_expressions(self):
         source = '''
 rows = [{"crew": {"id": 2}}, {"crew": {"id": 1}}]
@@ -113,6 +123,20 @@ print(v("not valid","fallback"))
         self.assertEqual(compile_source(source), source)
         self.assertEqual(count_short_stages('x = ":n"  # :c 1\n' + source), 0)
         self.assertEqual(output('def classify(a):\n    return a:m _[1:]:l\nj classify(["pa"])'), '["a"]\n')
+
+    def test_local_callback_names_do_not_install_global_helpers(self):
+        from agentlang.compiler import prepare_run
+        source = '''def apply(x, shahex):
+    return x(shahex(3))
+
+assert apply(str, lambda v: v + 1) == "4"
+assert {"x", "greatest", "shahex"}.isdisjoint(globals())
+'''
+        for build in (compile_source, compile_python):
+            self.assertEqual(build(source), source)
+            exec(build(source), {})
+        code, namespace = prepare_run(source, "callbacks.ag")
+        exec(code, namespace)
 
     def test_short_helper_calls_in_both_languages(self):
         for build in (compile_source, compile_python):
