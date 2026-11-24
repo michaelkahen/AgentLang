@@ -1,0 +1,53 @@
+import ast
+import json
+
+def parse_list(cell):
+    if not cell or not cell.strip():
+        return []
+    try:
+        value = json.loads(cell)
+    except (ValueError, RecursionError):
+        try:
+            value = ast.literal_eval(cell)
+        except (ValueError, SyntaxError, RecursionError):
+            return []
+    return value if isinstance(value, list) else []
+
+films = {
+    row["id"]
+    for row in csvrows("movies.csv")
+    if row["id"] and any(
+        isinstance(genre, dict) and genre.get("name") in ("Science Fiction", "Sci-Fi")
+        for genre in parse_list(row["genres"])
+    )
+}
+
+credited_films = set()
+credits = {}
+person_films = {}
+appearances = 0
+for row in csvrows("credits.csv"):
+    film = row["id"]
+    if film not in films:
+        continue
+    for entry in parse_list(row["crew"]):
+        if not isinstance(entry, dict):
+            continue
+        person = entry.get("id")
+        if type(person) is not int or person <= 0:
+            continue
+        credited_films.add(film)
+        appearances += 1
+        credits[person] = credits.get(person, 0) + 1
+        person_films.setdefault(person, set()).add(film)
+
+leaders = sorted(credits, key=lambda person: (-credits[person], -len(person_films[person]), person))[:5]
+writejson({
+    "films": len(films),
+    "credited_films": len(credited_films),
+    "appearances": appearances,
+    "leaders": [
+        {"id": person, "credits": credits[person], "movies": len(person_films[person])}
+        for person in leaders
+    ],
+})

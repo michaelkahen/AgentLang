@@ -1,0 +1,50 @@
+import ast
+import json
+
+def entries(cell):
+    if not cell:
+        return []
+    try:
+        value = json.loads(cell)
+    except (ValueError, RecursionError):
+        try:
+            value = ast.literal_eval(cell.strip())
+        except (ValueError, SyntaxError, TypeError, RecursionError):
+            return []
+    if not isinstance(value, list):
+        return []
+    return value:w isinstance(_, dict):l
+
+films = set()
+for row in c("movies.csv"):
+    movie = row["id"]
+    if movie and any(genre.get("name") in ("Science Fiction", "Sci-Fi")
+                     for genre in entries(row["genres"])):
+        films.add(movie)
+
+credited = set()
+counts = {}
+person_films = {}
+appearances = 0
+for row in c("credits.csv"):
+    movie = row["id"]
+    if movie not in films:
+        continue
+    for entry in entries(row["crew"]):
+        person = entry.get("id")
+        if type(person) is int and person > 0:
+            credited.add(movie)
+            appearances += 1
+            counts[person] = counts.get(person, 0) + 1
+            person_films.setdefault(person, set()).add(movie)
+
+leaders = sorted(counts, key=lambda person: (
+    -counts[person], -len(person_films[person]), person
+))[:5]
+wj({
+    "films": len(films),
+    "credited_films": len(credited),
+    "appearances": appearances,
+    "leaders": [{"id": person, "credits": counts[person],
+                 "movies": len(person_films[person])} for person in leaders],
+})

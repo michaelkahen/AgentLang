@@ -1,4 +1,4 @@
-"""Compare the Python and AgentLang examples. Run python bench/run.py --help."""
+"""Compare the Python and AgentLang examples. Run with --help for options."""
 
 import argparse
 import hashlib
@@ -17,7 +17,8 @@ from pathlib import Path
 
 from scale import prepare_examples
 
-ROOT = Path(__file__).resolve().parents[1]
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[2]
 
 
 def arguments():
@@ -28,7 +29,7 @@ def arguments():
     parser.add_argument("--warmups", type=int, default=1, help="Unmeasured runs per mode per case.")
     parser.add_argument("--scale", type=int, default=1, help="Repeat the bundled data records this many times.")
     parser.add_argument("--seed", type=int, default=42, help="Seed for mode ordering.")
-    parser.add_argument("--output", type=Path, help="Result JSON. Defaults to bench/results/{seed,scaled}.json.")
+    parser.add_argument("--output", type=Path, help="Result JSON. Defaults to results/{seed,scaled}.json beside this harness.")
     args = parser.parse_args()
     if args.runs < 1 or args.scale < 1 or args.warmups < 0:
         parser.error("--runs and --scale must be positive and --warmups must be nonnegative")
@@ -36,7 +37,7 @@ def arguments():
         parser.error("Per-process peak RSS measurement supports macOS and Linux.")
     if args.output is None:
         filename = "seed.json" if args.scale == 1 else "scaled.json"
-        args.output = ROOT / "bench" / "results" / filename
+        args.output = HERE / "results" / filename
     return args
 
 
@@ -200,7 +201,7 @@ def main():
                    "scale_factor": args.scale, "PYTHONHASHSEED": 0},
         "implementation_sha256": {
             str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
-            for folder in ("agentlang", "bench") for path in sorted((ROOT / folder).glob("*.py"))
+            for folder in (ROOT / "agentlang", HERE) for path in sorted(folder.glob("*.py"))
         },
         "method": {
             "source": "Entire UTF-8 files including comments and final newline, without Markdown fences.",

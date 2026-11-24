@@ -1,0 +1,71 @@
+from math import sqrt
+from decimal import Decimal
+
+train, test = [], []
+for row in csvrows("samples.csv"):
+    fold = row["fold"]
+    (test if fold == "test" else train).append(
+        (fold, int(row["x"]), int(row["y"]), row["label"])
+    )
+
+def neighbors(row, pool, metric):
+    _, x, y, _ = row
+    ranked = []
+    for _, a, b, label in pool:
+        dx, dy = abs(x - a), abs(y - b)
+        distance = dx * dx + dy * dy if metric == "euclidean" else dx + dy
+        ranked.append((distance, label))
+    return sorted(ranked, key=lambda pair: pair[0])
+
+def predict(ranked, k, metric, weights):
+    selected = ranked[:k]
+    if weights == "distance" and selected[0][0] == 0:
+        selected = [(d, label) for d, label in selected if d == 0]
+        weights = "uniform"
+
+    def vote(distance):
+        if metric == "euclidean":
+            return 1 / sqrt(distance)
+        return 1 / distance
+
+    if weights == "uniform":
+        votes = [1] * len(selected)
+    else:
+        try:
+            votes = [vote(d) for d, _ in selected]
+            if 0 in votes:
+                raise OverflowError
+        except OverflowError:
+            distances = [Decimal(d) for d, _ in selected]
+            if metric == "euclidean":
+                distances = [d.sqrt() for d in distances]
+            votes = [1 / d for d in distances]
+
+    scores = {}
+    for (_, label), weight in zip(selected, votes):
+        scores[label] = scores.get(label, 0) + weight
+    return min(scores, key=lambda label: (-scores[label], label))
+
+metrics = ("euclidean", "manhattan")
+validation = {metric: [] for metric in metrics}
+for row in train:
+    pool = [other for other in train if other[0] != row[0]]
+    for metric in metrics:
+        validation[metric].append(neighbors(row, pool, metric)[:5])
+
+grid = []
+for k in (1, 3, 5):
+    for metric in metrics:
+        for weights in ("uniform", "distance"):
+            correct = sum(
+                predict(ranked, k, metric, weights) == row[3]
+                for ranked, row in zip(validation[metric], train)
+            )
+            grid.append(dict(k=k, metric=metric, weights=weights, correct=correct))
+
+best = max(range(len(grid)), key=lambda i: grid[i]["correct"])
+config = grid[best]
+k, metric, weights = config["k"], config["metric"], config["weights"]
+predictions = [predict(neighbors(row, train, metric), k, metric, weights) for row in test]
+writejson(dict(grid=grid, best=best, predictions=predictions,
+               test_correct=sum(label == row[3] for label, row in zip(predictions, test))))

@@ -1,4 +1,6 @@
-# Prototype benchmark
+# Short-script pilot
+
+The saved measurements refer to commit `b13d2e3`. The raw JSON preserves paths and hashes from that revision. The harness here also runs against the current compiler.
 
 On four data tasks, AgentLang reduced the handwritten programs from 238 source tokens to 137. Giving plain Python the same I/O helpers reduced it to 160. In a separate live trial, the model produced 41.9% fewer source tokens and its median request finished about one second sooner. Including the language reference in every request increased total service tokens by 0.9%. [Live results and exact prompts](../generation/README.md)
 
@@ -55,10 +57,10 @@ The flight filter shows a concrete tradeoff. The Python baseline streams the CSV
 
 ## Method and limits
 
-- The workloads adapt recorded agent operations to deterministic local inputs. Two came from notebook data analysis and two from Python tool calls on programming exercises. The examples emphasize collection processing, which the dialect was designed for. [Trace provenance and adaptations](../examples/PROVENANCE.md)
+- The workloads adapt recorded agent operations to deterministic local inputs. Two came from notebook data analysis and two from Python tool calls on programming exercises. The examples emphasize collection processing, which the dialect was designed for. [Trace provenance and adaptations](../../../examples/PROVENANCE.md)
 - The larger fixtures repeat the original records 1,000 times. They test growth in row count while preserving value distributions. Input identities, sizes, expected-output hashes, and implementation hashes accompany the raw samples.
 - The host was an Apple M1 running macOS 14.8.2 and CPython 3.12.4. Each size and task had one warmup and twelve measured runs per mode. Modes were interleaved and their order rotated. OS caches could be warm. All 384 measured processes and 32 warmups exited successfully and matched expected stdout byte for byte.
 - Local execution measurements use hand-authored equivalents. The live model-generation experiment measures separate requests and checks each generated program on two fixture sets. Model-serving hardware and energy data were unavailable. Server caching and the algorithms selected by the model varied between requests.
 - The runtime harness used tiktoken 0.12.0, and the live harness used 0.14.0. Recounting every live source with 0.12.0 reproduced the recorded counts.
 
-Each raw file includes individual observations, medians, quartiles, and ranges. The setup commands at the project root reproduce the two dataset sizes. [Seed measurements](results/seed.json) · [Scaled measurements](results/scaled.json) · [Setup and commands](../README.md)
+Each raw file includes individual observations, medians, quartiles, and ranges. The setup commands at the project root reproduce the two dataset sizes. [Seed measurements](results/seed.json) · [Scaled measurements](results/scaled.json) · [Setup and commands](../../../README.md)

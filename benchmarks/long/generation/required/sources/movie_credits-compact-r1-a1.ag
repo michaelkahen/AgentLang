@@ -1,0 +1,47 @@
+import ast
+import json
+
+def parse_list(cell):
+    if not cell:
+        return []
+    try:
+        value = json.loads(cell, parse_constant=reject_constant)
+    except (ValueError, RecursionError):
+        try:
+            value = ast.literal_eval(cell)
+        except (ValueError, SyntaxError, RecursionError, OverflowError):
+            return []
+    return value if isinstance(value, list) else []
+
+def reject_constant(value):
+    raise ValueError(value)
+
+films = set()
+for row in c("movies.csv"):
+    movie = row["id"]
+    if movie and any(isinstance(genre, dict) and genre.get("name") in
+                     ("Science Fiction", "Sci-Fi") for genre in parse_list(row["genres"])):
+        films.add(movie)
+
+credited = set()
+people = {}
+appearances = 0
+for row in c("credits.csv"):
+    movie = row["id"]
+    if movie not in films:
+        continue
+    crew = parse_list(row["crew"])
+    ids = crew:w isinstance(_, dict):m _.get("id"):w type(_) is int and _ > 0:l
+    for person in ids:
+        count, movies = people.get(person, (0, set()))
+        movies.add(movie)
+        people[person] = count + 1, movies
+    if ids:
+        credited.add(movie)
+        appearances += len(ids)
+
+leaders = [{"id": person, "credits": count, "movies": len(movies)}
+           for person, (count, movies) in people.items()]
+leaders.sort(key=lambda entry: (-entry["credits"], -entry["movies"], entry["id"]))
+wj({"films": len(films), "credited_films": len(credited),
+    "appearances": appearances, "leaders": leaders[:5]})

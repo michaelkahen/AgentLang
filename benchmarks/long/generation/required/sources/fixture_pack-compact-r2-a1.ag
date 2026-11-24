@@ -1,0 +1,49 @@
+import csv
+import hashlib
+import io
+import itertools
+from pathlib import Path
+
+def encode_json(value):
+    return (json.dumps(value) + "\n").encode("utf-8")
+
+def digest(data):
+    return hashlib.sha256(data).hexdigest()
+
+import json
+
+factor = int(input())
+result = {}
+for task, path in (
+    ("late_flights", "data/tweets.csv"),
+    ("goal_gap", "data/projects.csv"),
+    ("word_counts", "word_counts.in"),
+    ("sort_scores", "sort_scores.in"),
+):
+    golden = Path(task + ".out").read_bytes()
+    if path.endswith(".csv"):
+        with open(path, encoding="utf-8", newline="") as file:
+            reader = csv.reader(file)
+            header = next(reader)
+            records = list(reader)
+        buffer = io.StringIO(newline="")
+        writer = csv.writer(buffer, lineterminator="\n")
+        writer.writerow(header)
+        writer.writerows(records * factor)
+        data = buffer.getvalue().encode("utf-8")
+    else:
+        records = r(path)
+        data = encode_json(records * factor)
+    if task == "late_flights":
+        golden = f"{int(golden) * factor}\n".encode("utf-8")
+    elif task == "sort_scores":
+        groups = itertools.groupby(json.loads(golden), key=lambda pair: pair[1])
+        scaled = groups:f list(_[1]) * factor:l
+        golden = encode_json(scaled)
+    result[task] = {
+        "records": len(records) * factor,
+        "bytes": len(data),
+        "input_sha256": digest(data),
+        "golden_sha256": digest(golden),
+    }
+wj(result)

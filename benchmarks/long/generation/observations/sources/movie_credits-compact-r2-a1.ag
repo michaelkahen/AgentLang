@@ -1,0 +1,44 @@
+import ast
+import json
+from collections import Counter, defaultdict
+
+def parse(cell):
+    for load in (json.loads, ast.literal_eval):
+        try:
+            value = load(cell)
+            return value if isinstance(value, list) else []
+        except (ValueError, SyntaxError, TypeError, RecursionError):
+            pass
+    return []
+
+films = {
+    row["id"] for row in csvrows("movies.csv")
+    if row["id"] and any(
+        isinstance(genre, dict) and genre.get("name") in ("Science Fiction", "Sci-Fi")
+        for genre in parse(row["genres"])
+    )
+}
+credits = Counter()
+movies = defaultdict(set)
+credited = set()
+for row in csvrows("credits.csv"):
+    film = row["id"]
+    if film not in films:
+        continue
+    for entry in parse(row["crew"]):
+        person = entry.get("id") if isinstance(entry, dict) else None
+        if type(person) is int and person > 0:
+            credits[person] += 1
+            movies[person].add(film)
+            credited.add(film)
+
+leaders = sorted(credits, key=lambda person: (-credits[person], -len(movies[person]), person))[:5]
+writejson({
+    "films": len(films),
+    "credited_films": len(credited),
+    "appearances": sum(credits.values()),
+    "leaders": [
+        {"id": person, "credits": credits[person], "movies": len(movies[person])}
+        for person in leaders
+    ],
+})

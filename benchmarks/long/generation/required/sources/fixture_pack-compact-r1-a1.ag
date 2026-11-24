@@ -1,0 +1,52 @@
+import csv
+import hashlib
+import io
+import itertools
+import json
+import operator
+from pathlib import Path
+
+factor = r()
+
+def json_bytes(value):
+    return (json.dumps(value) + "\n").encode("utf-8")
+
+def checksum(count, data, golden):
+    return {
+        "records": count,
+        "bytes": len(data),
+        "input_sha256": hashlib.sha256(data).hexdigest(),
+        "golden_sha256": hashlib.sha256(golden).hexdigest(),
+    }
+
+def csv_checksum(path, golden):
+    with open(path, encoding="utf-8", newline="") as source:
+        reader = csv.reader(source)
+        header = next(reader)
+        rows = list(reader)
+    output = io.StringIO(newline="")
+    writer = csv.writer(output, lineterminator="\n")
+    writer.writerow(header)
+    for _ in range(factor):
+        writer.writerows(rows)
+    return checksum(len(rows) * factor, output.getvalue().encode("utf-8"), golden)
+
+words = r("word_counts.in")
+scores = r("sort_scores.in")
+sorted_scores = r("sort_scores.out")
+groups = itertools.groupby(sorted_scores, key=operator.itemgetter(1))
+scaled_sorted = groups:f list(_[1]) * factor:l
+
+j {
+    "late_flights": csv_checksum(
+        "data/tweets.csv",
+        (str(int(Path("late_flights.out").read_bytes()) * factor) + "\n").encode("utf-8"),
+    ),
+    "goal_gap": csv_checksum("data/projects.csv", Path("goal_gap.out").read_bytes()),
+    "word_counts": checksum(
+        len(words) * factor, json_bytes(words * factor), Path("word_counts.out").read_bytes()
+    ),
+    "sort_scores": checksum(
+        len(scores) * factor, json_bytes(scores * factor), json_bytes(scaled_sorted)
+    ),
+}

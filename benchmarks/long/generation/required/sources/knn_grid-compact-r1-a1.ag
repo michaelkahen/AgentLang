@@ -1,0 +1,51 @@
+from math import sqrt
+
+rows = c("samples.csv"):m (_["fold"], int(_["x"]), int(_["y"]), _["label"]):l
+training = rows:w _[0] != "test":l
+holdout = rows:w _[0] == "test":l
+
+def predict(row, pool, k, metric, weights):
+    def distance_key(neighbor):
+        dx = abs(row[1] - neighbor[1])
+        dy = abs(row[2] - neighbor[2])
+        if metric == "euclidean":
+            return dx * dx + dy * dy
+        return dx + dy
+
+    neighbors = sorted(
+        ((distance_key(neighbor), neighbor[3]) for neighbor in pool),
+        key=lambda pair: pair[0],
+    )[:k]
+    scores = {}
+    zero_only = weights == "distance" and neighbors[0][0] == 0
+    for distance, label in neighbors:
+        if zero_only and distance:
+            break
+        vote = 1
+        if weights == "distance" and not zero_only:
+            vote = 1 / (sqrt(distance) if metric == "euclidean" else distance)
+        scores[label] = scores.get(label, 0) + vote
+    return min(scores, key=lambda label: (-scores[label], label))
+
+pools = {
+    fold: [row for row in training if row[0] != fold]
+    for fold in ("0", "1", "2")
+}
+grid = []
+for k in (1, 3, 5):
+    for metric in ("euclidean", "manhattan"):
+        for weights in ("uniform", "distance"):
+            correct = sum(
+                predict(row, pools[row[0]], k, metric, weights) == row[3]
+                for row in training
+            )
+            grid.append(dict(k=k, metric=metric, weights=weights, correct=correct))
+
+best = max(range(len(grid)), key=lambda i: grid[i]["correct"])
+config = grid[best]
+predictions = [
+    predict(row, training, config["k"], config["metric"], config["weights"])
+    for row in holdout
+]
+test_correct = sum(label == row[3] for label, row in zip(predictions, holdout))
+wj(dict(grid=grid, best=best, predictions=predictions, test_correct=test_correct))

@@ -1,0 +1,263 @@
+{
+  "variants": [
+    "base",
+    "edges",
+    "profile",
+    "audit"
+  ],
+  "trial_manifest_sha256": "c866540f67c7701e38362cc5c9803d56074f07a6bd707dca08a7dcebbb11b976",
+  "results": [
+    {
+      "task": "movie_credits",
+      "round": 1,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "cce32ee070e86ffc8416b76115203f0d3fb97a92763574559eead5e28ea3521b",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "movie_credits",
+      "round": 1,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "knn_grid",
+      "round": 1,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "df09b07b23645f1e247446604762736a05496a1dab735ee9921b6da062cfe353",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "knn_grid",
+      "round": 1,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "2c9249c3e57f7dce70ae357d801b1d148970bddb76f8ef1891174b59c50e1964",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "fixture_pack",
+      "round": 1,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "a9fafeac0687d6becffa667fddbae59d3f8692ffa3a37e769fc9724dacb6d3e8",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "fixture_pack",
+      "round": 1,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "58379d98124ea8e849f1ef099ca2711bff71451a77a6c29a4c61c2179c7cf085",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "knn_grid",
+      "round": 2,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "61dae899cf03c2a1361a4ad2c4b889fe04c5178ef3562e514f3f588ec4318635",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "knn_grid",
+      "round": 2,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "cb5f600754f3028d0f27418bf7d4f5fe548771f782ddee1e41fcab729029e7fe",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "fixture_pack",
+      "round": 2,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "d7b43bc0608f3da44eca23d90ea4c7b234cd2ef0dccb1df2591e6c96027c7cbf",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "fixture_pack",
+      "round": 2,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "5887816bd726502c84e38826c640cf5ef75bf0396fa35787cb81734e13e90981",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "movie_credits",
+      "round": 2,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "movie_credits",
+      "round": 2,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "268e183e2be2e5e0d4722f2754001627570175d6f24a79da3c1405922b0e4f56",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "fixture_pack",
+      "round": 3,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "63f1c3148e8f39479bde6545967609c0bfaa61ea32d0f78ece641eed7bdd1846",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "fixture_pack",
+      "round": 3,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "05374116dbae654ba4a8abb88b4897958398991f43bc5d3596e060571b5807ec",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "movie_credits",
+      "round": 3,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "efeb2fdc76dbe4be39727f6624144625219b7c95fd236c15e02a4f4a2040fe35",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "movie_credits",
+      "round": 3,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "knn_grid",
+      "round": 3,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "442e6b111ab1c47acb44270f03bbf927581ed73bb75f979c46de8d4487da45f4",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "knn_grid",
+      "round": 3,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "dc1a347be4418decc19fe3815740445e57f47f242e3c5d9959788abbd233f69c",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    }
+  ]
+}

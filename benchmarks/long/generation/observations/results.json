@@ -1,0 +1,748 @@
+{
+  "model": "gpt-6.2-sol",
+  "reasoning_effort": "low",
+  "rounds": 3,
+  "limits": {
+    "attempts": 3,
+    "attempt_seconds": 90,
+    "trial_seconds": 180,
+    "grading_seconds": 8
+  },
+  "variants": [
+    "base",
+    "edges",
+    "profile"
+  ],
+  "encoding": "o200k_base",
+  "tiktoken": "0.14.0",
+  "cli": "codex-cli 0.170.0",
+  "platform": "macOS-14.8.2-arm64-arm-64bit",
+  "python": "3.12.4",
+  "prompt_task_sha256": {
+    "movie_credits": "f2b3665ef65442049dd6dff41c81b724c800a33d8cdf02e80f56085e19dcd9f1",
+    "knn_grid": "e8255951a1465cc83b1feb821db299fa2286565033d16804e54f3569e823bdbd",
+    "fixture_pack": "4019641f3e73c3c0bd9d9a18f63d27d37957d3503fb0935876e4f9d020265e4e"
+  },
+  "trials": [
+    {
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/movie_credits-python-r1-a1.py",
+          "uses_shorthand": false,
+          "visible_source_tokens": 360,
+          "prompt_tokens": 383,
+          "generation": {
+            "wall_s": 12.1029,
+            "cpu_s": 1.26469,
+            "peak_rss_mib": 162.969,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18825,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 364,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.27621,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 12.38228
+    },
+    {
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+          "uses_shorthand": false,
+          "visible_source_tokens": 377,
+          "prompt_tokens": 528,
+          "generation": {
+            "wall_s": 11.14975,
+            "cpu_s": 1.36179,
+            "peak_rss_mib": 151.734,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18970,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 381,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.19633,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 11.34861
+    },
+    {
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r1-a1.ag",
+          "uses_shorthand": false,
+          "visible_source_tokens": 649,
+          "prompt_tokens": 577,
+          "generation": {
+            "wall_s": 18.85066,
+            "cpu_s": 1.08787,
+            "peak_rss_mib": 163.812,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 19019,
+              "cached_input_tokens": 17536,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 754,
+              "reasoning_output_tokens": 99
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.16578,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 19.01826
+    },
+    {
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/knn_grid-python-r1-a1.py",
+          "uses_shorthand": false,
+          "visible_source_tokens": 496,
+          "prompt_tokens": 432,
+          "generation": {
+            "wall_s": 14.88522,
+            "cpu_s": 1.14085,
+            "peak_rss_mib": 162.672,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18872,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 599,
+              "reasoning_output_tokens": 97
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.20254,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 15.08964
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r1-a1.py",
+          "uses_shorthand": false,
+          "visible_source_tokens": 445,
+          "prompt_tokens": 456,
+          "generation": {
+            "wall_s": 12.99087,
+            "cpu_s": 1.12255,
+            "peak_rss_mib": 167.125,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18898,
+              "cached_input_tokens": 17536,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 470,
+              "reasoning_output_tokens": 19
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.223,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 13.21632
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 1,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+          "uses_shorthand": false,
+          "visible_source_tokens": 413,
+          "prompt_tokens": 601,
+          "generation": {
+            "wall_s": 11.78448,
+            "cpu_s": 1.12332,
+            "peak_rss_mib": 164.531,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 19041,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 417,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.2218,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 12.00966
+    },
+    {
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 2,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/knn_grid-python-r2-a1.py",
+          "uses_shorthand": false,
+          "visible_source_tokens": 567,
+          "prompt_tokens": 432,
+          "generation": {
+            "wall_s": 15.74111,
+            "cpu_s": 1.11357,
+            "peak_rss_mib": 168.188,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18872,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 623,
+              "reasoning_output_tokens": 50
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.15842,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 15.90212
+    },
+    {
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 2,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r2-a1.ag",
+          "uses_shorthand": false,
+          "visible_source_tokens": 477,
+          "prompt_tokens": 577,
+          "generation": {
+            "wall_s": 14.48995,
+            "cpu_s": 1.17704,
+            "peak_rss_mib": 162.203,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 19015,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 543,
+              "reasoning_output_tokens": 60
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.19762,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 14.69006
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 2,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r2-a1.ag",
+          "uses_shorthand": false,
+          "visible_source_tokens": 377,
+          "prompt_tokens": 601,
+          "generation": {
+            "wall_s": 10.98706,
+            "cpu_s": 1.152,
+            "peak_rss_mib": 161.125,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 19039,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 381,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.23278,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 11.22376
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 2,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r2-a1.py",
+          "uses_shorthand": false,
+          "visible_source_tokens": 456,
+          "prompt_tokens": 456,
+          "generation": {
+            "wall_s": 12.91568,
+            "cpu_s": 1.30385,
+            "peak_rss_mib": 157.344,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18898,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 460,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.23578,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 13.15423
+    },
+    {
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 2,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+          "uses_shorthand": false,
+          "visible_source_tokens": 330,
+          "prompt_tokens": 528,
+          "generation": {
+            "wall_s": 10.74374,
+            "cpu_s": 1.12468,
+            "peak_rss_mib": 169.953,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18966,
+              "cached_input_tokens": 17536,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 334,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.19481,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 10.94192
+    },
+    {
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 2,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/movie_credits-python-r2-a1.py",
+          "uses_shorthand": false,
+          "visible_source_tokens": 355,
+          "prompt_tokens": 383,
+          "generation": {
+            "wall_s": 11.21041,
+            "cpu_s": 1.10549,
+            "peak_rss_mib": 163.703,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18825,
+              "cached_input_tokens": 17536,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 359,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.19215,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 11.40533
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "python",
+      "round": 3,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r3-a1.py",
+          "uses_shorthand": false,
+          "visible_source_tokens": 450,
+          "prompt_tokens": 456,
+          "generation": {
+            "wall_s": 12.51535,
+            "cpu_s": 1.10565,
+            "peak_rss_mib": 162.594,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18898,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 454,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.23055,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 12.74819
+    },
+    {
+      "task": "fixture_pack",
+      "arm": "compact",
+      "round": 3,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+          "uses_shorthand": false,
+          "visible_source_tokens": 381,
+          "prompt_tokens": 601,
+          "generation": {
+            "wall_s": 10.65815,
+            "cpu_s": 1.08585,
+            "peak_rss_mib": 168.25,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 19043,
+              "cached_input_tokens": 17536,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 385,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.23695,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 10.89895
+    },
+    {
+      "task": "movie_credits",
+      "arm": "python",
+      "round": 3,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/movie_credits-python-r3-a1.py",
+          "uses_shorthand": false,
+          "visible_source_tokens": 347,
+          "prompt_tokens": 383,
+          "generation": {
+            "wall_s": 10.17438,
+            "cpu_s": 1.05746,
+            "peak_rss_mib": 164.203,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18823,
+              "cached_input_tokens": 17536,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 351,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.19041,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 10.36781
+    },
+    {
+      "task": "movie_credits",
+      "arm": "compact",
+      "round": 3,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+          "uses_shorthand": false,
+          "visible_source_tokens": 331,
+          "prompt_tokens": 528,
+          "generation": {
+            "wall_s": 9.54717,
+            "cpu_s": 1.05541,
+            "peak_rss_mib": 165.984,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18968,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 335,
+              "reasoning_output_tokens": 0
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.18703,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 9.7382
+    },
+    {
+      "task": "knn_grid",
+      "arm": "compact",
+      "round": 3,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r3-a1.ag",
+          "uses_shorthand": false,
+          "visible_source_tokens": 487,
+          "prompt_tokens": 577,
+          "generation": {
+            "wall_s": 14.20333,
+            "cpu_s": 1.06597,
+            "peak_rss_mib": 161.188,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 19019,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 551,
+              "reasoning_output_tokens": 58
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.16154,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 14.36876
+    },
+    {
+      "task": "knn_grid",
+      "arm": "python",
+      "round": 3,
+      "attempts": [
+        {
+          "attempt": 1,
+          "passed": true,
+          "diagnostic": null,
+          "source_path": "benchmarks/long/generation/observations/sources/knn_grid-python-r3-a1.py",
+          "uses_shorthand": false,
+          "visible_source_tokens": 815,
+          "prompt_tokens": 432,
+          "generation": {
+            "wall_s": 22.15237,
+            "cpu_s": 1.09147,
+            "peak_rss_mib": 162.625,
+            "exit": 0,
+            "timed_out": false,
+            "service_usage": {
+              "input_tokens": 18872,
+              "cached_input_tokens": 13696,
+              "cache_write_input_tokens": 0,
+              "output_tokens": 940,
+              "reasoning_output_tokens": 119
+            },
+            "message_count": 1,
+            "non_message_items": []
+          },
+          "validation_s": 0.1559,
+          "fixtures": {
+            "base": "pass",
+            "edges": "pass",
+            "profile": "pass"
+          }
+        }
+      ],
+      "passed": true,
+      "wall_s": 22.31209
+    }
+  ]
+}

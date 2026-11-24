@@ -1,0 +1,50 @@
+import csv
+import hashlib
+import io
+import itertools
+import json
+from pathlib import Path
+
+factor = int(input())
+
+def csv_input(path):
+    with open(path, encoding="utf-8", newline="") as source:
+        reader = csv.reader(source)
+        header = next(reader)
+        rows = list(reader)
+    output = io.StringIO(newline="")
+    writer = csv.writer(output, lineterminator="\n")
+    writer.writerow(header)
+    writer.writerows(rows * factor)
+    return len(rows) * factor, output.getvalue().encode("utf-8")
+
+def json_bytes(value):
+    return (json.dumps(value) + "\n").encode("utf-8")
+
+def json_input(path):
+    rows = readjson(path)
+    return len(rows) * factor, json_bytes(rows * factor)
+
+def checksum(data):
+    return hashlib.sha256(data).hexdigest()
+
+def summarize(scaled_input, golden):
+    records, data = scaled_input
+    return {
+        "records": records,
+        "bytes": len(data),
+        "input_sha256": checksum(data),
+        "golden_sha256": checksum(golden),
+    }
+
+flight_count = int(Path("late_flights.out").read_bytes())
+sorted_scores = []
+for _, group in itertools.groupby(readjson("sort_scores.out"), key=lambda pair: pair[1]):
+    sorted_scores.extend(list(group) * factor)
+
+writejson({
+    "late_flights": summarize(csv_input("data/tweets.csv"), f"{flight_count * factor}\n".encode("utf-8")),
+    "goal_gap": summarize(csv_input("data/projects.csv"), Path("goal_gap.out").read_bytes()),
+    "word_counts": summarize(json_input("word_counts.in"), Path("word_counts.out").read_bytes()),
+    "sort_scores": summarize(json_input("sort_scores.in"), json_bytes(sorted_scores)),
+})

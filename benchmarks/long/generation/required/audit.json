@@ -1,0 +1,179 @@
+{
+  "variants": [
+    "base",
+    "edges",
+    "profile",
+    "audit"
+  ],
+  "trial_manifest_sha256": "1921b7a5390859e0520804f881cab4dbb5d83fe3bd1129c9568483778a0906af",
+  "results": [
+    {
+      "task": "movie_credits",
+      "round": 1,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "8381e42f9c39c20f59e172102e119c3a962d44ca6f5f7d9586953b60c11af70e",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "movie_credits",
+      "round": 1,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "knn_grid",
+      "round": 1,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "f32af592e7aef312c5949ab6ce087285dee91fe99f1f4d64475399ad6f3c219b",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "knn_grid",
+      "round": 1,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "bc828df98bfac0b1cdc38d979e77bb081f805f30d66cc94cf475d315d944a50e",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "fixture_pack",
+      "round": 1,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "afebfe2f9d9b4af523c075e9819401b788f8dc573337113b08a4cb55dac1b0ef",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "fixture_pack",
+      "round": 1,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "34709a1caa172feab70ecf59f356c1222ea11bac180d64eef29e1d0dc79a265e",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "knn_grid",
+      "round": 2,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "1e3f636069290034419f8173dbe63b08ad7f6da9c5871ee8306ed9d49f1cf4c2",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "knn_grid",
+      "round": 2,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "3bfeceec9e13a3ff836307b87de25fa23a0bd02b52c43a973beae692b5a18747",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "fixture_pack",
+      "round": 2,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "c2418f47b20d9af34fbe91674234d40e1877e4ed6f6fa9c8b7a7da96b89532a3",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "fixture_pack",
+      "round": 2,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "fa787ba0f7566bdc97ba54bcb0714c0384dd86310a92e15d60e047b61e78e83e",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "movie_credits",
+      "round": 2,
+      "arm": "compact",
+      "attempt": 1,
+      "source_sha256": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    },
+    {
+      "task": "movie_credits",
+      "round": 2,
+      "arm": "python",
+      "attempt": 1,
+      "source_sha256": "7c50ff0baf1d3ea323dda900d98e79790aa772b774e4ceba3b5e7798858e1905",
+      "checks": {
+        "base": "pass",
+        "edges": "pass",
+        "profile": "pass",
+        "audit": "pass"
+      },
+      "status": "pass"
+    }
+  ]
+}

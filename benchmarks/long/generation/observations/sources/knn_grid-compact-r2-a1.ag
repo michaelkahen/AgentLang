@@ -1,0 +1,47 @@
+from math import sqrt
+
+train, test = [], []
+for row in csvrows("samples.csv"):
+    fold = row["fold"]
+    sample = (fold, int(row["x"]), int(row["y"]), row["label"])
+    (test if fold == "test" else train).append(sample)
+
+def neighbors(sample, metric):
+    fold, x, y, _ = sample
+    distances = []
+    for other_fold, a, b, label in train:
+        if other_fold == fold:
+            continue
+        dx, dy = x - a, y - b
+        distance = sqrt(dx * dx + dy * dy) if metric == "euclidean" else abs(dx) + abs(dy)
+        distances.append((distance, label))
+    distances.sort(key=lambda pair: pair[0])
+    return distances[:5]
+
+def predict(nearest, k, weights):
+    weighted = weights == "distance"
+    zero_only = weighted and nearest[0][0] == 0
+    scores = {}
+    for distance, label in nearest[:k]:
+        if zero_only and distance != 0:
+            break
+        vote = 1 / distance if weighted and not zero_only else 1
+        scores[label] = scores.get(label, 0) + vote
+    return min(scores, key=lambda label: (-scores[label], label))
+
+metrics = ("euclidean", "manhattan")
+validation = {metric: [neighbors(row, metric) for row in train] for metric in metrics}
+grid = []
+for k in (1, 3, 5):
+    for metric in metrics:
+        for weights in ("uniform", "distance"):
+            correct = sum(predict(near, k, weights) == row[3]
+                          for near, row in zip(validation[metric], train))
+            grid.append(dict(k=k, metric=metric, weights=weights, correct=correct))
+
+best = max(range(len(grid)), key=lambda i: grid[i]["correct"])
+config = grid[best]
+predictions = [predict(neighbors(row, config["metric"]), config["k"], config["weights"])
+               for row in test]
+writejson(dict(grid=grid, best=best, predictions=predictions,
+               test_correct=sum(label == row[3] for label, row in zip(predictions, test))))

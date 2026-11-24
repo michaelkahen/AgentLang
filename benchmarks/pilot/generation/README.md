@@ -28,11 +28,11 @@ The model chose its own algorithms. Both Python attempts at the project means us
 
 ## Reproduce
 
-Run these commands at the repository root with Python, `tiktoken`, and an authenticated Codex CLI. Check the collected programs before executing the verification command. To recheck only the bundled trials, skip collection and pass `generation/trials.json` as the input to verification.
+Run these commands at the repository root with Python, `tiktoken`, and an authenticated Codex CLI. Check the collected programs before executing the verification command. To recheck only the bundled trials, skip collection and pass `benchmarks/pilot/generation/trials.json` as the input to verification.
 
 ```sh
-python3 generation/collect.py --out /tmp/agentlang-new-trials.json
-python3 generation/verify.py /tmp/agentlang-new-trials.json --out /tmp/agentlang-scored.json
+python3 benchmarks/pilot/generation/collect.py --out /tmp/agentlang-new-trials.json
+python3 benchmarks/pilot/generation/verify.py /tmp/agentlang-new-trials.json --out /tmp/agentlang-scored.json
 ```
 
 The recorded run used Codex CLI 0.170.0, tiktoken 0.14.0, model `gpt-6.2-sol`, and low reasoning effort. The collector ran one request at a time in an empty temporary directory, with ephemeral sessions, read-only access, and a no-tool instruction. All completions contained a single source response and zero tool calls. Task order rotated across rounds, and each task used both language orderings. The model and service controlled caching. Fresh executions may yield different programs and timings.

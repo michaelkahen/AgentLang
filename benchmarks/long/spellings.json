@@ -1,0 +1,1543 @@
+{
+  "encoding": "o200k_base",
+  "tiktoken": "0.12.0",
+  "scope": "One accepted source per benchmark trial. Duplicates counted per trial. Worked examples are a separate authored set. No model timing is measured here.",
+  "method": "All seven variants of every program have the same compiled Python AST after normalizing unshadowed helper aliases injected by the compiler. Only eligible syntax-site tokens and horizontal pipe padding change. A short helper spelling is conservatively skipped if its name is bound anywhere.",
+  "contrasts": {
+    "long_spaced to long_tight": "remove horizontal pipe padding",
+    "long_tight to colon_long": "switch delimiter from | to :",
+    "colon_long to short_stages": "shorten stage identifiers",
+    "short_stages to short_commands_and_stages": "shorten output command names",
+    "short_commands_and_stages to all_short": "shorten I/O helper names"
+  },
+  "variants": [
+    "authored",
+    "long_spaced",
+    "long_tight",
+    "colon_long",
+    "short_stages",
+    "short_commands_and_stages",
+    "all_short"
+  ],
+  "summary": {
+    "worked_examples": {
+      "programs": 4,
+      "unique_sources": 4,
+      "programs_with_eligible_sites": 4,
+      "programs_with_authored_short_sites": 0,
+      "programs_with_eligible_stage": 4,
+      "programs_with_authored_short_stage": 0,
+      "eligible_sites": {
+        "stage": 8,
+        "command": 4,
+        "helper": 4
+      },
+      "authored_short_sites": {
+        "stage": 0,
+        "command": 0,
+        "helper": 0
+      },
+      "metrics": {
+        "authored": {
+          "bytes": 472,
+          "characters": 472,
+          "tokens": 137
+        },
+        "long_spaced": {
+          "bytes": 472,
+          "characters": 472,
+          "tokens": 137
+        },
+        "long_tight": {
+          "bytes": 456,
+          "characters": 456,
+          "tokens": 136
+        },
+        "colon_long": {
+          "bytes": 456,
+          "characters": 456,
+          "tokens": 132
+        },
+        "short_stages": {
+          "bytes": 426,
+          "characters": 426,
+          "tokens": 129
+        },
+        "short_commands_and_stages": {
+          "bytes": 411,
+          "characters": 411,
+          "tokens": 128
+        },
+        "all_short": {
+          "bytes": 385,
+          "characters": 385,
+          "tokens": 124
+        }
+      }
+    },
+    "short_pilot": {
+      "programs": 8,
+      "unique_sources": 7,
+      "programs_with_eligible_sites": 8,
+      "programs_with_authored_short_sites": 0,
+      "programs_with_eligible_stage": 7,
+      "programs_with_authored_short_stage": 0,
+      "eligible_sites": {
+        "stage": 14,
+        "command": 6,
+        "helper": 8
+      },
+      "authored_short_sites": {
+        "stage": 0,
+        "command": 0,
+        "helper": 0
+      },
+      "metrics": {
+        "authored": {
+          "bytes": 1286,
+          "characters": 1286,
+          "tokens": 358
+        },
+        "long_spaced": {
+          "bytes": 1286,
+          "characters": 1286,
+          "tokens": 358
+        },
+        "long_tight": {
+          "bytes": 1258,
+          "characters": 1258,
+          "tokens": 355
+        },
+        "colon_long": {
+          "bytes": 1258,
+          "characters": 1258,
+          "tokens": 346
+        },
+        "short_stages": {
+          "bytes": 1207,
+          "characters": 1207,
+          "tokens": 344
+        },
+        "short_commands_and_stages": {
+          "bytes": 1183,
+          "characters": 1183,
+          "tokens": 342
+        },
+        "all_short": {
+          "bytes": 1131,
+          "characters": 1131,
+          "tokens": 334
+        }
+      }
+    },
+    "long_free_choice": {
+      "programs": 9,
+      "unique_sources": 9,
+      "programs_with_eligible_sites": 9,
+      "programs_with_authored_short_sites": 0,
+      "programs_with_eligible_stage": 0,
+      "programs_with_authored_short_stage": 0,
+      "eligible_sites": {
+        "stage": 0,
+        "command": 0,
+        "helper": 23
+      },
+      "authored_short_sites": {
+        "stage": 0,
+        "command": 0,
+        "helper": 0
+      },
+      "metrics": {
+        "authored": {
+          "bytes": 15303,
+          "characters": 15303,
+          "tokens": 3822
+        },
+        "long_spaced": {
+          "bytes": 15303,
+          "characters": 15303,
+          "tokens": 3822
+        },
+        "long_tight": {
+          "bytes": 15303,
+          "characters": 15303,
+          "tokens": 3822
+        },
+        "colon_long": {
+          "bytes": 15303,
+          "characters": 15303,
+          "tokens": 3822
+        },
+        "short_stages": {
+          "bytes": 15303,
+          "characters": 15303,
+          "tokens": 3822
+        },
+        "short_commands_and_stages": {
+          "bytes": 15303,
+          "characters": 15303,
+          "tokens": 3822
+        },
+        "all_short": {
+          "bytes": 15151,
+          "characters": 15151,
+          "tokens": 3799
+        }
+      }
+    },
+    "long_required": {
+      "programs": 6,
+      "unique_sources": 6,
+      "programs_with_eligible_sites": 6,
+      "programs_with_authored_short_sites": 6,
+      "programs_with_eligible_stage": 6,
+      "programs_with_authored_short_stage": 6,
+      "eligible_sites": {
+        "stage": 20,
+        "command": 1,
+        "helper": 16
+      },
+      "authored_short_sites": {
+        "stage": 20,
+        "command": 1,
+        "helper": 16
+      },
+      "metrics": {
+        "authored": {
+          "bytes": 9517,
+          "characters": 9517,
+          "tokens": 2437
+        },
+        "long_spaced": {
+          "bytes": 9734,
+          "characters": 9734,
+          "tokens": 2473
+        },
+        "long_tight": {
+          "bytes": 9694,
+          "characters": 9694,
+          "tokens": 2467
+        },
+        "colon_long": {
+          "bytes": 9694,
+          "characters": 9694,
+          "tokens": 2462
+        },
+        "short_stages": {
+          "bytes": 9629,
+          "characters": 9629,
+          "tokens": 2454
+        },
+        "short_commands_and_stages": {
+          "bytes": 9623,
+          "characters": 9623,
+          "tokens": 2453
+        },
+        "all_short": {
+          "bytes": 9517,
+          "characters": 9517,
+          "tokens": 2437
+        }
+      }
+    }
+  },
+  "programs": {
+    "worked_examples": [
+      {
+        "source": "examples/goal_gap.ag",
+        "sha256": "9b7a0da45d869396c4805d3d2056a964227857d270ee839fc42fbbd4382c0159",
+        "eligible_sites": {
+          "helper": 1,
+          "stage": 2,
+          "command": 1
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 205,
+            "characters": 205,
+            "tokens": 52
+          },
+          "long_spaced": {
+            "bytes": 205,
+            "characters": 205,
+            "tokens": 52
+          },
+          "long_tight": {
+            "bytes": 201,
+            "characters": 201,
+            "tokens": 52
+          },
+          "colon_long": {
+            "bytes": 201,
+            "characters": 201,
+            "tokens": 52
+          },
+          "short_stages": {
+            "bytes": 194,
+            "characters": 194,
+            "tokens": 50
+          },
+          "short_commands_and_stages": {
+            "bytes": 191,
+            "characters": 191,
+            "tokens": 50
+          },
+          "all_short": {
+            "bytes": 185,
+            "characters": 185,
+            "tokens": 49
+          }
+        }
+      },
+      {
+        "source": "examples/late_flights.ag",
+        "sha256": "a589da3d922db330400e0f226a9f9bfb83b41632669378856baedd5f00385ca9",
+        "eligible_sites": {
+          "helper": 1,
+          "command": 1,
+          "stage": 2
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 171,
+            "characters": 171,
+            "tokens": 52
+          },
+          "long_spaced": {
+            "bytes": 171,
+            "characters": 171,
+            "tokens": 52
+          },
+          "long_tight": {
+            "bytes": 167,
+            "characters": 167,
+            "tokens": 51
+          },
+          "colon_long": {
+            "bytes": 167,
+            "characters": 167,
+            "tokens": 51
+          },
+          "short_stages": {
+            "bytes": 159,
+            "characters": 159,
+            "tokens": 50
+          },
+          "short_commands_and_stages": {
+            "bytes": 156,
+            "characters": 156,
+            "tokens": 50
+          },
+          "all_short": {
+            "bytes": 150,
+            "characters": 150,
+            "tokens": 49
+          }
+        }
+      },
+      {
+        "source": "examples/sort_scores.ag",
+        "sha256": "cf12bed26e173ea398b8d9c5be19e30d13b0c496951b8d8abb457534ae4a87cc",
+        "eligible_sites": {
+          "command": 1,
+          "helper": 1,
+          "stage": 1
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 31,
+            "characters": 31,
+            "tokens": 11
+          },
+          "long_spaced": {
+            "bytes": 31,
+            "characters": 31,
+            "tokens": 11
+          },
+          "long_tight": {
+            "bytes": 29,
+            "characters": 29,
+            "tokens": 11
+          },
+          "colon_long": {
+            "bytes": 29,
+            "characters": 29,
+            "tokens": 10
+          },
+          "short_stages": {
+            "bytes": 26,
+            "characters": 26,
+            "tokens": 10
+          },
+          "short_commands_and_stages": {
+            "bytes": 20,
+            "characters": 20,
+            "tokens": 9
+          },
+          "all_short": {
+            "bytes": 13,
+            "characters": 13,
+            "tokens": 8
+          }
+        }
+      },
+      {
+        "source": "examples/word_counts.ag",
+        "sha256": "a225efe1a1a5e322aea6a432e9b70c1729fe9b0854deec710b976a4dd06d3879",
+        "eligible_sites": {
+          "helper": 1,
+          "stage": 3,
+          "command": 1
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 65,
+            "characters": 65,
+            "tokens": 22
+          },
+          "long_spaced": {
+            "bytes": 65,
+            "characters": 65,
+            "tokens": 22
+          },
+          "long_tight": {
+            "bytes": 59,
+            "characters": 59,
+            "tokens": 22
+          },
+          "colon_long": {
+            "bytes": 59,
+            "characters": 59,
+            "tokens": 19
+          },
+          "short_stages": {
+            "bytes": 47,
+            "characters": 47,
+            "tokens": 19
+          },
+          "short_commands_and_stages": {
+            "bytes": 44,
+            "characters": 44,
+            "tokens": 19
+          },
+          "all_short": {
+            "bytes": 37,
+            "characters": 37,
+            "tokens": 18
+          }
+        }
+      }
+    ],
+    "short_pilot": [
+      {
+        "source": "benchmarks/pilot/generation/trials.json#compact/late_flights/round-1",
+        "sha256": "3c8b20b3b9ce7c63bde383a13f30dc58f92c860d83ab81df0cb84a957479a056",
+        "eligible_sites": {
+          "command": 1,
+          "helper": 1,
+          "stage": 2
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 158,
+            "characters": 158,
+            "tokens": 48
+          },
+          "long_spaced": {
+            "bytes": 158,
+            "characters": 158,
+            "tokens": 48
+          },
+          "long_tight": {
+            "bytes": 154,
+            "characters": 154,
+            "tokens": 47
+          },
+          "colon_long": {
+            "bytes": 154,
+            "characters": 154,
+            "tokens": 46
+          },
+          "short_stages": {
+            "bytes": 146,
+            "characters": 146,
+            "tokens": 46
+          },
+          "short_commands_and_stages": {
+            "bytes": 143,
+            "characters": 143,
+            "tokens": 46
+          },
+          "all_short": {
+            "bytes": 137,
+            "characters": 137,
+            "tokens": 45
+          }
+        }
+      },
+      {
+        "source": "benchmarks/pilot/generation/trials.json#compact/goal_gap/round-1",
+        "sha256": "0c93eb4b17a3032bcc3aec4aacc135f4452b72f8af444898dfe92c7ab2d49aa9",
+        "eligible_sites": {
+          "helper": 1,
+          "stage": 4,
+          "command": 1
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 233,
+            "characters": 233,
+            "tokens": 63
+          },
+          "long_spaced": {
+            "bytes": 233,
+            "characters": 233,
+            "tokens": 63
+          },
+          "long_tight": {
+            "bytes": 225,
+            "characters": 225,
+            "tokens": 61
+          },
+          "colon_long": {
+            "bytes": 225,
+            "characters": 225,
+            "tokens": 61
+          },
+          "short_stages": {
+            "bytes": 211,
+            "characters": 211,
+            "tokens": 59
+          },
+          "short_commands_and_stages": {
+            "bytes": 208,
+            "characters": 208,
+            "tokens": 59
+          },
+          "all_short": {
+            "bytes": 202,
+            "characters": 202,
+            "tokens": 58
+          }
+        }
+      },
+      {
+        "source": "benchmarks/pilot/generation/trials.json#compact/word_counts/round-1",
+        "sha256": "7cb1b2faf6fb15ef7a2c98a08392d38c525c320844ee1c45319a031f24fb5dc5",
+        "eligible_sites": {
+          "helper": 1,
+          "stage": 3,
+          "command": 1
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 68,
+            "characters": 68,
+            "tokens": 22
+          },
+          "long_spaced": {
+            "bytes": 68,
+            "characters": 68,
+            "tokens": 22
+          },
+          "long_tight": {
+            "bytes": 62,
+            "characters": 62,
+            "tokens": 22
+          },
+          "colon_long": {
+            "bytes": 62,
+            "characters": 62,
+            "tokens": 19
+          },
+          "short_stages": {
+            "bytes": 50,
+            "characters": 50,
+            "tokens": 19
+          },
+          "short_commands_and_stages": {
+            "bytes": 47,
+            "characters": 47,
+            "tokens": 19
+          },
+          "all_short": {
+            "bytes": 40,
+            "characters": 40,
+            "tokens": 18
+          }
+        }
+      },
+      {
+        "source": "benchmarks/pilot/generation/trials.json#compact/sort_scores/round-1",
+        "sha256": "49807621531e75494858adb739c38a24fcc0f49e9889de52da31c62a610ef2b7",
+        "eligible_sites": {
+          "command": 1,
+          "helper": 1,
+          "stage": 1
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 30,
+            "characters": 30,
+            "tokens": 11
+          },
+          "long_spaced": {
+            "bytes": 30,
+            "characters": 30,
+            "tokens": 11
+          },
+          "long_tight": {
+            "bytes": 28,
+            "characters": 28,
+            "tokens": 11
+          },
+          "colon_long": {
+            "bytes": 28,
+            "characters": 28,
+            "tokens": 10
+          },
+          "short_stages": {
+            "bytes": 25,
+            "characters": 25,
+            "tokens": 10
+          },
+          "short_commands_and_stages": {
+            "bytes": 19,
+            "characters": 19,
+            "tokens": 9
+          },
+          "all_short": {
+            "bytes": 12,
+            "characters": 12,
+            "tokens": 8
+          }
+        }
+      },
+      {
+        "source": "benchmarks/pilot/generation/trials.json#compact/goal_gap/round-2",
+        "sha256": "b384822add771ca97f923ef3548ced0ccdbf766343cacdd4fa1a2564f96695fa",
+        "eligible_sites": {
+          "helper": 1
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 505,
+            "characters": 505,
+            "tokens": 130
+          },
+          "long_spaced": {
+            "bytes": 505,
+            "characters": 505,
+            "tokens": 130
+          },
+          "long_tight": {
+            "bytes": 505,
+            "characters": 505,
+            "tokens": 130
+          },
+          "colon_long": {
+            "bytes": 505,
+            "characters": 505,
+            "tokens": 130
+          },
+          "short_stages": {
+            "bytes": 505,
+            "characters": 505,
+            "tokens": 130
+          },
+          "short_commands_and_stages": {
+            "bytes": 505,
+            "characters": 505,
+            "tokens": 130
+          },
+          "all_short": {
+            "bytes": 499,
+            "characters": 499,
+            "tokens": 129
+          }
+        }
+      },
+      {
+        "source": "benchmarks/pilot/generation/trials.json#compact/word_counts/round-2",
+        "sha256": "4c8baa4812cdc1a5be5f2323a79aad6e1e50ac6acef39f55442a858bef28e079",
+        "eligible_sites": {
+          "helper": 1,
+          "stage": 1
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 110,
+            "characters": 110,
+            "tokens": 29
+          },
+          "long_spaced": {
+            "bytes": 110,
+            "characters": 110,
+            "tokens": 29
+          },
+          "long_tight": {
+            "bytes": 108,
+            "characters": 108,
+            "tokens": 29
+          },
+          "colon_long": {
+            "bytes": 108,
+            "characters": 108,
+            "tokens": 28
+          },
+          "short_stages": {
+            "bytes": 105,
+            "characters": 105,
+            "tokens": 28
+          },
+          "short_commands_and_stages": {
+            "bytes": 105,
+            "characters": 105,
+            "tokens": 28
+          },
+          "all_short": {
+            "bytes": 98,
+            "characters": 98,
+            "tokens": 27
+          }
+        }
+      },
+      {
+        "source": "benchmarks/pilot/generation/trials.json#compact/sort_scores/round-2",
+        "sha256": "49807621531e75494858adb739c38a24fcc0f49e9889de52da31c62a610ef2b7",
+        "eligible_sites": {
+          "command": 1,
+          "helper": 1,
+          "stage": 1
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 30,
+            "characters": 30,
+            "tokens": 11
+          },
+          "long_spaced": {
+            "bytes": 30,
+            "characters": 30,
+            "tokens": 11
+          },
+          "long_tight": {
+            "bytes": 28,
+            "characters": 28,
+            "tokens": 11
+          },
+          "colon_long": {
+            "bytes": 28,
+            "characters": 28,
+            "tokens": 10
+          },
+          "short_stages": {
+            "bytes": 25,
+            "characters": 25,
+            "tokens": 10
+          },
+          "short_commands_and_stages": {
+            "bytes": 19,
+            "characters": 19,
+            "tokens": 9
+          },
+          "all_short": {
+            "bytes": 12,
+            "characters": 12,
+            "tokens": 8
+          }
+        }
+      },
+      {
+        "source": "benchmarks/pilot/generation/trials.json#compact/late_flights/round-2",
+        "sha256": "a3259bce8bdd8c6fd6af9faba97d0c5b3e780663d159e354ba36a237429d33ab",
+        "eligible_sites": {
+          "command": 1,
+          "helper": 1,
+          "stage": 2
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 152,
+            "characters": 152,
+            "tokens": 44
+          },
+          "long_spaced": {
+            "bytes": 152,
+            "characters": 152,
+            "tokens": 44
+          },
+          "long_tight": {
+            "bytes": 148,
+            "characters": 148,
+            "tokens": 44
+          },
+          "colon_long": {
+            "bytes": 148,
+            "characters": 148,
+            "tokens": 42
+          },
+          "short_stages": {
+            "bytes": 140,
+            "characters": 140,
+            "tokens": 42
+          },
+          "short_commands_and_stages": {
+            "bytes": 137,
+            "characters": 137,
+            "tokens": 42
+          },
+          "all_short": {
+            "bytes": 131,
+            "characters": 131,
+            "tokens": 41
+          }
+        }
+      }
+    ],
+    "long_free_choice": [
+      {
+        "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r1-a1.ag#round-1",
+        "sha256": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd",
+        "eligible_sites": {
+          "helper": 3
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1510,
+            "characters": 1510,
+            "tokens": 377
+          },
+          "long_spaced": {
+            "bytes": 1510,
+            "characters": 1510,
+            "tokens": 377
+          },
+          "long_tight": {
+            "bytes": 1510,
+            "characters": 1510,
+            "tokens": 377
+          },
+          "colon_long": {
+            "bytes": 1510,
+            "characters": 1510,
+            "tokens": 377
+          },
+          "short_stages": {
+            "bytes": 1510,
+            "characters": 1510,
+            "tokens": 377
+          },
+          "short_commands_and_stages": {
+            "bytes": 1510,
+            "characters": 1510,
+            "tokens": 377
+          },
+          "all_short": {
+            "bytes": 1491,
+            "characters": 1491,
+            "tokens": 374
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/observations/sources/knn_grid-compact-r1-a1.ag#round-1",
+        "sha256": "df09b07b23645f1e247446604762736a05496a1dab735ee9921b6da062cfe353",
+        "eligible_sites": {
+          "helper": 2
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 2536,
+            "characters": 2536,
+            "tokens": 649
+          },
+          "long_spaced": {
+            "bytes": 2536,
+            "characters": 2536,
+            "tokens": 649
+          },
+          "long_tight": {
+            "bytes": 2536,
+            "characters": 2536,
+            "tokens": 649
+          },
+          "colon_long": {
+            "bytes": 2536,
+            "characters": 2536,
+            "tokens": 649
+          },
+          "short_stages": {
+            "bytes": 2536,
+            "characters": 2536,
+            "tokens": 649
+          },
+          "short_commands_and_stages": {
+            "bytes": 2536,
+            "characters": 2536,
+            "tokens": 649
+          },
+          "all_short": {
+            "bytes": 2523,
+            "characters": 2523,
+            "tokens": 647
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r1-a1.ag#round-1",
+        "sha256": "58379d98124ea8e849f1ef099ca2711bff71451a77a6c29a4c61c2179c7cf085",
+        "eligible_sites": {
+          "helper": 3
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1647,
+            "characters": 1647,
+            "tokens": 413
+          },
+          "long_spaced": {
+            "bytes": 1647,
+            "characters": 1647,
+            "tokens": 413
+          },
+          "long_tight": {
+            "bytes": 1647,
+            "characters": 1647,
+            "tokens": 413
+          },
+          "colon_long": {
+            "bytes": 1647,
+            "characters": 1647,
+            "tokens": 413
+          },
+          "short_stages": {
+            "bytes": 1647,
+            "characters": 1647,
+            "tokens": 413
+          },
+          "short_commands_and_stages": {
+            "bytes": 1647,
+            "characters": 1647,
+            "tokens": 413
+          },
+          "all_short": {
+            "bytes": 1626,
+            "characters": 1626,
+            "tokens": 410
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/observations/sources/knn_grid-compact-r2-a1.ag#round-2",
+        "sha256": "cb5f600754f3028d0f27418bf7d4f5fe548771f782ddee1e41fcab729029e7fe",
+        "eligible_sites": {
+          "helper": 2
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1854,
+            "characters": 1854,
+            "tokens": 477
+          },
+          "long_spaced": {
+            "bytes": 1854,
+            "characters": 1854,
+            "tokens": 477
+          },
+          "long_tight": {
+            "bytes": 1854,
+            "characters": 1854,
+            "tokens": 477
+          },
+          "colon_long": {
+            "bytes": 1854,
+            "characters": 1854,
+            "tokens": 477
+          },
+          "short_stages": {
+            "bytes": 1854,
+            "characters": 1854,
+            "tokens": 477
+          },
+          "short_commands_and_stages": {
+            "bytes": 1854,
+            "characters": 1854,
+            "tokens": 477
+          },
+          "all_short": {
+            "bytes": 1841,
+            "characters": 1841,
+            "tokens": 475
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r2-a1.ag#round-2",
+        "sha256": "d7b43bc0608f3da44eca23d90ea4c7b234cd2ef0dccb1df2591e6c96027c7cbf",
+        "eligible_sites": {
+          "helper": 2
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1578,
+            "characters": 1578,
+            "tokens": 377
+          },
+          "long_spaced": {
+            "bytes": 1578,
+            "characters": 1578,
+            "tokens": 377
+          },
+          "long_tight": {
+            "bytes": 1578,
+            "characters": 1578,
+            "tokens": 377
+          },
+          "colon_long": {
+            "bytes": 1578,
+            "characters": 1578,
+            "tokens": 377
+          },
+          "short_stages": {
+            "bytes": 1578,
+            "characters": 1578,
+            "tokens": 377
+          },
+          "short_commands_and_stages": {
+            "bytes": 1578,
+            "characters": 1578,
+            "tokens": 377
+          },
+          "all_short": {
+            "bytes": 1564,
+            "characters": 1564,
+            "tokens": 375
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r2-a1.ag#round-2",
+        "sha256": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c",
+        "eligible_sites": {
+          "helper": 3
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1330,
+            "characters": 1330,
+            "tokens": 330
+          },
+          "long_spaced": {
+            "bytes": 1330,
+            "characters": 1330,
+            "tokens": 330
+          },
+          "long_tight": {
+            "bytes": 1330,
+            "characters": 1330,
+            "tokens": 330
+          },
+          "colon_long": {
+            "bytes": 1330,
+            "characters": 1330,
+            "tokens": 330
+          },
+          "short_stages": {
+            "bytes": 1330,
+            "characters": 1330,
+            "tokens": 330
+          },
+          "short_commands_and_stages": {
+            "bytes": 1330,
+            "characters": 1330,
+            "tokens": 330
+          },
+          "all_short": {
+            "bytes": 1311,
+            "characters": 1311,
+            "tokens": 327
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r3-a1.ag#round-3",
+        "sha256": "05374116dbae654ba4a8abb88b4897958398991f43bc5d3596e060571b5807ec",
+        "eligible_sites": {
+          "helper": 3
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1603,
+            "characters": 1603,
+            "tokens": 381
+          },
+          "long_spaced": {
+            "bytes": 1603,
+            "characters": 1603,
+            "tokens": 381
+          },
+          "long_tight": {
+            "bytes": 1603,
+            "characters": 1603,
+            "tokens": 381
+          },
+          "colon_long": {
+            "bytes": 1603,
+            "characters": 1603,
+            "tokens": 381
+          },
+          "short_stages": {
+            "bytes": 1603,
+            "characters": 1603,
+            "tokens": 381
+          },
+          "short_commands_and_stages": {
+            "bytes": 1603,
+            "characters": 1603,
+            "tokens": 381
+          },
+          "all_short": {
+            "bytes": 1582,
+            "characters": 1582,
+            "tokens": 378
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r3-a1.ag#round-3",
+        "sha256": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c",
+        "eligible_sites": {
+          "helper": 3
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1349,
+            "characters": 1349,
+            "tokens": 331
+          },
+          "long_spaced": {
+            "bytes": 1349,
+            "characters": 1349,
+            "tokens": 331
+          },
+          "long_tight": {
+            "bytes": 1349,
+            "characters": 1349,
+            "tokens": 331
+          },
+          "colon_long": {
+            "bytes": 1349,
+            "characters": 1349,
+            "tokens": 331
+          },
+          "short_stages": {
+            "bytes": 1349,
+            "characters": 1349,
+            "tokens": 331
+          },
+          "short_commands_and_stages": {
+            "bytes": 1349,
+            "characters": 1349,
+            "tokens": 331
+          },
+          "all_short": {
+            "bytes": 1330,
+            "characters": 1330,
+            "tokens": 328
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/observations/sources/knn_grid-compact-r3-a1.ag#round-3",
+        "sha256": "442e6b111ab1c47acb44270f03bbf927581ed73bb75f979c46de8d4487da45f4",
+        "eligible_sites": {
+          "helper": 2
+        },
+        "authored_short_sites": {},
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1896,
+            "characters": 1896,
+            "tokens": 487
+          },
+          "long_spaced": {
+            "bytes": 1896,
+            "characters": 1896,
+            "tokens": 487
+          },
+          "long_tight": {
+            "bytes": 1896,
+            "characters": 1896,
+            "tokens": 487
+          },
+          "colon_long": {
+            "bytes": 1896,
+            "characters": 1896,
+            "tokens": 487
+          },
+          "short_stages": {
+            "bytes": 1896,
+            "characters": 1896,
+            "tokens": 487
+          },
+          "short_commands_and_stages": {
+            "bytes": 1896,
+            "characters": 1896,
+            "tokens": 487
+          },
+          "all_short": {
+            "bytes": 1883,
+            "characters": 1883,
+            "tokens": 485
+          }
+        }
+      }
+    ],
+    "long_required": [
+      {
+        "source": "benchmarks/long/generation/required/sources/movie_credits-compact-r1-a1.ag#round-1",
+        "sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7",
+        "eligible_sites": {
+          "helper": 3,
+          "stage": 4
+        },
+        "authored_short_sites": {
+          "helper": 3,
+          "stage": 4
+        },
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1506,
+            "characters": 1506,
+            "tokens": 372
+          },
+          "long_spaced": {
+            "bytes": 1546,
+            "characters": 1546,
+            "tokens": 379
+          },
+          "long_tight": {
+            "bytes": 1538,
+            "characters": 1538,
+            "tokens": 378
+          },
+          "colon_long": {
+            "bytes": 1538,
+            "characters": 1538,
+            "tokens": 376
+          },
+          "short_stages": {
+            "bytes": 1525,
+            "characters": 1525,
+            "tokens": 375
+          },
+          "short_commands_and_stages": {
+            "bytes": 1525,
+            "characters": 1525,
+            "tokens": 375
+          },
+          "all_short": {
+            "bytes": 1506,
+            "characters": 1506,
+            "tokens": 372
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/required/sources/knn_grid-compact-r1-a1.ag#round-1",
+        "sha256": "f32af592e7aef312c5949ab6ce087285dee91fe99f1f4d64475399ad6f3c219b",
+        "eligible_sites": {
+          "helper": 2,
+          "stage": 6
+        },
+        "authored_short_sites": {
+          "helper": 2,
+          "stage": 6
+        },
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1816,
+            "characters": 1816,
+            "tokens": 495
+          },
+          "long_spaced": {
+            "bytes": 1860,
+            "characters": 1860,
+            "tokens": 502
+          },
+          "long_tight": {
+            "bytes": 1848,
+            "characters": 1848,
+            "tokens": 500
+          },
+          "colon_long": {
+            "bytes": 1848,
+            "characters": 1848,
+            "tokens": 499
+          },
+          "short_stages": {
+            "bytes": 1829,
+            "characters": 1829,
+            "tokens": 497
+          },
+          "short_commands_and_stages": {
+            "bytes": 1829,
+            "characters": 1829,
+            "tokens": 497
+          },
+          "all_short": {
+            "bytes": 1816,
+            "characters": 1816,
+            "tokens": 495
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/required/sources/fixture_pack-compact-r1-a1.ag#round-1",
+        "sha256": "34709a1caa172feab70ecf59f356c1222ea11bac180d64eef29e1d0dc79a265e",
+        "eligible_sites": {
+          "helper": 4,
+          "stage": 2,
+          "command": 1
+        },
+        "authored_short_sites": {
+          "helper": 4,
+          "stage": 2,
+          "command": 1
+        },
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1588,
+            "characters": 1588,
+            "tokens": 393
+          },
+          "long_spaced": {
+            "bytes": 1632,
+            "characters": 1632,
+            "tokens": 400
+          },
+          "long_tight": {
+            "bytes": 1628,
+            "characters": 1628,
+            "tokens": 400
+          },
+          "colon_long": {
+            "bytes": 1628,
+            "characters": 1628,
+            "tokens": 399
+          },
+          "short_stages": {
+            "bytes": 1622,
+            "characters": 1622,
+            "tokens": 398
+          },
+          "short_commands_and_stages": {
+            "bytes": 1616,
+            "characters": 1616,
+            "tokens": 397
+          },
+          "all_short": {
+            "bytes": 1588,
+            "characters": 1588,
+            "tokens": 393
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/required/sources/knn_grid-compact-r2-a1.ag#round-2",
+        "sha256": "3bfeceec9e13a3ff836307b87de25fa23a0bd02b52c43a973beae692b5a18747",
+        "eligible_sites": {
+          "helper": 2,
+          "stage": 4
+        },
+        "authored_short_sites": {
+          "helper": 2,
+          "stage": 4
+        },
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1698,
+            "characters": 1698,
+            "tokens": 465
+          },
+          "long_spaced": {
+            "bytes": 1733,
+            "characters": 1733,
+            "tokens": 471
+          },
+          "long_tight": {
+            "bytes": 1725,
+            "characters": 1725,
+            "tokens": 469
+          },
+          "colon_long": {
+            "bytes": 1725,
+            "characters": 1725,
+            "tokens": 469
+          },
+          "short_stages": {
+            "bytes": 1711,
+            "characters": 1711,
+            "tokens": 467
+          },
+          "short_commands_and_stages": {
+            "bytes": 1711,
+            "characters": 1711,
+            "tokens": 467
+          },
+          "all_short": {
+            "bytes": 1698,
+            "characters": 1698,
+            "tokens": 465
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/required/sources/fixture_pack-compact-r2-a1.ag#round-2",
+        "sha256": "c2418f47b20d9af34fbe91674234d40e1877e4ed6f6fa9c8b7a7da96b89532a3",
+        "eligible_sites": {
+          "helper": 2,
+          "stage": 2
+        },
+        "authored_short_sites": {
+          "helper": 2,
+          "stage": 2
+        },
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1474,
+            "characters": 1474,
+            "tokens": 361
+          },
+          "long_spaced": {
+            "bytes": 1498,
+            "characters": 1498,
+            "tokens": 365
+          },
+          "long_tight": {
+            "bytes": 1494,
+            "characters": 1494,
+            "tokens": 365
+          },
+          "colon_long": {
+            "bytes": 1494,
+            "characters": 1494,
+            "tokens": 364
+          },
+          "short_stages": {
+            "bytes": 1488,
+            "characters": 1488,
+            "tokens": 363
+          },
+          "short_commands_and_stages": {
+            "bytes": 1488,
+            "characters": 1488,
+            "tokens": 363
+          },
+          "all_short": {
+            "bytes": 1474,
+            "characters": 1474,
+            "tokens": 361
+          }
+        }
+      },
+      {
+        "source": "benchmarks/long/generation/required/sources/movie_credits-compact-r2-a1.ag#round-2",
+        "sha256": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49",
+        "eligible_sites": {
+          "stage": 2,
+          "helper": 3
+        },
+        "authored_short_sites": {
+          "stage": 2,
+          "helper": 3
+        },
+        "excluded_candidates": {},
+        "metrics": {
+          "authored": {
+            "bytes": 1435,
+            "characters": 1435,
+            "tokens": 351
+          },
+          "long_spaced": {
+            "bytes": 1465,
+            "characters": 1465,
+            "tokens": 356
+          },
+          "long_tight": {
+            "bytes": 1461,
+            "characters": 1461,
+            "tokens": 355
+          },
+          "colon_long": {
+            "bytes": 1461,
+            "characters": 1461,
+            "tokens": 355
+          },
+          "short_stages": {
+            "bytes": 1454,
+            "characters": 1454,
+            "tokens": 354
+          },
+          "short_commands_and_stages": {
+            "bytes": 1454,
+            "characters": 1454,
+            "tokens": 354
+          },
+          "all_short": {
+            "bytes": 1435,
+            "characters": 1435,
+            "tokens": 351
+          }
+        }
+      }
+    ]
+  }
+}
