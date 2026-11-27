@@ -35,7 +35,9 @@ An ordinary Python statement can host a pipeline. The compiler binds `_` to the 
 
 The compile command embeds the helper functions it needs in the output. The run command binds those functions in memory. Plain Python can also import these functions directly from `agentlang.helpers`. The benchmark preloads the same functions for both languages. [Language reference](docs/language.md) · [Short reference for agent prompts](docs/agent-reference.txt)
 
-## Latest optimization results
+## Faster startup and shorter scripts
+
+Existing scripts pick up the speed improvements when run with the updated CLI. The common `run file.ag` path skips argument-parser setup, the compiler reuses its first scan of record expressions, and pipelines that rank records by a literal field use Python's `operator.itemgetter`.
 
 Across 512 measured launches of 16 existing scripts, the updated CLI cut median paired wall time by **11.7% on audit inputs** and **6.0% on larger inputs**. For programs using the previous release's record shorthand, in-memory preparation used **26.8% less CPU** on the archived script cohort and **28.9% less** on repository tools.
 
@@ -79,11 +81,7 @@ The earlier [long-script study](benchmarks/long/README.md) found 7.6% fewer sour
 | Path | What to look at |
 | --- | --- |
 | [Compiler](agentlang/compiler.py) | Stage recognition, Python translation and helper injection |
-| [Second optimization study](benchmarks/optimization/README.md) | Word literals, compiler passes, ranking, helper and fresh-launch measurements |
-| [Scripting study](benchmarks/scripting/README.md) | Syntax comparisons on two tokenizers, CSV and compiler alternatives, and before/after CLI timings |
-| [Pattern study](benchmarks/patterns/README.md) | Token inventory, fixed-source substitutions, live matched trials, batching and process measurements |
-| [Long-script study](benchmarks/long/README.md) | Workloads, paired trials, repair budgets, independent verification and resource profiles |
-| [Short-script pilot](benchmarks/pilot/README.md) | The original four-task experiment, including the Python helper control |
+| [Benchmark reports](benchmarks/README.md) | Guide to all five studies, their measurements and reproduction instructions |
 | [Runnable short example](examples/terse/paid_total.ag) | A complete stdin-to-stdout script |
 
 The compiler runs from a checkout with no third-party dependencies. The following commands install the `agentlang` command and optional tokenizer, then run the tests.
