@@ -44,7 +44,6 @@ def writejson(value):
 
 def parsevalue(text, default=None):
     """Read JSON or a Python literal, returning default when neither parses."""
-    import ast
     import json
 
     try:
@@ -53,6 +52,8 @@ def parsevalue(text, default=None):
         pass
     if not _ag_builtins.isinstance(text, _ag_builtins.str):
         return default
+    import ast
+
     try:
         return ast.literal_eval(text.strip())
     except (_ag_builtins.ValueError, _ag_builtins.TypeError, _ag_builtins.SyntaxError,

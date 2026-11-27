@@ -1,0 +1,694 @@
+{
+  "baseline": "0e896bc4efcdf0d93b012dbf181b73e4f99f05d1",
+  "python": "3.12.4",
+  "platform": "macOS-14.8.2-arm64-arm-64bit",
+  "seed": 170314,
+  "programs": {
+    "records": [
+      ":s _$score",
+      ":k _$score",
+      ":x _$score",
+      ":t limit, _$score",
+      ":s _?score",
+      ":s -_$score",
+      ":s (_$score, _$id)",
+      ":t limit, (_$score, _$id)",
+      ":s _$score:l",
+      ":s _$score:n",
+      ":t limit, _$score:l",
+      ":t limit, _$score:n"
+    ],
+    "pairs": [
+      ":s _[1]",
+      ":k _[1]",
+      ":x _[1]",
+      ":t limit, _[1]",
+      ":s _[-1]",
+      ":s _[len(_) - 1]",
+      ":s _:l",
+      ":t limit, _:n"
+    ],
+    "numbers": [
+      ":s _",
+      ":k _",
+      ":x _",
+      ":t limit, _",
+      ":s:l:n",
+      ":l:n",
+      ":l:l",
+      ":c limit:l",
+      ":c limit:n",
+      ":w _ > 0:n",
+      ":m _ * 3:w _ < 30:l",
+      ":n"
+    ]
+  },
+  "simulation": {
+    "input_draws": 65536,
+    "compiled_program_pairs": 32,
+    "matched_program_input_pairs": 2097152,
+    "executions_per_pair": 2,
+    "matching_exceptions": {
+      "ValueError": 20832,
+      "KeyError": 28757,
+      "TypeError": 2577
+    }
+  },
+  "timing": [
+    {
+      "size": 1,
+      "kind": "records",
+      "pipeline": ":s _$score",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 387.0,
+        "new": 350.3
+      },
+      "median_wall_ns": {
+        "old": 394.2,
+        "new": 356.1
+      }
+    },
+    {
+      "size": 1,
+      "kind": "records",
+      "pipeline": ":k _$score",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 460.4,
+        "new": 431.9
+      },
+      "median_wall_ns": {
+        "old": 460.8,
+        "new": 432.1
+      }
+    },
+    {
+      "size": 1,
+      "kind": "records",
+      "pipeline": ":x _$score",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 460.9,
+        "new": 433.1
+      },
+      "median_wall_ns": {
+        "old": 461.2,
+        "new": 433.5
+      }
+    },
+    {
+      "size": 1,
+      "kind": "records",
+      "pipeline": ":t limit, _$score",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 820.6,
+        "new": 780.8
+      },
+      "median_wall_ns": {
+        "old": 822.3,
+        "new": 781.0
+      }
+    },
+    {
+      "size": 1,
+      "kind": "records",
+      "pipeline": ":s (_$score, _$id)",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 415.8,
+        "new": 379.2
+      },
+      "median_wall_ns": {
+        "old": 417.4,
+        "new": 380.0
+      }
+    },
+    {
+      "size": 1,
+      "kind": "pairs",
+      "pipeline": ":s _[1]",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 366.7,
+        "new": 332.3
+      },
+      "median_wall_ns": {
+        "old": 372.3,
+        "new": 335.3
+      }
+    },
+    {
+      "size": 1,
+      "kind": "numbers",
+      "pipeline": ":s _",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 353.0,
+        "new": 216.8
+      },
+      "median_wall_ns": {
+        "old": 353.3,
+        "new": 217.1
+      }
+    },
+    {
+      "size": 1,
+      "kind": "numbers",
+      "pipeline": ":l:n",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 467.8,
+        "new": 186.3
+      },
+      "median_wall_ns": {
+        "old": 468.5,
+        "new": 186.5
+      }
+    },
+    {
+      "size": 1,
+      "kind": "numbers",
+      "pipeline": ":l:l",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 243.7,
+        "new": 171.6
+      },
+      "median_wall_ns": {
+        "old": 243.9,
+        "new": 171.6
+      }
+    },
+    {
+      "size": 1,
+      "kind": "numbers",
+      "pipeline": ":s:l:n",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 599.9,
+        "new": 237.5
+      },
+      "median_wall_ns": {
+        "old": 600.1,
+        "new": 237.6
+      }
+    },
+    {
+      "size": 1,
+      "kind": "numbers",
+      "pipeline": ":c limit:n",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 2158.7,
+        "new": 1864.0
+      },
+      "median_wall_ns": {
+        "old": 2199.8,
+        "new": 1913.1
+      }
+    },
+    {
+      "size": 1,
+      "kind": "candidate_keys",
+      "iterations": 4096,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "required_lambda": 336.4,
+        "itemgetter": 310.5,
+        "optional_lambda": 338.6,
+        "methodcaller": 428.0,
+        "multi_lambda": 377.2,
+        "multi_itemgetter": 349.6
+      },
+      "median_wall_ns": {
+        "required_lambda": 341.3,
+        "itemgetter": 310.8,
+        "optional_lambda": 342.0,
+        "methodcaller": 431.5,
+        "multi_lambda": 380.8,
+        "multi_itemgetter": 353.7
+      }
+    },
+    {
+      "size": 32,
+      "kind": "records",
+      "pipeline": ":s _$score",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 3765.6,
+        "new": 2414.1
+      },
+      "median_wall_ns": {
+        "old": 3870.8,
+        "new": 2435.5
+      }
+    },
+    {
+      "size": 32,
+      "kind": "records",
+      "pipeline": ":k _$score",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 2976.6,
+        "new": 1742.2
+      },
+      "median_wall_ns": {
+        "old": 3002.0,
+        "new": 1878.3
+      }
+    },
+    {
+      "size": 32,
+      "kind": "records",
+      "pipeline": ":x _$score",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 3109.4,
+        "new": 1679.7
+      },
+      "median_wall_ns": {
+        "old": 3228.5,
+        "new": 1790.7
+      }
+    },
+    {
+      "size": 32,
+      "kind": "records",
+      "pipeline": ":t limit, _$score",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 6507.8,
+        "new": 5796.9
+      },
+      "median_wall_ns": {
+        "old": 6836.9,
+        "new": 6085.0
+      }
+    },
+    {
+      "size": 32,
+      "kind": "records",
+      "pipeline": ":s (_$score, _$id)",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 6171.9,
+        "new": 4812.5
+      },
+      "median_wall_ns": {
+        "old": 6279.9,
+        "new": 4894.2
+      }
+    },
+    {
+      "size": 32,
+      "kind": "pairs",
+      "pipeline": ":s _[1]",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 3414.1,
+        "new": 1992.2
+      },
+      "median_wall_ns": {
+        "old": 3473.3,
+        "new": 2030.6
+      }
+    },
+    {
+      "size": 32,
+      "kind": "numbers",
+      "pipeline": ":s _",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 3062.5,
+        "new": 1421.9
+      },
+      "median_wall_ns": {
+        "old": 3070.0,
+        "new": 1432.6
+      }
+    },
+    {
+      "size": 32,
+      "kind": "numbers",
+      "pipeline": ":l:n",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 1781.2,
+        "new": 250.0
+      },
+      "median_wall_ns": {
+        "old": 1788.4,
+        "new": 256.8
+      }
+    },
+    {
+      "size": 32,
+      "kind": "numbers",
+      "pipeline": ":l:l",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 406.2,
+        "new": 234.4
+      },
+      "median_wall_ns": {
+        "old": 414.1,
+        "new": 241.9
+      }
+    },
+    {
+      "size": 32,
+      "kind": "numbers",
+      "pipeline": ":s:l:n",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 3046.9,
+        "new": 1445.3
+      },
+      "median_wall_ns": {
+        "old": 3054.4,
+        "new": 1451.8
+      }
+    },
+    {
+      "size": 32,
+      "kind": "numbers",
+      "pipeline": ":c limit:n",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 7328.1,
+        "new": 6773.4
+      },
+      "median_wall_ns": {
+        "old": 7377.9,
+        "new": 6812.8
+      }
+    },
+    {
+      "size": 32,
+      "kind": "candidate_keys",
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "required_lambda": 3773.4,
+        "itemgetter": 2398.4,
+        "optional_lambda": 4015.6,
+        "methodcaller": 5671.9,
+        "multi_lambda": 6242.2,
+        "multi_itemgetter": 4804.7
+      },
+      "median_wall_ns": {
+        "required_lambda": 3934.2,
+        "itemgetter": 2407.2,
+        "optional_lambda": 4102.2,
+        "methodcaller": 5833.3,
+        "multi_lambda": 6395.5,
+        "multi_itemgetter": 4934.9
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "records",
+      "pipeline": ":s _$score",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 400375.0,
+        "new": 316000.0
+      },
+      "median_wall_ns": {
+        "old": 405276.1,
+        "new": 317218.8
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "records",
+      "pipeline": ":k _$score",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 152250.0,
+        "new": 73750.0
+      },
+      "median_wall_ns": {
+        "old": 152687.5,
+        "new": 73838.5
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "records",
+      "pipeline": ":x _$score",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 153125.0,
+        "new": 73625.0
+      },
+      "median_wall_ns": {
+        "old": 154239.5,
+        "new": 73765.6
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "records",
+      "pipeline": ":t limit, _$score",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 164875.0,
+        "new": 114000.0
+      },
+      "median_wall_ns": {
+        "old": 177239.6,
+        "new": 123901.1
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "records",
+      "pipeline": ":s (_$score, _$id)",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 743625.0,
+        "new": 664875.0
+      },
+      "median_wall_ns": {
+        "old": 751776.0,
+        "new": 673869.9
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "pairs",
+      "pipeline": ":s _[1]",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 360375.0,
+        "new": 279250.0
+      },
+      "median_wall_ns": {
+        "old": 360875.0,
+        "new": 285447.9
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "numbers",
+      "pipeline": ":s _",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 318250.0,
+        "new": 220250.0
+      },
+      "median_wall_ns": {
+        "old": 320916.6,
+        "new": 223432.4
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "numbers",
+      "pipeline": ":l:n",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 74875.0,
+        "new": 5500.0
+      },
+      "median_wall_ns": {
+        "old": 75734.4,
+        "new": 5510.4
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "numbers",
+      "pipeline": ":l:l",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 10750.0,
+        "new": 5250.0
+      },
+      "median_wall_ns": {
+        "old": 10947.9,
+        "new": 5291.8
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "numbers",
+      "pipeline": ":s:l:n",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 278750.0,
+        "new": 205625.0
+      },
+      "median_wall_ns": {
+        "old": 278958.2,
+        "new": 206015.6
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "numbers",
+      "pipeline": ":c limit:n",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 193750.0,
+        "new": 196500.0
+      },
+      "median_wall_ns": {
+        "old": 194354.1,
+        "new": 197057.2
+      }
+    },
+    {
+      "size": 2048,
+      "kind": "candidate_keys",
+      "iterations": 8,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "required_lambda": 346125.0,
+        "itemgetter": 275500.0,
+        "optional_lambda": 363875.0,
+        "methodcaller": 432125.0,
+        "multi_lambda": 658875.0,
+        "multi_itemgetter": 572125.0
+      },
+      "median_wall_ns": {
+        "required_lambda": 346203.1,
+        "itemgetter": 275635.4,
+        "optional_lambda": 365401.0,
+        "methodcaller": 432343.8,
+        "multi_lambda": 660546.9,
+        "multi_itemgetter": 576609.4
+      }
+    }
+  ],
+  "prepared_scripts": [
+    {
+      "path": "examples/sort_scores.ag",
+      "records": 6,
+      "iterations": 128,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 10210.9,
+        "new": 10101.6
+      },
+      "median_wall_ns": {
+        "old": 10213.2,
+        "new": 10113.6
+      }
+    },
+    {
+      "path": "examples/sort_scores.ag",
+      "records": 192,
+      "iterations": 4,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 100750.0,
+        "new": 96500.0
+      },
+      "median_wall_ns": {
+        "old": 100906.2,
+        "new": 96604.2
+      }
+    },
+    {
+      "path": "examples/sort_scores.ag",
+      "records": 12288,
+      "iterations": 1,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "old": 6303000.0,
+        "new": 6022000.0
+      },
+      "median_wall_ns": {
+        "old": 6302583.0,
+        "new": 6022625.0
+      }
+    }
+  ],
+  "other_interpreters": [
+    {
+      "python": "3.10.22",
+      "simulation": {
+        "input_draws": 65536,
+        "compiled_program_pairs": 32,
+        "matched_program_input_pairs": 2097152,
+        "executions_per_pair": 2,
+        "matching_exceptions": {
+          "ValueError": 20832,
+          "KeyError": 28757,
+          "TypeError": 2577
+        }
+      }
+    },
+    {
+      "python": "3.14.10",
+      "simulation": {
+        "input_draws": 65536,
+        "compiled_program_pairs": 32,
+        "matched_program_input_pairs": 2097152,
+        "executions_per_pair": 2,
+        "matching_exceptions": {
+          "ValueError": 20832,
+          "KeyError": 28757,
+          "TypeError": 2577
+        }
+      }
+    }
+  ]
+}

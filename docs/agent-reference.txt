@@ -1,7 +1,8 @@
-Python. Write x = SRC:op or return SRC:op. p prints, j emits JSON.
+Python pipelines on assignment or return. p prints, j emits JSON.
 p r():w _?paid:u _$cents
-_ is the item. w filter, m map and f flat-map yield lazily. n count, u sum, a mean, s stable sort, h first, l list, c N most-common pairs. Use :l before JSON on lazy results.
-k min, x max. u/a/s/k/x accept an optional item expression. t N[,key] takes up to N smallest in stable order.
+_ is the item. w filter, m map, f flat-map are lazy. l list (use before JSON), n count, u sum, a mean, s stable sort, h first, c N most-common pairs.
+k min, x max. u/a/s/k/x take optional item expressions. t N[,key] stable N smallest.
 r() stdin JSON, r(path) JSON file, c(path) CSV dict rows, wj(x) prints JSON.
 o$f = o["f"]. o?f = o.get("f"). d{x,y=expr} = {"x":x,"y":expr}.
+$[id name] lists strings. $(id name) makes a tuple.
 v(text,default=None) tries JSON then Python literals. b(x) default JSON + LF as UTF-8 bytes. h(data) SHA-256 hex.

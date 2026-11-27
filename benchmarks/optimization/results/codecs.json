@@ -1,0 +1,244 @@
+{
+  "python": "3.12.4",
+  "platform": "macOS-14.8.2-arm64-arm-64bit",
+  "baseline": "0e896bc4efcdf0d93b012dbf181b73e4f99f05d1",
+  "seed": 161822,
+  "equivalence": {
+    "parse_inputs": 5128,
+    "encode_inputs": 1024
+  },
+  "probes": [
+    {
+      "codec": "parse",
+      "inputs": "json",
+      "iterations": 256,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "previous": 6718.8,
+        "defer_ast": 6250.0,
+        "skip_impossible_json": 6066.4
+      },
+      "median_wall_ns": {
+        "previous": 6843.6,
+        "defer_ast": 6441.9,
+        "skip_impossible_json": 6265.0
+      }
+    },
+    {
+      "codec": "parse",
+      "inputs": "python",
+      "iterations": 256,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "previous": 50343.8,
+        "defer_ast": 49574.2,
+        "skip_impossible_json": 42054.7
+      },
+      "median_wall_ns": {
+        "previous": 53959.3,
+        "defer_ast": 50261.4,
+        "skip_impossible_json": 43555.8
+      }
+    },
+    {
+      "codec": "parse",
+      "inputs": "invalid",
+      "iterations": 256,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "previous": 37796.9,
+        "defer_ast": 37644.5,
+        "skip_impossible_json": 36941.4
+      },
+      "median_wall_ns": {
+        "previous": 38638.0,
+        "defer_ast": 39072.3,
+        "skip_impossible_json": 37669.8
+      }
+    },
+    {
+      "codec": "bytes",
+      "rows": 1,
+      "iterations": 2048,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "previous": 2296.9,
+        "encode_then_append": 2443.8
+      },
+      "median_wall_ns": {
+        "previous": 2371.5,
+        "encode_then_append": 2549.9
+      }
+    },
+    {
+      "codec": "bytes",
+      "rows": 128,
+      "iterations": 16,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "previous": 56312.5,
+        "encode_then_append": 56562.5
+      },
+      "median_wall_ns": {
+        "previous": 56403.6,
+        "encode_then_append": 56572.9
+      }
+    },
+    {
+      "codec": "bytes",
+      "rows": 8192,
+      "iterations": 2,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "previous": 3484000.0,
+        "encode_then_append": 3645000.0
+      },
+      "median_wall_ns": {
+        "previous": 3684041.5,
+        "encode_then_append": 3850396.0
+      }
+    }
+  ],
+  "scripts": [
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+      "fixture": "audit",
+      "calls": {
+        "json": 7,
+        "literal": 2
+      },
+      "iterations": 16,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "previous": 334250.0,
+        "defer_ast": 322125.0,
+        "skip_impossible_json": 247687.5
+      },
+      "median_wall_ns": {
+        "previous": 361942.7,
+        "defer_ast": 363752.6,
+        "skip_impossible_json": 254119.8
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+      "fixture": "profile",
+      "calls": {
+        "json": 9600,
+        "literal": 1600,
+        "default": 1600
+      },
+      "iterations": 1,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "previous": 128920000.0,
+        "defer_ast": 115549000.0,
+        "skip_impossible_json": 126216000.0
+      },
+      "median_wall_ns": {
+        "previous": 136140500.0,
+        "defer_ast": 124958084.0,
+        "skip_impossible_json": 140971916.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+      "fixture": "audit",
+      "calls": {
+        "json_values": 3
+      },
+      "iterations": 16,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "previous": 473562.5,
+        "encode_then_append": 473312.5
+      },
+      "median_wall_ns": {
+        "previous": 490104.2,
+        "encode_then_append": 525958.3
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+      "fixture": "profile",
+      "calls": {
+        "json_values": 3
+      },
+      "iterations": 1,
+      "measured_rounds": 11,
+      "median_cpu_ns": {
+        "previous": 86805000.0,
+        "encode_then_append": 89055000.0
+      },
+      "median_wall_ns": {
+        "previous": 88035625.0,
+        "encode_then_append": 89369917.0
+      }
+    }
+  ],
+  "standalone_ast_loaded": {
+    "previous": {
+      "before": false,
+      "after_json": true,
+      "after_literal": true
+    },
+    "shipped": {
+      "before": false,
+      "after_json": false,
+      "after_literal": true
+    }
+  },
+  "fresh_json_only": {
+    "program": "wj(v('true'))",
+    "wall_ms": {
+      "previous": [
+        49.086,
+        45.103,
+        41.969,
+        37.866,
+        35.792,
+        36.355,
+        36.378,
+        46.394,
+        48.069,
+        40.769,
+        38.792,
+        42.396,
+        40.15,
+        44.929,
+        61.336,
+        69.47,
+        49.48,
+        63.031,
+        60.401,
+        48.371
+      ],
+      "shipped": [
+        36.77,
+        38.707,
+        34.931,
+        32.485,
+        33.95,
+        33.982,
+        34.682,
+        40.019,
+        34.946,
+        34.122,
+        33.143,
+        35.749,
+        37.997,
+        44.166,
+        52.108,
+        56.59,
+        47.385,
+        65.232,
+        55.703,
+        51.936
+      ]
+    },
+    "median_wall_ms": {
+      "previous": 45.016000000000005,
+      "shipped": 37.3835
+    }
+  }
+}

@@ -83,6 +83,8 @@ The 32 language tests and eight workload tests passed on CPython 3.10.22, 3.12.4
 
 ## Reproduce
 
+Commit `0e896bc` contains this study as originally measured. Use that checkout to reproduce its compiler and prompt card. The [second optimization study](../optimization/README.md) uses this revision as its baseline.
+
 Use Python 3.10 or later. The tokenizer experiment needs the optional benchmark dependency. The spelling, record-preparation and launch comparisons read the baseline revision from local Git history. The launch benchmark uses the repository's OS-level process timer on macOS or Linux. Run the timing commands separately on an idle host for a local comparison.
 
 ```sh

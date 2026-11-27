@@ -35,14 +35,14 @@ def stage_package(directory, revision=None):
     return hashes
 
 
-def run(rounds):
+def run(rounds, before=BASE, after=None):
     rng = random.Random(55981)
     rows = []
     signal.signal(signal.SIGALRM, timed_out)
     with tempfile.TemporaryDirectory() as tempdir:
         temp = Path(tempdir)
         packages = {k: stage_package(temp / k, rev)
-                    for k, rev in (("before", BASE), ("after", None))}
+                    for k, rev in (("before", before), ("after", after))}
         envs = {k: {"PATH": os.defpath, "PYTHONPATH": str(temp / k),
                     "PYTHONHASHSEED": "0", "PYTHONUTF8": "1"} for k in packages}
         jobs = [(p, task, variant) for task in TASKS
@@ -82,7 +82,7 @@ def run(rounds):
                     paired.append(after / before)
             ratios[variant][metric] = round(statistics.median(paired), 5)
     return {"python": platform.python_version(), "platform": platform.platform(),
-            "baseline": BASE, "package_sha256": packages, "seed": 55981,
+            "baseline": before, "package_sha256": packages, "seed": 55981,
             "measured_rounds": rounds, "warmups": 1, "sample_columns": ["wall_ms", "cpu_ms"],
             "median_of_paired_ratios": ratios, "pairs": rows}
 
@@ -90,7 +90,9 @@ def run(rounds):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--rounds", type=int, default=8)
+    parser.add_argument("--before", default=BASE, help="baseline Git revision")
+    parser.add_argument("--after", help="comparison Git revision (default: current checkout)")
     args = parser.parse_args()
     if args.rounds < 1:
         parser.error("--rounds must be positive")
-    print(json.dumps(run(args.rounds), indent=2))
+    print(json.dumps(run(args.rounds, args.before, args.after), indent=2))

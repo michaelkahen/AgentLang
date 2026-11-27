@@ -44,6 +44,20 @@ top_ids = ids:m _$id:l
 j d{best,top_ids}
 ```
 
+## Lists and tuples of strings
+
+Write `$[team name score]` for `["team", "name", "score"]` and `$(queued running)` for `("queued", "running")`. Words are literal strings, so they need no variable bindings. Separate them with whitespace. Each word must be a valid identifier spelling. Python keywords and Unicode identifiers are allowed, and their exact spelling, order and duplicates are preserved.
+
+`$[]` and `$()` produce empty collections. `$(done)` produces a one-element tuple. A word list creates a fresh list each time it is evaluated. Use quoted strings in ordinary Python collections for elements containing punctuation or spaces.
+
+```text
+rows = r():s (_$team, _$name)
+columns = $[team name score]
+j [[row[key] for key in columns] for row in rows]
+```
+
+The example sorts the records by team and then by name, and emits each record's values in the requested column order. [Runnable script](../examples/terse/score_table.ag)
+
 ## Input, output and shared functions
 
 | Compact | Long | Behavior |

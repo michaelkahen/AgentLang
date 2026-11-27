@@ -1,0 +1,1604 @@
+{
+  "seed": 207173,
+  "baseline": "0e896bc4efcdf0d93b012dbf181b73e4f99f05d1",
+  "tiktoken": "0.12.0",
+  "python": "3.12.4",
+  "platform": "macOS-14.8.2-arm64-arm-64bit",
+  "generated": {
+    "distinct_cases": 131072,
+    "case_sha256": "deccfd32321a9da265c90a010bdd327694893efb6dda8ad5fcfd2fbac4812cc9",
+    "literal_value_checks": 4096,
+    "renderings_per_encoder": 1048576,
+    "template_count": 8,
+    "word_counts": {
+      "4": 23468,
+      "8": 23386,
+      "6": 23308,
+      "3": 22532,
+      "2": 14845,
+      "12": 23533
+    },
+    "tokens": {
+      "o200k_base": {
+        "quoted": 3416346,
+        "compact_quotes": 2746928,
+        "split": 2287328,
+        "dollar": 2017285,
+        "comma": 2687039,
+        "question": 2082669,
+        "typed_braces": 2096656,
+        "single_word_sigil": 2746928,
+        "best_existing": 2256426
+      },
+      "cl100k_base": {
+        "quoted": 3480800,
+        "compact_quotes": 2811382,
+        "split": 2399600,
+        "dollar": 2129557,
+        "comma": 2739545,
+        "question": 2194941,
+        "typed_braces": 2208928,
+        "single_word_sigil": 2811382,
+        "best_existing": 2366358
+      }
+    },
+    "dollar_vs_best_existing": {
+      "o200k_base": {
+        "shorter": 124872,
+        "equal": 6200
+      },
+      "cl100k_base": {
+        "shorter": 124280,
+        "equal": 6732,
+        "longer": 60
+      }
+    }
+  },
+  "reference_tokens": {
+    "o200k_base": {
+      "previous": 206,
+      "edited_without_new_line": 187,
+      "final": 203
+    },
+    "cl100k_base": {
+      "previous": 204,
+      "edited_without_new_line": 185,
+      "final": 201
+    }
+  },
+  "preparation_pairs": 21,
+  "preparation_warmups": 2,
+  "archive": {
+    "program_count": 76,
+    "affected": 29,
+    "sites": 54,
+    "tokens": {
+      "o200k_base": {
+        "authored": 25921,
+        "dollar": 25763,
+        "compact_quotes": 25841,
+        "split": 25922,
+        "question": 25815,
+        "typed_braces": 25845,
+        "comma": 25831,
+        "single_word_sigil": 25841,
+        "best_existing": 25837
+      },
+      "cl100k_base": {
+        "authored": 25731,
+        "dollar": 25573,
+        "compact_quotes": 25651,
+        "split": 25732,
+        "question": 25625,
+        "typed_braces": 25655,
+        "comma": 25631,
+        "single_word_sigil": 25651,
+        "best_existing": 25647
+      }
+    },
+    "other_opportunities": {},
+    "programs": [
+      {
+        "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+        "source_sha256": "58379d98124ea8e849f1ef099ca2711bff71451a77a6c29a4c61c2179c7cf085",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r2-a1.ag",
+        "source_sha256": "d7b43bc0608f3da44eca23d90ea4c7b234cd2ef0dccb1df2591e6c96027c7cbf",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+        "source_sha256": "05374116dbae654ba4a8abb88b4897958398991f43bc5d3596e060571b5807ec",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r1-a1.py",
+        "source_sha256": "a9fafeac0687d6becffa667fddbae59d3f8692ffa3a37e769fc9724dacb6d3e8",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r2-a1.py",
+        "source_sha256": "5887816bd726502c84e38826c640cf5ef75bf0396fa35787cb81734e13e90981",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 2,
+          "cl100k_base": 2
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r3-a1.py",
+        "source_sha256": "63f1c3148e8f39479bde6545967609c0bfaa61ea32d0f78ece641eed7bdd1846",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r1-a1.ag",
+        "source_sha256": "df09b07b23645f1e247446604762736a05496a1dab735ee9921b6da062cfe353",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r2-a1.ag",
+        "source_sha256": "cb5f600754f3028d0f27418bf7d4f5fe548771f782ddee1e41fcab729029e7fe",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/knn_grid-compact-r3-a1.ag",
+        "source_sha256": "442e6b111ab1c47acb44270f03bbf927581ed73bb75f979c46de8d4487da45f4",
+        "list": 2,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 2,
+          "cl100k_base": 2
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/knn_grid-python-r1-a1.py",
+        "source_sha256": "2c9249c3e57f7dce70ae357d801b1d148970bddb76f8ef1891174b59c50e1964",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/knn_grid-python-r2-a1.py",
+        "source_sha256": "61dae899cf03c2a1361a4ad2c4b889fe04c5178ef3562e514f3f588ec4318635",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/knn_grid-python-r3-a1.py",
+        "source_sha256": "dc1a347be4418decc19fe3815740445e57f47f242e3c5d9959788abbd233f69c",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+        "source_sha256": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+        "source_sha256": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+        "source_sha256": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r1-a1.py",
+        "source_sha256": "cce32ee070e86ffc8416b76115203f0d3fb97a92763574559eead5e28ea3521b",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r2-a1.py",
+        "source_sha256": "268e183e2be2e5e0d4722f2754001627570175d6f24a79da3c1405922b0e4f56",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r3-a1.py",
+        "source_sha256": "efeb2fdc76dbe4be39727f6624144625219b7c95fd236c15e02a4f4a2040fe35",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/fixture_pack-compact-r1-a1.ag",
+        "source_sha256": "34709a1caa172feab70ecf59f356c1222ea11bac180d64eef29e1d0dc79a265e",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/fixture_pack-compact-r2-a1.ag",
+        "source_sha256": "c2418f47b20d9af34fbe91674234d40e1877e4ed6f6fa9c8b7a7da96b89532a3",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/fixture_pack-python-r1-a1.py",
+        "source_sha256": "afebfe2f9d9b4af523c075e9819401b788f8dc573337113b08a4cb55dac1b0ef",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/fixture_pack-python-r2-a1.py",
+        "source_sha256": "fa787ba0f7566bdc97ba54bcb0714c0384dd86310a92e15d60e047b61e78e83e",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/knn_grid-compact-r1-a1.ag",
+        "source_sha256": "f32af592e7aef312c5949ab6ce087285dee91fe99f1f4d64475399ad6f3c219b",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/knn_grid-compact-r2-a1.ag",
+        "source_sha256": "3bfeceec9e13a3ff836307b87de25fa23a0bd02b52c43a973beae692b5a18747",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/knn_grid-python-r1-a1.py",
+        "source_sha256": "bc828df98bfac0b1cdc38d979e77bb081f805f30d66cc94cf475d315d944a50e",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/knn_grid-python-r2-a1.py",
+        "source_sha256": "1e3f636069290034419f8173dbe63b08ad7f6da9c5871ee8306ed9d49f1cf4c2",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/movie_credits-compact-r1-a1.ag",
+        "source_sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/movie_credits-compact-r2-a1.ag",
+        "source_sha256": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/movie_credits-python-r1-a1.py",
+        "source_sha256": "8381e42f9c39c20f59e172102e119c3a962d44ca6f5f7d9586953b60c11af70e",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/movie_credits-python-r2-a1.py",
+        "source_sha256": "7c50ff0baf1d3ea323dda900d98e79790aa772b774e4ceba3b5e7798858e1905",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+        "source_sha256": "a9931777c355f70d9deaa67ad09218c2f46d70449c534fbf63dfb49452688f28",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r2-a1.ag",
+        "source_sha256": "737613c7c6654ab434d9237b1f73362f9d7352b9929d3ef6e95a9653df08dce6",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+        "source_sha256": "19b56f10a950d99ee194a9c00466b7eb970b945511a0adef3b390d7411b852ce",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r4-a1.ag",
+        "source_sha256": "85d4eef9bb55b7abb013aa793ff2ec9d9d641653a166a41e1f8d37d1a327db2f",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/fixture_pack-python-r1-a1.py",
+        "source_sha256": "6a7b90dc9be42feb9e707db075ff171a00ba4c1cf58763f5db1ae28b68ac2ed7",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/fixture_pack-python-r2-a1.py",
+        "source_sha256": "f5c9c5c5ebf0dc181fc57bc8570068e277519e819a50b868914d7b70b4aaf790",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/fixture_pack-python-r3-a1.py",
+        "source_sha256": "9544a30254063a2fdb07e021043e385152eee875a6a136567e1f857cf79db2af",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 6,
+          "cl100k_base": 6
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/fixture_pack-python-r4-a1.py",
+        "source_sha256": "190db48e0468331e9389d5894af95d1c8e97ce40a9aa55b4a2d2d823184357a1",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r1-a1.ag",
+        "source_sha256": "1b90cdbfe63dd7ed5795912a1dd1f644f1ca968c0a40946f32812958295e6b64",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r2-a1.ag",
+        "source_sha256": "7141d9e8a4c5936f1f0d0d947619b67214c86e017016202ffc77816d084d9e59",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r3-a1.ag",
+        "source_sha256": "b8b7635212722aaff7001e6bc912993e6599589e0ebdabeb0981167a7cb2ed5d",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r4-a1.ag",
+        "source_sha256": "0cbae38de043fc7e7fe754ef3789c0b6a9b71b8b0bc4a1e8752df33fd6163ae0",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/knn_grid-python-r1-a1.py",
+        "source_sha256": "3eaf446531cd257205a2997e55a2c01b65a39d966f80ed8361064e33d321a173",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/knn_grid-python-r2-a1.py",
+        "source_sha256": "0d14a68734a4852e500a5d8031dd43cae74bf7011e97a74cb0a22a127cb42f7e",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/knn_grid-python-r3-a1.py",
+        "source_sha256": "517caff38d56481f7f49fda0d480d16f0103b20153d1992e6e5d78788b563122",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/knn_grid-python-r4-a1.py",
+        "source_sha256": "c44375ef6d90d0ebb4534accbf1e3c82351bfacf6819d9aab132408b4895be84",
+        "list": 0,
+        "tuple": 3,
+        "tokens_saved": {
+          "o200k_base": 8,
+          "cl100k_base": 8
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+        "source_sha256": "18c43a4a11dc1e043ce77a454ed45351cf28d6dd3c56ef47bbf109a5c07f1022",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+        "source_sha256": "498fa34a99f79e15b661d3a34389b6fb292d2d400791adcab219f7a3686fd79d",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+        "source_sha256": "c51ae59f767f464d7e9aa784e9f251e614155e67587998a44c7403131b373761",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r4-a1.ag",
+        "source_sha256": "2ba800b2754f41bdc39d03bcab6fecf8256b04f00a17f78b88929401b9e5717a",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r1-a1.py",
+        "source_sha256": "33f7a5bf30c4d8dba2033c402bcebcb6b5708bc0716c974e22d819300639574f",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r2-a1.py",
+        "source_sha256": "e15313a473a4847a2f79eaa672aa2878bc53cdb92ec3c02388f2a64f5b65fe48",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r3-a1.py",
+        "source_sha256": "3f8fcc4d80768a1c949e797866fae0196a01c68f993d1beadf8fb33e8f3d94b2",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r4-a1.py",
+        "source_sha256": "c285f73a13fe063b53717f46eacf8b4bdf77acdba621df6aae54bb35da7e4087",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r1-a1.ag",
+        "source_sha256": "15661b35d6b5f630546aef2288537365d617c27bfe0c6efea5783dead7765912",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 14,
+          "cl100k_base": 14
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r2-a1.ag",
+        "source_sha256": "37598f05aa8c4816072dafde564ee4f1b5908c7b197e8a4997ee9d22d8fddd17",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 10,
+          "cl100k_base": 10
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r3-a1.ag",
+        "source_sha256": "52548ebd1c03a6a017c5de72515fa6ce198303b9931b46167328fb06658d2d85",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 14,
+          "cl100k_base": 14
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r4-a1.ag",
+        "source_sha256": "149879de549d7c4f003fdede7131ca26bae975601c33c3e6b68f70cab1c82cb6",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r1-a1.py",
+        "source_sha256": "9ee826056dfd0317669d12101b05ba1bc547f374219ded10da0e75f2ed274764",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 8,
+          "cl100k_base": 8
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r2-a1.py",
+        "source_sha256": "b1d307fd5edd48cf0c7631b33faace17f5fb02079dbdc95345351ca5aa0afe41",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 8,
+          "cl100k_base": 8
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r3-a1.py",
+        "source_sha256": "0967f7979f45a852c3b34fea60a1faea41ae118463ddfdeaf344da1617d66675",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 8,
+          "cl100k_base": 8
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r4-a1.py",
+        "source_sha256": "512d2fe1d0e7744e28b7fc56b48062e239b85d3bf342924940677ccdb8e57ebe",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 8,
+          "cl100k_base": 8
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#python/late_flights/1",
+        "source_sha256": "19b0860043ce72edbdda975cf3b05cacd71773d9fd66cf524aed7e14625f084a",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#compact/late_flights/1",
+        "source_sha256": "3c8b20b3b9ce7c63bde383a13f30dc58f92c860d83ab81df0cb84a957479a056",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#compact/goal_gap/1",
+        "source_sha256": "0c93eb4b17a3032bcc3aec4aacc135f4452b72f8af444898dfe92c7ab2d49aa9",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#python/goal_gap/1",
+        "source_sha256": "ecb905267dca91a8da80770b39e26402ad0eef212b99850a823e0d7e1c8bb86b",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#python/word_counts/1",
+        "source_sha256": "5bb24c6957ed769e6eff978e5b58715bcc29671d0feec2c85ce106f3957367df",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#compact/word_counts/1",
+        "source_sha256": "7cb1b2faf6fb15ef7a2c98a08392d38c525c320844ee1c45319a031f24fb5dc5",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#compact/sort_scores/1",
+        "source_sha256": "49807621531e75494858adb739c38a24fcc0f49e9889de52da31c62a610ef2b7",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#python/sort_scores/1",
+        "source_sha256": "47adc73eff6fe1b96c6c92ffc3f4f2cec5e791a0a78dc0261bd9f34c61b44c83",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#python/goal_gap/2",
+        "source_sha256": "2c733429419fc6c4d3874cfe3119a73966cdec91f1dc059c34820a4280d4517c",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#compact/goal_gap/2",
+        "source_sha256": "b384822add771ca97f923ef3548ced0ccdbf766343cacdd4fa1a2564f96695fa",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 2,
+          "cl100k_base": 2
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#compact/word_counts/2",
+        "source_sha256": "4c8baa4812cdc1a5be5f2323a79aad6e1e50ac6acef39f55442a858bef28e079",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#python/word_counts/2",
+        "source_sha256": "3dfa4bc93c6cd3ef7f975ef27797d6b56f1f9a339493c47020e4ed3eee7f2d6c",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#compact/late_flights/2",
+        "source_sha256": "a3259bce8bdd8c6fd6af9faba97d0c5b3e780663d159e354ba36a237429d33ab",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/trials.json#python/late_flights/2",
+        "source_sha256": "d8ad038e6d206a7578d471d28a7f108243ef57650d6f44edf8053b84e03a358d",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      }
+    ]
+  },
+  "tools": {
+    "program_count": 29,
+    "affected": 20,
+    "sites": 59,
+    "tokens": {
+      "o200k_base": {
+        "authored": 44675,
+        "dollar": 44430,
+        "compact_quotes": 44552,
+        "split": 44605,
+        "question": 44480,
+        "typed_braces": 44499,
+        "comma": 44538,
+        "single_word_sigil": 44553,
+        "best_existing": 44546
+      },
+      "cl100k_base": {
+        "authored": 44302,
+        "dollar": 44060,
+        "compact_quotes": 44176,
+        "split": 44235,
+        "question": 44110,
+        "typed_braces": 44129,
+        "comma": 44164,
+        "single_word_sigil": 44181,
+        "best_existing": 44170
+      }
+    },
+    "other_opportunities": {
+      "literal_get_with_default": 5,
+      "sets_of_words": 20
+    },
+    "programs": [
+      {
+        "path": "benchmarks/long/generation/run.py",
+        "source_sha256": "d7f9f4939bbad4003e2c7d5f3b0c33094429d283ece850267b49679cdfaef773",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 6,
+          "cl100k_base": 6
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/summarize.py",
+        "source_sha256": "c7da6f8cba4681b7b0b3d8181446c36676c7351cee5d80274eb2766229517563",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 2,
+          "cl100k_base": 2
+        }
+      },
+      {
+        "path": "benchmarks/long/plot.py",
+        "source_sha256": "4df3b301471f03935cae48a3c6367613324a5654dc5e3aee6e03e4cc047346bb",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/replay.py",
+        "source_sha256": "c61ab9a456ee6cf5e6761f5803c8e9860f98c72d56d4d6e2d2eb03a0529132a0",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 6,
+          "cl100k_base": 6
+        }
+      },
+      {
+        "path": "benchmarks/long/runtime/native.py",
+        "source_sha256": "75d8d9fe23d97c6fc275b2af925314d2772e91ede38b354938ace39d5b141129",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/long/runtime/run.py",
+        "source_sha256": "77eb9c82c94e5d7d49eadf1e4e68ed2fa9ae0a7671674853ca6c3ca6804965e9",
+        "list": 3,
+        "tuple": 6,
+        "tokens_saved": {
+          "o200k_base": 60,
+          "cl100k_base": 60
+        }
+      },
+      {
+        "path": "benchmarks/long/spellings.py",
+        "source_sha256": "8dd7c0038d29afa229dccc3f27243248d18fa6cf980bc312281f16130003d158",
+        "list": 0,
+        "tuple": 4,
+        "tokens_saved": {
+          "o200k_base": 24,
+          "cl100k_base": 22
+        }
+      },
+      {
+        "path": "benchmarks/long/workloads/cases.py",
+        "source_sha256": "5d1abdb6f8788fe1624a3bee7507ac04b9e88d03744199471cb2eb76027c6c8c",
+        "list": 0,
+        "tuple": 9,
+        "tokens_saved": {
+          "o200k_base": 30,
+          "cl100k_base": 29
+        }
+      },
+      {
+        "path": "benchmarks/long/workloads/test_cases.py",
+        "source_sha256": "40c7c46bd855388d117630a0e850836cc8df12c910c2c76c79ff1bb84ce53b45",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 6,
+          "cl100k_base": 6
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/run.py",
+        "source_sha256": "a398d0fdf30085bfb28d0738371fb46a04ab72ae7b5a279e27f295e9454e10ea",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/verify.py",
+        "source_sha256": "1127918f08b3a983206aeab756a34076945f6e2c166c88b9253755b40ae9f105",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/patterns/evaluation/cases.py",
+        "source_sha256": "500b985fe3c1b0a7dbd9393a01d85734b228a86b782132f7b6a3554f793af539",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/evaluation/compile_paths.py",
+        "source_sha256": "2b5425d310eaf0851cadecf3031dfbabcf36080c611c173e6bb206b84f86ba49",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/evaluation/native.py",
+        "source_sha256": "4425cbda04751cf82722414f2cd87d6c73eebc333d8874fb178b093d0dd11850",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/evaluation/profile.py",
+        "source_sha256": "63f37bdec7e49a55affb7b93b9e2393e165fb55cd5a4ad4f6285381154ab8598",
+        "list": 1,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 12,
+          "cl100k_base": 12
+        }
+      },
+      {
+        "path": "benchmarks/patterns/evaluation/test_cases.py",
+        "source_sha256": "d78551680f230aaf1ece56f63d028b3376a68beb82c3b6d0ce590ec3d5a2e510",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 8,
+          "cl100k_base": 8
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/calibrate.py",
+        "source_sha256": "c4c2baa4b0a51492d44883827b493aa14ccaee47e68c1c9907809506ba80a9a8",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 6,
+          "cl100k_base": 6
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/client.py",
+        "source_sha256": "bfb1a3a665c1e1a3695a2546766f679c39dc181755a78857211b6aad2eec61c4",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/features.py",
+        "source_sha256": "32c055543a01583b1b72411888ca518a2c5c38eca5dbfe0b67cd7b0fdc757bc7",
+        "list": 1,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 7,
+          "cl100k_base": 7
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/run.py",
+        "source_sha256": "fdf268e54ca5c6a15f2daaed1003844cafca1640232146f6d07f7012e91ad1eb",
+        "list": 0,
+        "tuple": 3,
+        "tokens_saved": {
+          "o200k_base": 6,
+          "cl100k_base": 6
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/verify.py",
+        "source_sha256": "63383533f6f59047974656b9576fc870c622226ba32fd3b46c969d97ebbe3e24",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 8,
+          "cl100k_base": 8
+        }
+      },
+      {
+        "path": "benchmarks/patterns/plot.py",
+        "source_sha256": "4d87d218570bc9810a2d0fdb298330dc1e72a2bd6722b8b8c82e9861849338fc",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/profile/measure.py",
+        "source_sha256": "d2958616d378a92985246ed8cf540beb597d8e03020398185e3d8932446d87af",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 14,
+          "cl100k_base": 14
+        }
+      },
+      {
+        "path": "benchmarks/patterns/profile/opportunities.py",
+        "source_sha256": "6beccfefc4e1d2d6999dcccee9dba6c86560a9b166ecfe7551ad74948f1fd5fa",
+        "list": 1,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 9,
+          "cl100k_base": 9
+        }
+      },
+      {
+        "path": "benchmarks/patterns/summarize.py",
+        "source_sha256": "f0cdf98ceeeb7ac4626bd7c6c84656e1a2851544b4f7e885194d25f05579a16b",
+        "list": 0,
+        "tuple": 5,
+        "tokens_saved": {
+          "o200k_base": 19,
+          "cl100k_base": 19
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/collect.py",
+        "source_sha256": "ff2d7c5d97905125ddf41ea23910d36e36b1956f6b61fbb54fecf2a20837aceb",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/verify.py",
+        "source_sha256": "638a1a48e5e4625915733faa697803c3d0f6a8b0e6252a18d88546e986f54962",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 2,
+          "cl100k_base": 2
+        }
+      },
+      {
+        "path": "benchmarks/pilot/runtime/run.py",
+        "source_sha256": "74c157bf99a9bb28550f44bc4c436182a476f144719c8fc6f9dd9552bcab95b8",
+        "list": 0,
+        "tuple": 4,
+        "tokens_saved": {
+          "o200k_base": 12,
+          "cl100k_base": 12
+        }
+      },
+      {
+        "path": "benchmarks/pilot/runtime/scale.py",
+        "source_sha256": "85ddeba9a170d69a5f73530a9e7fe06031ea2834a6058659bddda670d619ef31",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      }
+    ]
+  },
+  "batch_holdout": {
+    "program_count": 16,
+    "affected": 10,
+    "sites": 20,
+    "tokens": {
+      "o200k_base": {
+        "authored": 6381,
+        "dollar": 6324,
+        "compact_quotes": 6351,
+        "split": 6380,
+        "question": 6341,
+        "typed_braces": 6346,
+        "comma": 6347,
+        "single_word_sigil": 6351,
+        "best_existing": 6351
+      },
+      "cl100k_base": {
+        "authored": 6327,
+        "dollar": 6270,
+        "compact_quotes": 6297,
+        "split": 6326,
+        "question": 6287,
+        "typed_braces": 6292,
+        "comma": 6288,
+        "single_word_sigil": 6297,
+        "best_existing": 6297
+      }
+    },
+    "other_opportunities": {},
+    "programs": [
+      {
+        "path": "benchmarks/patterns/batch/observations/compact-r1-a1.txt#movie_credits",
+        "source_sha256": "eca2bb2944f1fa0670d24e1ff727e15ff53637d01716e942025a98aadb29243c",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/compact-r1-a1.txt#knn_grid",
+        "source_sha256": "500dad255029e15fc4ebf8dce5e132671263424a5b4b7a1ca04380dd818db22c",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 2015.0,
+            "combined": 2010.0
+          },
+          "wall": {
+            "authored": 2016.459,
+            "combined": 2024.0
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/compact-r1-a1.txt#fixture_pack",
+        "source_sha256": "4bd4fea1cdee5a1ea7c394ac8111e81f8412575a26ba2c722aa3ad9160501dea",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/compact-r1-a1.txt#replay_trace",
+        "source_sha256": "2d08adb3565e036ee8d38b53fff9c1fa9673db151806aca2a575540d427c818f",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 6,
+          "cl100k_base": 6
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 1250.0,
+            "combined": 1261.0
+          },
+          "wall": {
+            "authored": 1251.5,
+            "combined": 1262.125
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/compact-r2-a1.txt#fixture_pack",
+        "source_sha256": "85c49e493f9e4d0e61b761dbff5e85a875ae30469f35300be5130493d1fa1b2c",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/compact-r2-a1.txt#replay_trace",
+        "source_sha256": "0a1b6d5f545ac0f2c32a877fd1f6700487971a292416baf883e5a0fc259adcac",
+        "list": 0,
+        "tuple": 3,
+        "tokens_saved": {
+          "o200k_base": 12,
+          "cl100k_base": 12
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 1343.0,
+            "combined": 1331.0
+          },
+          "wall": {
+            "authored": 1344.625,
+            "combined": 1336.625
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/compact-r2-a1.txt#movie_credits",
+        "source_sha256": "961d7c568bfe285878ed9537f11e6dcf638246ba8d4ea6f8f282bf9ac002f94c",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/compact-r2-a1.txt#knn_grid",
+        "source_sha256": "fc9aee5c559e2f284e212c2fd5a5c6104592ed81d963c924bd87babb84417cb5",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 2040.0,
+            "combined": 2033.0
+          },
+          "wall": {
+            "authored": 2049.792,
+            "combined": 2040.084
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/python-r1-a1.txt#movie_credits",
+        "source_sha256": "bcc7e8367fe3ff239746da1b47a515ce2ecb65e60044cc0de654421be0d9295c",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/python-r1-a1.txt#knn_grid",
+        "source_sha256": "225bb1371af74d34f6d293061d27c83c6dcda17df0f25198e91339927ebc39fb",
+        "list": 2,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 2,
+          "cl100k_base": 2
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 2358.0,
+            "combined": 2295.0
+          },
+          "wall": {
+            "authored": 2412.292,
+            "combined": 2354.708
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/python-r1-a1.txt#fixture_pack",
+        "source_sha256": "c42945e8374bb8830195e3d47efb5bda397fdb9d2fb664f0e862b7aecd28b58b",
+        "list": 1,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 1,
+          "cl100k_base": 1
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 816.0,
+            "combined": 1171.0
+          },
+          "wall": {
+            "authored": 818.125,
+            "combined": 1189.083
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/python-r1-a1.txt#replay_trace",
+        "source_sha256": "446e215889705c5fcf5052ec82ee16ec0ee9a15cb4e44b271cad13d391c83eeb",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 8,
+          "cl100k_base": 8
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 1545.0,
+            "combined": 1594.0
+          },
+          "wall": {
+            "authored": 1590.166,
+            "combined": 1624.25
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/python-r2-a1.txt#fixture_pack",
+        "source_sha256": "405befe6fe47ec67dfe5ca3597eecb3ed85a209b198df7218d7538ed5c2ce0d9",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 6,
+          "cl100k_base": 6
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 904.0,
+            "combined": 1256.0
+          },
+          "wall": {
+            "authored": 905.542,
+            "combined": 1268.833
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/python-r2-a1.txt#replay_trace",
+        "source_sha256": "8da71602a5e9df17c1faaa437c8518b5a9b6a0addb699b84a9dc186df154de6a",
+        "list": 0,
+        "tuple": 3,
+        "tokens_saved": {
+          "o200k_base": 10,
+          "cl100k_base": 10
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 1360.0,
+            "combined": 1369.0
+          },
+          "wall": {
+            "authored": 1377.125,
+            "combined": 1369.792
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/python-r2-a1.txt#movie_credits",
+        "source_sha256": "609d6e2278fbd518c4c0b1fc4fc46d878af784a6b9a9c2316a8ac3f12f0577be",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/observations/python-r2-a1.txt#knn_grid",
+        "source_sha256": "afed20550e018fabbd7a2dae6a24fe02e8bb665bb1f93fc374796c0ccd9649dd",
+        "list": 0,
+        "tuple": 2,
+        "tokens_saved": {
+          "o200k_base": 4,
+          "cl100k_base": 4
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 2327.0,
+            "combined": 2315.0
+          },
+          "wall": {
+            "authored": 2336.042,
+            "combined": 2322.333
+          }
+        }
+      }
+    ]
+  },
+  "project_holdout": {
+    "program_count": 8,
+    "affected": 1,
+    "sites": 1,
+    "tokens": {
+      "o200k_base": {
+        "authored": 10563,
+        "dollar": 10561,
+        "compact_quotes": 10562,
+        "split": 10564,
+        "question": 10562,
+        "typed_braces": 10563,
+        "comma": 10561,
+        "single_word_sigil": 10562,
+        "best_existing": 10562
+      },
+      "cl100k_base": {
+        "authored": 10397,
+        "dollar": 10395,
+        "compact_quotes": 10396,
+        "split": 10398,
+        "question": 10396,
+        "typed_braces": 10397,
+        "comma": 10395,
+        "single_word_sigil": 10396,
+        "best_existing": 10396
+      }
+    },
+    "other_opportunities": {
+      "sets_of_words": 8
+    },
+    "programs": [
+      {
+        "path": "agentlang/__init__.py",
+        "source_sha256": "2a19b4ed2e77cc396257ab6ba8c0d6f7e60521de6461dd34a2c09a46a521ebca",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "agentlang/__main__.py",
+        "source_sha256": "2561d7a0aec7c5656da3f38c220b5373f8978a6991a246dda31456cee76dfe70",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "agentlang/compiler.py",
+        "source_sha256": "ab6f9279581fd596168c413b65fdc909f6ad561933a7ef0b3efbae60e7e58915",
+        "list": 0,
+        "tuple": 1,
+        "tokens_saved": {
+          "o200k_base": 2,
+          "cl100k_base": 2
+        },
+        "preparation_median_us": {
+          "cpu": {
+            "authored": 18540.0,
+            "combined": 18462.0
+          },
+          "wall": {
+            "authored": 19037.458,
+            "combined": 18895.25
+          }
+        }
+      },
+      {
+        "path": "agentlang/helpers.py",
+        "source_sha256": "d278c80632bc650ca527d7fb27d26506d1df87a4f5f258108367f774d8c1cb19",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "tests/test_compiler.py",
+        "source_sha256": "dcc705fdbf643b9ffe528a407e9d3919953fb1fda4f2f1eb1a77c609876e70a1",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "tests/test_csvrows.py",
+        "source_sha256": "5e53345200873cdfb5ad8e505dc90edb5385f6c5fef752739e55507247f22632",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "tests/test_record_expressions.py",
+        "source_sha256": "ca738e4b49488e1f55f5aa23d459f6ebae211dca7cc76a9389ae17082e7a86f1",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      },
+      {
+        "path": "tests/test_statement_scan.py",
+        "source_sha256": "1fdfe003cb15d6fabb01c5dc67d62739f11e787f2a2460dcaa08321c3893e57f",
+        "list": 0,
+        "tuple": 0,
+        "tokens_saved": {
+          "o200k_base": 0,
+          "cl100k_base": 0
+        }
+      }
+    ]
+  }
+}

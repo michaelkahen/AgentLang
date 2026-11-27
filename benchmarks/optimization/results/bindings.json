@@ -1,0 +1,337 @@
+{
+  "baseline": "0e896bc4efcdf0d93b012dbf181b73e4f99f05d1",
+  "python": "3.12.4",
+  "platform": "macOS-14.8.2-arm64-arm-64bit",
+  "seed": 31091,
+  "measured_rounds": 31,
+  "warmups": 2,
+  "sum_of_source_cpu_medians_us": {
+    "old": 48542.0,
+    "stdlib": 41485.0,
+    "fields": 40348.0
+  },
+  "sources": [
+    {
+      "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+      "median_cpu_us": {
+        "old": 993.0,
+        "stdlib": 805.0,
+        "fields": 764.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r2-a1.ag",
+      "median_cpu_us": {
+        "old": 1050.0,
+        "stdlib": 826.0,
+        "fields": 795.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+      "median_cpu_us": {
+        "old": 1078.0,
+        "stdlib": 894.0,
+        "fields": 858.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/knn_grid-compact-r1-a1.ag",
+      "median_cpu_us": {
+        "old": 3282.0,
+        "stdlib": 2878.0,
+        "fields": 2806.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/knn_grid-compact-r2-a1.ag",
+      "median_cpu_us": {
+        "old": 2235.0,
+        "stdlib": 1886.0,
+        "fields": 1857.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/knn_grid-compact-r3-a1.ag",
+      "median_cpu_us": {
+        "old": 2237.0,
+        "stdlib": 1951.0,
+        "fields": 1867.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+      "median_cpu_us": {
+        "old": 802.0,
+        "stdlib": 626.0,
+        "fields": 596.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+      "median_cpu_us": {
+        "old": 1063.0,
+        "stdlib": 900.0,
+        "fields": 875.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+      "median_cpu_us": {
+        "old": 1078.0,
+        "stdlib": 915.0,
+        "fields": 888.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/fixture_pack-compact-r1-a1.ag",
+      "median_cpu_us": {
+        "old": 1179.0,
+        "stdlib": 985.0,
+        "fields": 951.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/fixture_pack-compact-r2-a1.ag",
+      "median_cpu_us": {
+        "old": 1168.0,
+        "stdlib": 1035.0,
+        "fields": 1000.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/knn_grid-compact-r1-a1.ag",
+      "median_cpu_us": {
+        "old": 2177.0,
+        "stdlib": 1887.0,
+        "fields": 1859.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/knn_grid-compact-r2-a1.ag",
+      "median_cpu_us": {
+        "old": 2299.0,
+        "stdlib": 2019.0,
+        "fields": 1984.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/movie_credits-compact-r1-a1.ag",
+      "median_cpu_us": {
+        "old": 1450.0,
+        "stdlib": 1231.0,
+        "fields": 1197.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/movie_credits-compact-r2-a1.ag",
+      "median_cpu_us": {
+        "old": 1247.0,
+        "stdlib": 1053.0,
+        "fields": 1021.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+      "median_cpu_us": {
+        "old": 833.0,
+        "stdlib": 707.0,
+        "fields": 676.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r2-a1.ag",
+      "median_cpu_us": {
+        "old": 1177.0,
+        "stdlib": 1012.0,
+        "fields": 982.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+      "median_cpu_us": {
+        "old": 947.0,
+        "stdlib": 762.0,
+        "fields": 733.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r4-a1.ag",
+      "median_cpu_us": {
+        "old": 794.0,
+        "stdlib": 669.0,
+        "fields": 639.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r1-a1.ag",
+      "median_cpu_us": {
+        "old": 2284.0,
+        "stdlib": 2013.0,
+        "fields": 1973.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r2-a1.ag",
+      "median_cpu_us": {
+        "old": 2247.0,
+        "stdlib": 2008.0,
+        "fields": 1966.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r3-a1.ag",
+      "median_cpu_us": {
+        "old": 2138.0,
+        "stdlib": 1857.0,
+        "fields": 1828.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r4-a1.ag",
+      "median_cpu_us": {
+        "old": 2196.0,
+        "stdlib": 1870.0,
+        "fields": 1828.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+      "median_cpu_us": {
+        "old": 1763.0,
+        "stdlib": 1581.0,
+        "fields": 1536.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+      "median_cpu_us": {
+        "old": 1197.0,
+        "stdlib": 1021.0,
+        "fields": 1000.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+      "median_cpu_us": {
+        "old": 1237.0,
+        "stdlib": 1054.0,
+        "fields": 1027.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r4-a1.ag",
+      "median_cpu_us": {
+        "old": 1087.0,
+        "stdlib": 929.0,
+        "fields": 905.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r1-a1.ag",
+      "median_cpu_us": {
+        "old": 1398.0,
+        "stdlib": 1139.0,
+        "fields": 1104.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r2-a1.ag",
+      "median_cpu_us": {
+        "old": 1381.0,
+        "stdlib": 1120.0,
+        "fields": 1087.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r3-a1.ag",
+      "median_cpu_us": {
+        "old": 1390.0,
+        "stdlib": 1133.0,
+        "fields": 1101.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r4-a1.ag",
+      "median_cpu_us": {
+        "old": 1612.0,
+        "stdlib": 1356.0,
+        "fields": 1320.0
+      }
+    },
+    {
+      "source": "examples/goal_gap.ag",
+      "median_cpu_us": {
+        "old": 265.0,
+        "stdlib": 235.0,
+        "fields": 227.0
+      }
+    },
+    {
+      "source": "examples/late_flights.ag",
+      "median_cpu_us": {
+        "old": 227.0,
+        "stdlib": 201.0,
+        "fields": 197.0
+      }
+    },
+    {
+      "source": "examples/sort_scores.ag",
+      "median_cpu_us": {
+        "old": 101.0,
+        "stdlib": 94.0,
+        "fields": 90.0
+      }
+    },
+    {
+      "source": "examples/terse/leaders.ag",
+      "median_cpu_us": {
+        "old": 290.0,
+        "stdlib": 259.0,
+        "fields": 251.0
+      }
+    },
+    {
+      "source": "examples/terse/order_summary.ag",
+      "median_cpu_us": {
+        "old": 244.0,
+        "stdlib": 218.0,
+        "fields": 212.0
+      }
+    },
+    {
+      "source": "examples/terse/paid_total.ag",
+      "median_cpu_us": {
+        "old": 173.0,
+        "stdlib": 157.0,
+        "fields": 155.0
+      }
+    },
+    {
+      "source": "examples/word_counts.ag",
+      "median_cpu_us": {
+        "old": 223.0,
+        "stdlib": 199.0,
+        "fields": 193.0
+      }
+    }
+  ],
+  "helper_free_probe": {
+    "archive": {
+      "sources": 76,
+      "eligible": 13,
+      "sum_of_median_cpu_us": {
+        "ordinary": 52821.0,
+        "guard": 50646.0
+      }
+    },
+    "tooling": {
+      "sources": 29,
+      "eligible": 2,
+      "sum_of_median_cpu_us": {
+        "ordinary": 91259.0,
+        "guard": 91446.0
+      }
+    }
+  }
+}

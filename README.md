@@ -35,7 +35,13 @@ An ordinary Python statement can host a pipeline. The compiler binds `_` to the 
 
 The compile command embeds the helper functions it needs in the output. The run command binds those functions in memory. Plain Python can also import these functions directly from `agentlang.helpers`. The benchmark preloads the same functions for both languages. [Language reference](docs/language.md) · [Short reference for agent prompts](docs/agent-reference.txt)
 
-## Latest scripting results
+## Latest optimization results
+
+Across 512 measured launches of 16 existing scripts, the updated CLI cut median paired wall time by **11.7% on audit inputs** and **6.0% on larger inputs**. For programs using the previous release's record shorthand, in-memory preparation used **26.8% less CPU** on the archived script cohort and **28.9% less** on repository tools.
+
+Use `$[team name score]` for a list of literal column names or `$(queued running)` for a tuple of states. Across 1,048,576 generated source renderings, word lists and tuples used about **10% fewer tokens** than the shortest tested existing spelling per fragment. On 16 held-out complete scripts they saved **27 tokens** against the best existing control. The pipeline checks separately ran 2,097,152 program/input comparisons on each of three Python versions. [Study, results and reproduction commands](benchmarks/optimization/README.md) · [Runnable score table](examples/terse/score_table.ag)
+
+## Earlier scripting results
 
 Use `row?paid` for `row.get("paid")`. A record can now combine locals and computed fields. This script reads orders, totals the paid ones and reports how many orders it saw.
 
@@ -73,6 +79,7 @@ The earlier [long-script study](benchmarks/long/README.md) found 7.6% fewer sour
 | Path | What to look at |
 | --- | --- |
 | [Compiler](agentlang/compiler.py) | Stage recognition, Python translation and helper injection |
+| [Second optimization study](benchmarks/optimization/README.md) | Word literals, compiler passes, ranking, helper and fresh-launch measurements |
 | [Scripting study](benchmarks/scripting/README.md) | Syntax comparisons on two tokenizers, CSV and compiler alternatives, and before/after CLI timings |
 | [Pattern study](benchmarks/patterns/README.md) | Token inventory, fixed-source substitutions, live matched trials, batching and process measurements |
 | [Long-script study](benchmarks/long/README.md) | Workloads, paired trials, repair budgets, independent verification and resource profiles |

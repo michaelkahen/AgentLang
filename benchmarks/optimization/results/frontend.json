@@ -1,0 +1,2493 @@
+{
+  "baseline": "0e896bc4efcdf0d93b012dbf181b73e4f99f05d1",
+  "python": "3.12.4",
+  "platform": "macOS-14.8.2-arm64-arm-64bit",
+  "seed": 409157,
+  "warmup_rounds": 2,
+  "measured_rounds": 13,
+  "lexical_checks": [
+    {
+      "python": "3.12.4",
+      "ok": 1935,
+      "error": 1467,
+      "changed_record_boundary": 36
+    },
+    {
+      "python": "3.10.22",
+      "ok": 1845,
+      "error": 1557,
+      "changed_record_boundary": 0
+    },
+    {
+      "python": "3.14.10",
+      "ok": 1935,
+      "error": 1467,
+      "changed_record_boundary": 36
+    }
+  ],
+  "cohorts": {
+    "archive_authored": {
+      "sum_of_script_medians_us": {
+        "previous_release": {
+          "cpu": 46777.0,
+          "wall": 47031.877
+        },
+        "always_scan": {
+          "cpu": 43629.0,
+          "wall": 43903.792
+        },
+        "previous_frontend": {
+          "cpu": 38142.0,
+          "wall": 38448.413
+        },
+        "current": {
+          "cpu": 36758.0,
+          "wall": 37013.336
+        }
+      },
+      "programs": [
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r1-a1.py",
+          "sha256": "9ee826056dfd0317669d12101b05ba1bc547f374219ded10da0e75f2ed274764",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1207.0,
+              "wall": 1229.542
+            },
+            "always_scan": {
+              "cpu": 1227.0,
+              "wall": 1250.25
+            },
+            "previous_frontend": {
+              "cpu": 851.0,
+              "wall": 879.958
+            },
+            "current": {
+              "cpu": 879.0,
+              "wall": 903.5
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/fixture_pack-python-r3-a1.py",
+          "sha256": "63f1c3148e8f39479bde6545967609c0bfaa61ea32d0f78ece641eed7bdd1846",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1287.0,
+              "wall": 1333.125
+            },
+            "always_scan": {
+              "cpu": 1451.0,
+              "wall": 1484.625
+            },
+            "previous_frontend": {
+              "cpu": 1056.0,
+              "wall": 1115.791
+            },
+            "current": {
+              "cpu": 1029.0,
+              "wall": 1062.583
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r2-a1.py",
+          "sha256": "b1d307fd5edd48cf0c7631b33faace17f5fb02079dbdc95345351ca5aa0afe41",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1288.0,
+              "wall": 1321.625
+            },
+            "always_scan": {
+              "cpu": 1313.0,
+              "wall": 1354.458
+            },
+            "previous_frontend": {
+              "cpu": 956.0,
+              "wall": 976.583
+            },
+            "current": {
+              "cpu": 919.0,
+              "wall": 936.917
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+          "sha256": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd",
+          "median_us": {
+            "previous_release": {
+              "cpu": 994.0,
+              "wall": 994.583
+            },
+            "always_scan": {
+              "cpu": 1101.0,
+              "wall": 1101.958
+            },
+            "previous_frontend": {
+              "cpu": 752.0,
+              "wall": 755.709
+            },
+            "current": {
+              "cpu": 744.0,
+              "wall": 745.375
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r4-a1.py",
+          "sha256": "c285f73a13fe063b53717f46eacf8b4bdf77acdba621df6aae54bb35da7e4087",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1363.0,
+              "wall": 1379.458
+            },
+            "always_scan": {
+              "cpu": 1080.0,
+              "wall": 1081.042
+            },
+            "previous_frontend": {
+              "cpu": 1197.0,
+              "wall": 1198.458
+            },
+            "current": {
+              "cpu": 1149.0,
+              "wall": 1181.209
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r4-a1.ag",
+          "sha256": "2ba800b2754f41bdc39d03bcab6fecf8256b04f00a17f78b88929401b9e5717a",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1337.0,
+              "wall": 1338.792
+            },
+            "always_scan": {
+              "cpu": 1411.0,
+              "wall": 1412.75
+            },
+            "previous_frontend": {
+              "cpu": 1115.0,
+              "wall": 1115.875
+            },
+            "current": {
+              "cpu": 1098.0,
+              "wall": 1100.875
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-python-r3-a1.py",
+          "sha256": "efeb2fdc76dbe4be39727f6624144625219b7c95fd236c15e02a4f4a2040fe35",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1440.0,
+              "wall": 1440.958
+            },
+            "always_scan": {
+              "cpu": 1103.0,
+              "wall": 1103.458
+            },
+            "previous_frontend": {
+              "cpu": 1212.0,
+              "wall": 1228.375
+            },
+            "current": {
+              "cpu": 1153.0,
+              "wall": 1173.709
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/required/sources/movie_credits-compact-r2-a1.ag",
+          "sha256": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1478.0,
+              "wall": 1482.209
+            },
+            "always_scan": {
+              "cpu": 1207.0,
+              "wall": 1211.291
+            },
+            "previous_frontend": {
+              "cpu": 1322.0,
+              "wall": 1324.125
+            },
+            "current": {
+              "cpu": 1198.0,
+              "wall": 1199.292
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r2-a1.ag",
+          "sha256": "37598f05aa8c4816072dafde564ee4f1b5908c7b197e8a4997ee9d22d8fddd17",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1731.0,
+              "wall": 1739.083
+            },
+            "always_scan": {
+              "cpu": 1794.0,
+              "wall": 1809.834
+            },
+            "previous_frontend": {
+              "cpu": 1423.0,
+              "wall": 1427.833
+            },
+            "current": {
+              "cpu": 1314.0,
+              "wall": 1317.25
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/required/sources/movie_credits-python-r1-a1.py",
+          "sha256": "8381e42f9c39c20f59e172102e119c3a962d44ca6f5f7d9586953b60c11af70e",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1059.0,
+              "wall": 1066.0
+            },
+            "always_scan": {
+              "cpu": 1176.0,
+              "wall": 1187.417
+            },
+            "previous_frontend": {
+              "cpu": 837.0,
+              "wall": 848.208
+            },
+            "current": {
+              "cpu": 856.0,
+              "wall": 866.875
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+          "sha256": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1482.0,
+              "wall": 1500.75
+            },
+            "always_scan": {
+              "cpu": 1138.0,
+              "wall": 1139.167
+            },
+            "previous_frontend": {
+              "cpu": 1216.0,
+              "wall": 1221.292
+            },
+            "current": {
+              "cpu": 1180.0,
+              "wall": 1183.75
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/required/sources/movie_credits-python-r2-a1.py",
+          "sha256": "7c50ff0baf1d3ea323dda900d98e79790aa772b774e4ceba3b5e7798858e1905",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1373.0,
+              "wall": 1378.584
+            },
+            "always_scan": {
+              "cpu": 1076.0,
+              "wall": 1077.25
+            },
+            "previous_frontend": {
+              "cpu": 1144.0,
+              "wall": 1149.208
+            },
+            "current": {
+              "cpu": 1152.0,
+              "wall": 1159.25
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r2-a1.py",
+          "sha256": "e15313a473a4847a2f79eaa672aa2878bc53cdb92ec3c02388f2a64f5b65fe48",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1267.0,
+              "wall": 1267.75
+            },
+            "always_scan": {
+              "cpu": 996.0,
+              "wall": 996.833
+            },
+            "previous_frontend": {
+              "cpu": 1059.0,
+              "wall": 1061.125
+            },
+            "current": {
+              "cpu": 1028.0,
+              "wall": 1028.833
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r4-a1.ag",
+          "sha256": "149879de549d7c4f003fdede7131ca26bae975601c33c3e6b68f70cab1c82cb6",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2000.0,
+              "wall": 2002.334
+            },
+            "always_scan": {
+              "cpu": 2029.0,
+              "wall": 2031.5
+            },
+            "previous_frontend": {
+              "cpu": 1645.0,
+              "wall": 1646.5
+            },
+            "current": {
+              "cpu": 1563.0,
+              "wall": 1564.834
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r1-a1.ag",
+          "sha256": "15661b35d6b5f630546aef2288537365d617c27bfe0c6efea5783dead7765912",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1747.0,
+              "wall": 1753.333
+            },
+            "always_scan": {
+              "cpu": 1794.0,
+              "wall": 1798.792
+            },
+            "previous_frontend": {
+              "cpu": 1384.0,
+              "wall": 1392.459
+            },
+            "current": {
+              "cpu": 1308.0,
+              "wall": 1316.042
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+          "sha256": "18c43a4a11dc1e043ce77a454ed45351cf28d6dd3c56ef47bbf109a5c07f1022",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1592.0,
+              "wall": 1593.625
+            },
+            "always_scan": {
+              "cpu": 1422.0,
+              "wall": 1425.0
+            },
+            "previous_frontend": {
+              "cpu": 1395.0,
+              "wall": 1396.083
+            },
+            "current": {
+              "cpu": 1058.0,
+              "wall": 1059.375
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r4-a1.py",
+          "sha256": "512d2fe1d0e7744e28b7fc56b48062e239b85d3bf342924940677ccdb8e57ebe",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1244.0,
+              "wall": 1245.5
+            },
+            "always_scan": {
+              "cpu": 1321.0,
+              "wall": 1323.459
+            },
+            "previous_frontend": {
+              "cpu": 929.0,
+              "wall": 930.166
+            },
+            "current": {
+              "cpu": 908.0,
+              "wall": 909.292
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/knn_grid-python-r3-a1.py",
+          "sha256": "dc1a347be4418decc19fe3815740445e57f47f242e3c5d9959788abbd233f69c",
+          "median_us": {
+            "previous_release": {
+              "cpu": 3864.0,
+              "wall": 3876.334
+            },
+            "always_scan": {
+              "cpu": 3150.0,
+              "wall": 3161.5
+            },
+            "previous_frontend": {
+              "cpu": 3272.0,
+              "wall": 3286.625
+            },
+            "current": {
+              "cpu": 3152.0,
+              "wall": 3157.833
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r1-a1.py",
+          "sha256": "33f7a5bf30c4d8dba2033c402bcebcb6b5708bc0716c974e22d819300639574f",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1410.0,
+              "wall": 1424.583
+            },
+            "always_scan": {
+              "cpu": 1093.0,
+              "wall": 1094.417
+            },
+            "previous_frontend": {
+              "cpu": 1181.0,
+              "wall": 1186.5
+            },
+            "current": {
+              "cpu": 1124.0,
+              "wall": 1124.875
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r3-a1.py",
+          "sha256": "3f8fcc4d80768a1c949e797866fae0196a01c68f993d1beadf8fb33e8f3d94b2",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1372.0,
+              "wall": 1372.959
+            },
+            "always_scan": {
+              "cpu": 1046.0,
+              "wall": 1048.25
+            },
+            "previous_frontend": {
+              "cpu": 1128.0,
+              "wall": 1129.917
+            },
+            "current": {
+              "cpu": 1107.0,
+              "wall": 1107.75
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/fixture_pack-python-r2-a1.py",
+          "sha256": "5887816bd726502c84e38826c640cf5ef75bf0396fa35787cb81734e13e90981",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1172.0,
+              "wall": 1173.125
+            },
+            "always_scan": {
+              "cpu": 1356.0,
+              "wall": 1357.292
+            },
+            "previous_frontend": {
+              "cpu": 917.0,
+              "wall": 918.041
+            },
+            "current": {
+              "cpu": 925.0,
+              "wall": 925.125
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+          "sha256": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1335.0,
+              "wall": 1336.167
+            },
+            "always_scan": {
+              "cpu": 1037.0,
+              "wall": 1043.375
+            },
+            "previous_frontend": {
+              "cpu": 1094.0,
+              "wall": 1096.333
+            },
+            "current": {
+              "cpu": 1048.0,
+              "wall": 1048.375
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+          "sha256": "498fa34a99f79e15b661d3a34389b6fb292d2d400791adcab219f7a3686fd79d",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1393.0,
+              "wall": 1394.417
+            },
+            "always_scan": {
+              "cpu": 1417.0,
+              "wall": 1422.875
+            },
+            "previous_frontend": {
+              "cpu": 1138.0,
+              "wall": 1145.083
+            },
+            "current": {
+              "cpu": 1112.0,
+              "wall": 1112.958
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r3-a1.py",
+          "sha256": "0967f7979f45a852c3b34fea60a1faea41ae118463ddfdeaf344da1617d66675",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1183.0,
+              "wall": 1184.375
+            },
+            "always_scan": {
+              "cpu": 1246.0,
+              "wall": 1255.25
+            },
+            "previous_frontend": {
+              "cpu": 862.0,
+              "wall": 862.958
+            },
+            "current": {
+              "cpu": 869.0,
+              "wall": 873.958
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+          "sha256": "c51ae59f767f464d7e9aa784e9f251e614155e67587998a44c7403131b373761",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1507.0,
+              "wall": 1515.375
+            },
+            "always_scan": {
+              "cpu": 1561.0,
+              "wall": 1572.375
+            },
+            "previous_frontend": {
+              "cpu": 1247.0,
+              "wall": 1262.375
+            },
+            "current": {
+              "cpu": 1247.0,
+              "wall": 1256.167
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r3-a1.ag",
+          "sha256": "52548ebd1c03a6a017c5de72515fa6ce198303b9931b46167328fb06658d2d85",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1775.0,
+              "wall": 1783.25
+            },
+            "always_scan": {
+              "cpu": 1813.0,
+              "wall": 1814.0
+            },
+            "previous_frontend": {
+              "cpu": 1398.0,
+              "wall": 1399.833
+            },
+            "current": {
+              "cpu": 1357.0,
+              "wall": 1358.875
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/required/sources/fixture_pack-python-r2-a1.py",
+          "sha256": "fa787ba0f7566bdc97ba54bcb0714c0384dd86310a92e15d60e047b61e78e83e",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1066.0,
+              "wall": 1067.75
+            },
+            "always_scan": {
+              "cpu": 1163.0,
+              "wall": 1163.708
+            },
+            "previous_frontend": {
+              "cpu": 814.0,
+              "wall": 814.792
+            },
+            "current": {
+              "cpu": 788.0,
+              "wall": 789.417
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-python-r1-a1.py",
+          "sha256": "cce32ee070e86ffc8416b76115203f0d3fb97a92763574559eead5e28ea3521b",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1432.0,
+              "wall": 1434.0
+            },
+            "always_scan": {
+              "cpu": 1080.0,
+              "wall": 1081.333
+            },
+            "previous_frontend": {
+              "cpu": 1229.0,
+              "wall": 1239.958
+            },
+            "current": {
+              "cpu": 1182.0,
+              "wall": 1191.417
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+          "sha256": "05374116dbae654ba4a8abb88b4897958398991f43bc5d3596e060571b5807ec",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1117.0,
+              "wall": 1136.5
+            },
+            "always_scan": {
+              "cpu": 1271.0,
+              "wall": 1324.167
+            },
+            "previous_frontend": {
+              "cpu": 867.0,
+              "wall": 914.75
+            },
+            "current": {
+              "cpu": 885.0,
+              "wall": 909.5
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-python-r2-a1.py",
+          "sha256": "268e183e2be2e5e0d4722f2754001627570175d6f24a79da3c1405922b0e4f56",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1388.0,
+              "wall": 1389.625
+            },
+            "always_scan": {
+              "cpu": 1096.0,
+              "wall": 1100.125
+            },
+            "previous_frontend": {
+              "cpu": 1142.0,
+              "wall": 1143.333
+            },
+            "current": {
+              "cpu": 1127.0,
+              "wall": 1127.375
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/required/sources/movie_credits-compact-r1-a1.ag",
+          "sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1787.0,
+              "wall": 1788.416
+            },
+            "always_scan": {
+              "cpu": 1474.0,
+              "wall": 1487.25
+            },
+            "previous_frontend": {
+              "cpu": 1542.0,
+              "wall": 1550.917
+            },
+            "current": {
+              "cpu": 1483.0,
+              "wall": 1498.417
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+          "sha256": "58379d98124ea8e849f1ef099ca2711bff71451a77a6c29a4c61c2179c7cf085",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1087.0,
+              "wall": 1087.75
+            },
+            "always_scan": {
+              "cpu": 1187.0,
+              "wall": 1188.791
+            },
+            "previous_frontend": {
+              "cpu": 818.0,
+              "wall": 829.25
+            },
+            "current": {
+              "cpu": 816.0,
+              "wall": 822.333
+            }
+          }
+        }
+      ]
+    },
+    "archive_shortened": {
+      "sum_of_script_medians_us": {
+        "previous_release": {
+          "cpu": 59495.0,
+          "wall": 60233.247
+        },
+        "always_scan": {
+          "cpu": 56236.0,
+          "wall": 56864.209
+        },
+        "previous_frontend": {
+          "cpu": 50860.0,
+          "wall": 51504.582
+        },
+        "current": {
+          "cpu": 43543.0,
+          "wall": 44055.165
+        }
+      },
+      "programs": [
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-python-r1-a1.py",
+          "sha256": "1bc3dbc9be888a0ead67e6ca1ab551685b5ff81e80fd5e1c7e2297ee5be830cf",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1810.0,
+              "wall": 1813.084
+            },
+            "always_scan": {
+              "cpu": 1453.0,
+              "wall": 1453.709
+            },
+            "previous_frontend": {
+              "cpu": 1582.0,
+              "wall": 1593.0
+            },
+            "current": {
+              "cpu": 1072.0,
+              "wall": 1072.625
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+          "sha256": "8e77148fdb806f3719273cc041cd174c8e078f7dd54d6d5dea01935d5a44fdf2",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1649.0,
+              "wall": 1668.667
+            },
+            "always_scan": {
+              "cpu": 1412.0,
+              "wall": 1413.958
+            },
+            "previous_frontend": {
+              "cpu": 1422.0,
+              "wall": 1423.5
+            },
+            "current": {
+              "cpu": 1063.0,
+              "wall": 1063.792
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/knn_grid-python-r3-a1.py",
+          "sha256": "cce785082e31996acc09358e7f184566e5444419a50d92270a5e77dc7ddaa7b7",
+          "median_us": {
+            "previous_release": {
+              "cpu": 4673.0,
+              "wall": 4682.833
+            },
+            "always_scan": {
+              "cpu": 4055.0,
+              "wall": 4059.667
+            },
+            "previous_frontend": {
+              "cpu": 4120.0,
+              "wall": 4141.75
+            },
+            "current": {
+              "cpu": 3259.0,
+              "wall": 3267.083
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r1-a1.ag",
+          "sha256": "9725a8bdd036d4bbcc33480a5740c804dc9dc9a2bdd0f9e40ecdb47cc49eca17",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1717.0,
+              "wall": 1718.625
+            },
+            "always_scan": {
+              "cpu": 1794.0,
+              "wall": 1805.417
+            },
+            "previous_frontend": {
+              "cpu": 1370.0,
+              "wall": 1381.333
+            },
+            "current": {
+              "cpu": 1300.0,
+              "wall": 1305.167
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r2-a1.py",
+          "sha256": "86692f18355ba8cf7d330f95ebf0df0a762798a0a6b642720b5808ba034955e7",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1621.0,
+              "wall": 1624.5
+            },
+            "always_scan": {
+              "cpu": 1625.0,
+              "wall": 1630.042
+            },
+            "previous_frontend": {
+              "cpu": 1325.0,
+              "wall": 1330.208
+            },
+            "current": {
+              "cpu": 1227.0,
+              "wall": 1227.5
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r2-a1.py",
+          "sha256": "8d4c9d151b48dd5e6e62e35b98ad174f441b4a69bed3d29b0e2f77e567cd9053",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1592.0,
+              "wall": 1602.5
+            },
+            "always_scan": {
+              "cpu": 1322.0,
+              "wall": 1325.166
+            },
+            "previous_frontend": {
+              "cpu": 1390.0,
+              "wall": 1399.583
+            },
+            "current": {
+              "cpu": 1018.0,
+              "wall": 1019.25
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r4-a1.ag",
+          "sha256": "c3b562a5ee1926df31098fed055b08ad1ae6f6e3c9e88d748cabaf312d98689c",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1494.0,
+              "wall": 1531.084
+            },
+            "always_scan": {
+              "cpu": 1574.0,
+              "wall": 1607.167
+            },
+            "previous_frontend": {
+              "cpu": 1235.0,
+              "wall": 1248.334
+            },
+            "current": {
+              "cpu": 1206.0,
+              "wall": 1233.792
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/required/sources/movie_credits-compact-r1-a1.ag",
+          "sha256": "a429dad29f7494ac9ca58432cdd963240f93565b0a3b3814d7922ef668db8395",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2272.0,
+              "wall": 2312.875
+            },
+            "always_scan": {
+              "cpu": 1954.0,
+              "wall": 1955.5
+            },
+            "previous_frontend": {
+              "cpu": 2043.0,
+              "wall": 2115.5
+            },
+            "current": {
+              "cpu": 1997.0,
+              "wall": 1998.375
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+          "sha256": "9f847119b96685fc2db96203c3f392b6b459833502910026ccba44a3fe0cff2e",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1760.0,
+              "wall": 1788.625
+            },
+            "always_scan": {
+              "cpu": 1869.0,
+              "wall": 1876.375
+            },
+            "previous_frontend": {
+              "cpu": 1561.0,
+              "wall": 1571.708
+            },
+            "current": {
+              "cpu": 1400.0,
+              "wall": 1407.041
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/required/sources/movie_credits-compact-r2-a1.ag",
+          "sha256": "88c5d7ff5485988b189b30425ce0781faedf460d31562186fccd19296aed8d01",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1899.0,
+              "wall": 1911.958
+            },
+            "always_scan": {
+              "cpu": 1621.0,
+              "wall": 1622.458
+            },
+            "previous_frontend": {
+              "cpu": 1686.0,
+              "wall": 1697.666
+            },
+            "current": {
+              "cpu": 1652.0,
+              "wall": 1653.917
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/required/sources/fixture_pack-python-r2-a1.py",
+          "sha256": "ba8124d083b7873b718ad0546e1f26c8fbdeb5d20b48394710602ce5d9cbbf23",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1539.0,
+              "wall": 1548.916
+            },
+            "always_scan": {
+              "cpu": 1622.0,
+              "wall": 1633.75
+            },
+            "previous_frontend": {
+              "cpu": 1231.0,
+              "wall": 1234.417
+            },
+            "current": {
+              "cpu": 1175.0,
+              "wall": 1176.041
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r4-a1.py",
+          "sha256": "a379a1a135e69d776aa093d8c5af63e0ed02fe2baf965bd918956fb225994d62",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1658.0,
+              "wall": 1665.458
+            },
+            "always_scan": {
+              "cpu": 1352.0,
+              "wall": 1355.875
+            },
+            "previous_frontend": {
+              "cpu": 1527.0,
+              "wall": 1529.292
+            },
+            "current": {
+              "cpu": 1033.0,
+              "wall": 1042.292
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r4-a1.ag",
+          "sha256": "243fce769b5942136f49eded441f5f13e02a7a9b6ff78934f30ba57ea3514fb4",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2011.0,
+              "wall": 2013.833
+            },
+            "always_scan": {
+              "cpu": 2060.0,
+              "wall": 2065.209
+            },
+            "previous_frontend": {
+              "cpu": 1681.0,
+              "wall": 1683.458
+            },
+            "current": {
+              "cpu": 1602.0,
+              "wall": 1622.416
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-python-r2-a1.py",
+          "sha256": "1528547e8f1f7adbfdbd2d87a76e6f52d29a353e2b4f1222294308da744fb0cd",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2102.0,
+              "wall": 2137.709
+            },
+            "always_scan": {
+              "cpu": 1691.0,
+              "wall": 1715.584
+            },
+            "previous_frontend": {
+              "cpu": 1809.0,
+              "wall": 1825.416
+            },
+            "current": {
+              "cpu": 1313.0,
+              "wall": 1344.167
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/fixture_pack-python-r2-a1.py",
+          "sha256": "6f38b281f3dc7224bff87fd628bd30f77a1cdff63f99205d1c791c6de2d392a4",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1958.0,
+              "wall": 2005.083
+            },
+            "always_scan": {
+              "cpu": 2122.0,
+              "wall": 2151.75
+            },
+            "previous_frontend": {
+              "cpu": 1652.0,
+              "wall": 1670.5
+            },
+            "current": {
+              "cpu": 1612.0,
+              "wall": 1635.958
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r3-a1.py",
+          "sha256": "c731263efac2bd7d93e8f5b8a71674b65c9216e1d376916c535e135592454a31",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1760.0,
+              "wall": 1761.25
+            },
+            "always_scan": {
+              "cpu": 1448.0,
+              "wall": 1454.042
+            },
+            "previous_frontend": {
+              "cpu": 1517.0,
+              "wall": 1518.917
+            },
+            "current": {
+              "cpu": 1127.0,
+              "wall": 1128.083
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r3-a1.ag",
+          "sha256": "5a4ed37b5e5b985cc9d7add32bd3b8200704093ddee872bc5396fd7c541c71b2",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2000.0,
+              "wall": 2057.666
+            },
+            "always_scan": {
+              "cpu": 2027.0,
+              "wall": 2083.333
+            },
+            "previous_frontend": {
+              "cpu": 1533.0,
+              "wall": 1554.166
+            },
+            "current": {
+              "cpu": 1521.0,
+              "wall": 1539.666
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+          "sha256": "34629159cda840b17396c36ca8d7a7c03828a2a0ef391087825faaf9f17b7dc2",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1797.0,
+              "wall": 1832.292
+            },
+            "always_scan": {
+              "cpu": 1839.0,
+              "wall": 1870.875
+            },
+            "previous_frontend": {
+              "cpu": 1523.0,
+              "wall": 1564.667
+            },
+            "current": {
+              "cpu": 1438.0,
+              "wall": 1472.667
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+          "sha256": "c64664a9f4338ae8d2d36fd01dc8e72f61433ec45da8d96bd6e8ed2351ea3e7e",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1694.0,
+              "wall": 1735.875
+            },
+            "always_scan": {
+              "cpu": 1865.0,
+              "wall": 1921.875
+            },
+            "previous_frontend": {
+              "cpu": 1434.0,
+              "wall": 1474.083
+            },
+            "current": {
+              "cpu": 1267.0,
+              "wall": 1290.583
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-python-r3-a1.py",
+          "sha256": "9f857c48379bd96bf41b71ce32d21ae6dc2b7ae68ddac5ec7564c23386a0ce0c",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2175.0,
+              "wall": 2207.292
+            },
+            "always_scan": {
+              "cpu": 1642.0,
+              "wall": 1668.916
+            },
+            "previous_frontend": {
+              "cpu": 1917.0,
+              "wall": 1975.875
+            },
+            "current": {
+              "cpu": 1298.0,
+              "wall": 1332.625
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r1-a1.py",
+          "sha256": "a9d15f8d0443f3c68acee48ceca0d0fe97d6291bea0444c19889791c3fbcc66b",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2019.0,
+              "wall": 2066.583
+            },
+            "always_scan": {
+              "cpu": 1658.0,
+              "wall": 1705.625
+            },
+            "previous_frontend": {
+              "cpu": 1812.0,
+              "wall": 1847.208
+            },
+            "current": {
+              "cpu": 1410.0,
+              "wall": 1459.208
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/required/sources/movie_credits-python-r1-a1.py",
+          "sha256": "1dcdf26b1912f720ed8c8260fea92b6753ed679fb3de406c1300d7e5747b4d17",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1786.0,
+              "wall": 1841.0
+            },
+            "always_scan": {
+              "cpu": 1938.0,
+              "wall": 1995.375
+            },
+            "previous_frontend": {
+              "cpu": 1531.0,
+              "wall": 1580.667
+            },
+            "current": {
+              "cpu": 1480.0,
+              "wall": 1516.417
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r2-a1.ag",
+          "sha256": "0690e3c2b23a222dd5576f74d9f8be4f98d55642748e18d6a6f88b97a68ab4b6",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2096.0,
+              "wall": 2169.583
+            },
+            "always_scan": {
+              "cpu": 2192.0,
+              "wall": 2239.542
+            },
+            "previous_frontend": {
+              "cpu": 1758.0,
+              "wall": 1830.667
+            },
+            "current": {
+              "cpu": 1625.0,
+              "wall": 1671.0
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/fixture_pack-python-r3-a1.py",
+          "sha256": "5488dc6d639f082f686853ca871e813a4e1c4960ca687e40427f4cc011f80a9d",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2024.0,
+              "wall": 2070.875
+            },
+            "always_scan": {
+              "cpu": 2210.0,
+              "wall": 2273.458
+            },
+            "previous_frontend": {
+              "cpu": 1717.0,
+              "wall": 1760.959
+            },
+            "current": {
+              "cpu": 1694.0,
+              "wall": 1737.958
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+          "sha256": "6291d5b6f499f31f5a1b1271385c7eedacdd788abab9f37a1e802f1dbb461857",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2076.0,
+              "wall": 2111.167
+            },
+            "always_scan": {
+              "cpu": 1777.0,
+              "wall": 1834.916
+            },
+            "previous_frontend": {
+              "cpu": 1902.0,
+              "wall": 1956.583
+            },
+            "current": {
+              "cpu": 1229.0,
+              "wall": 1294.5
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+          "sha256": "6a1ffbec2ad87dbc93a0b021dccbffef9d5155cdcbef8ead3dac3701a854bded",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1589.0,
+              "wall": 1614.208
+            },
+            "always_scan": {
+              "cpu": 1682.0,
+              "wall": 1699.875
+            },
+            "previous_frontend": {
+              "cpu": 1340.0,
+              "wall": 1342.166
+            },
+            "current": {
+              "cpu": 1243.0,
+              "wall": 1254.875
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r4-a1.py",
+          "sha256": "28862cbb8ebf33a282b6f64fb70adc4372d0770ae1d590ef3476ed322aff6310",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1759.0,
+              "wall": 1763.291
+            },
+            "always_scan": {
+              "cpu": 1840.0,
+              "wall": 1844.333
+            },
+            "previous_frontend": {
+              "cpu": 1405.0,
+              "wall": 1409.209
+            },
+            "current": {
+              "cpu": 1357.0,
+              "wall": 1358.167
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r1-a1.py",
+          "sha256": "ee6d0d0dc8b6e1c1ecd6785b80188bf4a9fcfb0bc242a9693bb69e9a50d9c95a",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1603.0,
+              "wall": 1603.958
+            },
+            "always_scan": {
+              "cpu": 1660.0,
+              "wall": 1661.0
+            },
+            "previous_frontend": {
+              "cpu": 1300.0,
+              "wall": 1303.125
+            },
+            "current": {
+              "cpu": 1221.0,
+              "wall": 1221.584
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/required/sources/movie_credits-python-r2-a1.py",
+          "sha256": "a483a531997767f6e654e390083a29c5ea85c1e4c3c865363f1ebfa95b6c0b5a",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1482.0,
+              "wall": 1485.5
+            },
+            "always_scan": {
+              "cpu": 1220.0,
+              "wall": 1221.292
+            },
+            "previous_frontend": {
+              "cpu": 1279.0,
+              "wall": 1280.083
+            },
+            "current": {
+              "cpu": 888.0,
+              "wall": 889.666
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+          "sha256": "5b311585677f7e9c10e538f03df0d955ae0118668f5b52e47d4d803b9c5d88f3",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1214.0,
+              "wall": 1218.541
+            },
+            "always_scan": {
+              "cpu": 1262.0,
+              "wall": 1262.417
+            },
+            "previous_frontend": {
+              "cpu": 1047.0,
+              "wall": 1047.584
+            },
+            "current": {
+              "cpu": 1002.0,
+              "wall": 1003.292
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r3-a1.py",
+          "sha256": "ddab288733f05bc60fb588a3a042b8b26655b1f4f7c686ffc0b5feaf1a5d337e",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1326.0,
+              "wall": 1327.583
+            },
+            "always_scan": {
+              "cpu": 1358.0,
+              "wall": 1362.25
+            },
+            "previous_frontend": {
+              "cpu": 1053.0,
+              "wall": 1054.0
+            },
+            "current": {
+              "cpu": 1006.0,
+              "wall": 1006.75
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+          "sha256": "5102c7dc25c8a7596f88398ab8149dde121c24567fbef2cfc92edb018a9fa263",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1340.0,
+              "wall": 1340.833
+            },
+            "always_scan": {
+              "cpu": 1092.0,
+              "wall": 1093.458
+            },
+            "previous_frontend": {
+              "cpu": 1158.0,
+              "wall": 1158.958
+            },
+            "current": {
+              "cpu": 808.0,
+              "wall": 808.708
+            }
+          }
+        }
+      ]
+    },
+    "tooling_authored": {
+      "sum_of_script_medians_us": {
+        "previous_release": {
+          "cpu": 96460.0,
+          "wall": 97023.124
+        },
+        "always_scan": {
+          "cpu": 85184.0,
+          "wall": 85497.75
+        },
+        "previous_frontend": {
+          "cpu": 83773.0,
+          "wall": 84431.583
+        },
+        "current": {
+          "cpu": 79872.0,
+          "wall": 80062.753
+        }
+      },
+      "programs": [
+        {
+          "source": "benchmarks/long/spellings.py",
+          "sha256": "8dd7c0038d29afa229dccc3f27243248d18fa6cf980bc312281f16130003d158",
+          "median_us": {
+            "previous_release": {
+              "cpu": 10783.0,
+              "wall": 10809.75
+            },
+            "always_scan": {
+              "cpu": 8738.0,
+              "wall": 8740.25
+            },
+            "previous_frontend": {
+              "cpu": 9461.0,
+              "wall": 9466.958
+            },
+            "current": {
+              "cpu": 9090.0,
+              "wall": 9094.75
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/summarize.py",
+          "sha256": "c7da6f8cba4681b7b0b3d8181446c36676c7351cee5d80274eb2766229517563",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2147.0,
+              "wall": 2148.166
+            },
+            "always_scan": {
+              "cpu": 1797.0,
+              "wall": 1798.083
+            },
+            "previous_frontend": {
+              "cpu": 1863.0,
+              "wall": 1864.583
+            },
+            "current": {
+              "cpu": 1827.0,
+              "wall": 1828.875
+            }
+          }
+        },
+        {
+          "source": "benchmarks/pilot/generation/verify.py",
+          "sha256": "638a1a48e5e4625915733faa697803c3d0f6a8b0e6252a18d88546e986f54962",
+          "median_us": {
+            "previous_release": {
+              "cpu": 3812.0,
+              "wall": 3814.125
+            },
+            "always_scan": {
+              "cpu": 3103.0,
+              "wall": 3104.375
+            },
+            "previous_frontend": {
+              "cpu": 3331.0,
+              "wall": 3333.167
+            },
+            "current": {
+              "cpu": 3179.0,
+              "wall": 3180.416
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/runtime/run.py",
+          "sha256": "77eb9c82c94e5d7d49eadf1e4e68ed2fa9ae0a7671674853ca6c3ca6804965e9",
+          "median_us": {
+            "previous_release": {
+              "cpu": 10764.0,
+              "wall": 10774.667
+            },
+            "always_scan": {
+              "cpu": 8912.0,
+              "wall": 8916.042
+            },
+            "previous_frontend": {
+              "cpu": 9516.0,
+              "wall": 9526.875
+            },
+            "current": {
+              "cpu": 9178.0,
+              "wall": 9189.375
+            }
+          }
+        },
+        {
+          "source": "benchmarks/pilot/runtime/run.py",
+          "sha256": "74c157bf99a9bb28550f44bc4c436182a476f144719c8fc6f9dd9552bcab95b8",
+          "median_us": {
+            "previous_release": {
+              "cpu": 7558.0,
+              "wall": 7558.958
+            },
+            "always_scan": {
+              "cpu": 6287.0,
+              "wall": 6298.584
+            },
+            "previous_frontend": {
+              "cpu": 6758.0,
+              "wall": 6759.667
+            },
+            "current": {
+              "cpu": 6427.0,
+              "wall": 6436.542
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/runtime/native.py",
+          "sha256": "75d8d9fe23d97c6fc275b2af925314d2772e91ede38b354938ace39d5b141129",
+          "median_us": {
+            "previous_release": {
+              "cpu": 351.0,
+              "wall": 351.542
+            },
+            "always_scan": {
+              "cpu": 372.0,
+              "wall": 372.333
+            },
+            "previous_frontend": {
+              "cpu": 266.0,
+              "wall": 266.917
+            },
+            "current": {
+              "cpu": 267.0,
+              "wall": 268.5
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/summarize.py",
+          "sha256": "f0cdf98ceeeb7ac4626bd7c6c84656e1a2851544b4f7e885194d25f05579a16b",
+          "median_us": {
+            "previous_release": {
+              "cpu": 3846.0,
+              "wall": 3847.833
+            },
+            "always_scan": {
+              "cpu": 3203.0,
+              "wall": 3203.208
+            },
+            "previous_frontend": {
+              "cpu": 3334.0,
+              "wall": 3335.417
+            },
+            "current": {
+              "cpu": 3238.0,
+              "wall": 3239.334
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/batch/run.py",
+          "sha256": "a398d0fdf30085bfb28d0738371fb46a04ab72ae7b5a279e27f295e9454e10ea",
+          "median_us": {
+            "previous_release": {
+              "cpu": 4595.0,
+              "wall": 4598.791
+            },
+            "always_scan": {
+              "cpu": 3894.0,
+              "wall": 3898.458
+            },
+            "previous_frontend": {
+              "cpu": 4057.0,
+              "wall": 4057.958
+            },
+            "current": {
+              "cpu": 2911.0,
+              "wall": 2911.833
+            }
+          }
+        },
+        {
+          "source": "benchmarks/pilot/generation/collect.py",
+          "sha256": "ff2d7c5d97905125ddf41ea23910d36e36b1956f6b61fbb54fecf2a20837aceb",
+          "median_us": {
+            "previous_release": {
+              "cpu": 2890.0,
+              "wall": 2891.792
+            },
+            "always_scan": {
+              "cpu": 2366.0,
+              "wall": 2367.25
+            },
+            "previous_frontend": {
+              "cpu": 2503.0,
+              "wall": 2504.5
+            },
+            "current": {
+              "cpu": 2424.0,
+              "wall": 2424.292
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/evaluation/profile.py",
+          "sha256": "63f37bdec7e49a55affb7b93b9e2393e165fb55cd5a4ad4f6285381154ab8598",
+          "median_us": {
+            "previous_release": {
+              "cpu": 4865.0,
+              "wall": 5099.208
+            },
+            "always_scan": {
+              "cpu": 5517.0,
+              "wall": 5531.0
+            },
+            "previous_frontend": {
+              "cpu": 4390.0,
+              "wall": 4731.416
+            },
+            "current": {
+              "cpu": 4267.0,
+              "wall": 4361.292
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/evaluation/cases.py",
+          "sha256": "500b985fe3c1b0a7dbd9393a01d85734b228a86b782132f7b6a3554f793af539",
+          "median_us": {
+            "previous_release": {
+              "cpu": 4411.0,
+              "wall": 4644.083
+            },
+            "always_scan": {
+              "cpu": 3449.0,
+              "wall": 3648.542
+            },
+            "previous_frontend": {
+              "cpu": 3468.0,
+              "wall": 3650.625
+            },
+            "current": {
+              "cpu": 3442.0,
+              "wall": 3459.667
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/features.py",
+          "sha256": "32c055543a01583b1b72411888ca518a2c5c38eca5dbfe0b67cd7b0fdc757bc7",
+          "median_us": {
+            "previous_release": {
+              "cpu": 6649.0,
+              "wall": 6651.125
+            },
+            "always_scan": {
+              "cpu": 7036.0,
+              "wall": 7040.208
+            },
+            "previous_frontend": {
+              "cpu": 5786.0,
+              "wall": 5790.5
+            },
+            "current": {
+              "cpu": 5546.0,
+              "wall": 5548.833
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/run.py",
+          "sha256": "d7f9f4939bbad4003e2c7d5f3b0c33094429d283ece850267b49679cdfaef773",
+          "median_us": {
+            "previous_release": {
+              "cpu": 10036.0,
+              "wall": 10047.625
+            },
+            "always_scan": {
+              "cpu": 8430.0,
+              "wall": 8458.333
+            },
+            "previous_frontend": {
+              "cpu": 8650.0,
+              "wall": 8652.583
+            },
+            "current": {
+              "cpu": 8511.0,
+              "wall": 8517.834
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/workloads/cases.py",
+          "sha256": "5d1abdb6f8788fe1624a3bee7507ac04b9e88d03744199471cb2eb76027c6c8c",
+          "median_us": {
+            "previous_release": {
+              "cpu": 9586.0,
+              "wall": 9597.125
+            },
+            "always_scan": {
+              "cpu": 8071.0,
+              "wall": 8072.375
+            },
+            "previous_frontend": {
+              "cpu": 8344.0,
+              "wall": 8347.958
+            },
+            "current": {
+              "cpu": 8100.0,
+              "wall": 8101.209
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/run.py",
+          "sha256": "fdf268e54ca5c6a15f2daaed1003844cafca1640232146f6d07f7012e91ad1eb",
+          "median_us": {
+            "previous_release": {
+              "cpu": 4884.0,
+              "wall": 4885.584
+            },
+            "always_scan": {
+              "cpu": 5350.0,
+              "wall": 5351.625
+            },
+            "previous_frontend": {
+              "cpu": 4091.0,
+              "wall": 4094.917
+            },
+            "current": {
+              "cpu": 4080.0,
+              "wall": 4082.209
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/batch/verify.py",
+          "sha256": "1127918f08b3a983206aeab756a34076945f6e2c166c88b9253755b40ae9f105",
+          "median_us": {
+            "previous_release": {
+              "cpu": 7457.0,
+              "wall": 7468.0
+            },
+            "always_scan": {
+              "cpu": 7259.0,
+              "wall": 7294.917
+            },
+            "previous_frontend": {
+              "cpu": 6394.0,
+              "wall": 6474.417
+            },
+            "current": {
+              "cpu": 5909.0,
+              "wall": 5934.708
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/client.py",
+          "sha256": "bfb1a3a665c1e1a3695a2546766f679c39dc181755a78857211b6aad2eec61c4",
+          "median_us": {
+            "previous_release": {
+              "cpu": 1826.0,
+              "wall": 1834.75
+            },
+            "always_scan": {
+              "cpu": 1400.0,
+              "wall": 1402.167
+            },
+            "previous_frontend": {
+              "cpu": 1561.0,
+              "wall": 1573.125
+            },
+            "current": {
+              "cpu": 1476.0,
+              "wall": 1483.084
+            }
+          }
+        }
+      ]
+    },
+    "tooling_shortened": {
+      "sum_of_script_medians_us": {
+        "previous_release": {
+          "cpu": 200232.0,
+          "wall": 213465.372
+        },
+        "always_scan": {
+          "cpu": 183919.0,
+          "wall": 199342.251
+        },
+        "previous_frontend": {
+          "cpu": 178620.0,
+          "wall": 190056.166
+        },
+        "current": {
+          "cpu": 142273.0,
+          "wall": 152217.542
+        }
+      },
+      "programs": [
+        {
+          "source": "benchmarks/pilot/generation/verify.py",
+          "sha256": "73601be15152f3e49d834e2156b1e12112dfb74041659d9d964e3eaa2de590e3",
+          "median_us": {
+            "previous_release": {
+              "cpu": 6400.0,
+              "wall": 6544.375
+            },
+            "always_scan": {
+              "cpu": 5153.0,
+              "wall": 5224.417
+            },
+            "previous_frontend": {
+              "cpu": 5649.0,
+              "wall": 5714.459
+            },
+            "current": {
+              "cpu": 4152.0,
+              "wall": 4254.25
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/workloads/cases.py",
+          "sha256": "d3574ff3c4486fab7ace8e90a7b17320472012f46fe6b6eebbe530665bf6ffac",
+          "median_us": {
+            "previous_release": {
+              "cpu": 16788.0,
+              "wall": 17032.125
+            },
+            "always_scan": {
+              "cpu": 15565.0,
+              "wall": 15858.833
+            },
+            "previous_frontend": {
+              "cpu": 15831.0,
+              "wall": 16124.791
+            },
+            "current": {
+              "cpu": 11917.0,
+              "wall": 12153.625
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/evaluation/profile.py",
+          "sha256": "973bafe534b114a89eda3766ab3458e0cdecd6ce51859a3de497e1cd01378afd",
+          "median_us": {
+            "previous_release": {
+              "cpu": 11288.0,
+              "wall": 12040.583
+            },
+            "always_scan": {
+              "cpu": 11321.0,
+              "wall": 11890.375
+            },
+            "previous_frontend": {
+              "cpu": 9802.0,
+              "wall": 10453.291
+            },
+            "current": {
+              "cpu": 9381.0,
+              "wall": 10079.5
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/spellings.py",
+          "sha256": "b3f6bc9ee651583c55635cc260ce5c43a633307ef0492a126d253173a4afcd47",
+          "median_us": {
+            "previous_release": {
+              "cpu": 24099.0,
+              "wall": 26320.333
+            },
+            "always_scan": {
+              "cpu": 20337.0,
+              "wall": 24316.75
+            },
+            "previous_frontend": {
+              "cpu": 21639.0,
+              "wall": 24337.75
+            },
+            "current": {
+              "cpu": 14903.0,
+              "wall": 17137.125
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/summarize.py",
+          "sha256": "34704c529de52c2bc227da9722fde40bef11ba03666cfe0628ae8d07132b1290",
+          "median_us": {
+            "previous_release": {
+              "cpu": 4364.0,
+              "wall": 4416.208
+            },
+            "always_scan": {
+              "cpu": 3681.0,
+              "wall": 3747.292
+            },
+            "previous_frontend": {
+              "cpu": 3877.0,
+              "wall": 3987.875
+            },
+            "current": {
+              "cpu": 3016.0,
+              "wall": 3047.792
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/batch/verify.py",
+          "sha256": "c9ead559053f1eca6bc962776f8e7bd4fc34483176701b75b1a8cf76c2a220e5",
+          "median_us": {
+            "previous_release": {
+              "cpu": 11641.0,
+              "wall": 11971.625
+            },
+            "always_scan": {
+              "cpu": 12443.0,
+              "wall": 13109.375
+            },
+            "previous_frontend": {
+              "cpu": 10626.0,
+              "wall": 11181.625
+            },
+            "current": {
+              "cpu": 9897.0,
+              "wall": 10152.208
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/runtime/native.py",
+          "sha256": "ce27f4d6b021074d5e00904c2d061f59109aba4af149eac92ce47118c22cc299",
+          "median_us": {
+            "previous_release": {
+              "cpu": 951.0,
+              "wall": 1009.792
+            },
+            "always_scan": {
+              "cpu": 1092.0,
+              "wall": 1124.417
+            },
+            "previous_frontend": {
+              "cpu": 864.0,
+              "wall": 935.792
+            },
+            "current": {
+              "cpu": 714.0,
+              "wall": 735.583
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/client.py",
+          "sha256": "61f26f8ae186102fdf3e0cf485add6e5564b9345074e11b96b42fe39517dcb04",
+          "median_us": {
+            "previous_release": {
+              "cpu": 3770.0,
+              "wall": 4102.5
+            },
+            "always_scan": {
+              "cpu": 3048.0,
+              "wall": 3386.125
+            },
+            "previous_frontend": {
+              "cpu": 3408.0,
+              "wall": 3612.125
+            },
+            "current": {
+              "cpu": 2329.0,
+              "wall": 2662.083
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/runtime/run.py",
+          "sha256": "f5116ea87154291e47467d729f9d1a88c5ed9349079f4fdac17ea412084b7b72",
+          "median_us": {
+            "previous_release": {
+              "cpu": 27835.0,
+              "wall": 30601.666
+            },
+            "always_scan": {
+              "cpu": 27608.0,
+              "wall": 32422.708
+            },
+            "previous_frontend": {
+              "cpu": 24664.0,
+              "wall": 26568.083
+            },
+            "current": {
+              "cpu": 18691.0,
+              "wall": 20577.792
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/evaluation/cases.py",
+          "sha256": "03d35f6a9e3f3277a386913850774e91e525b0b9a85d5ed8ee1b6127d387a8dd",
+          "median_us": {
+            "previous_release": {
+              "cpu": 9609.0,
+              "wall": 10001.458
+            },
+            "always_scan": {
+              "cpu": 7819.0,
+              "wall": 7937.708
+            },
+            "previous_frontend": {
+              "cpu": 7974.0,
+              "wall": 8121.792
+            },
+            "current": {
+              "cpu": 5934.0,
+              "wall": 6087.792
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/batch/run.py",
+          "sha256": "e499b552b18437f297950a332705869e5c46f484db651a08fbc5ebcc3cc8bc4b",
+          "median_us": {
+            "previous_release": {
+              "cpu": 8340.0,
+              "wall": 9098.917
+            },
+            "always_scan": {
+              "cpu": 7378.0,
+              "wall": 7565.0
+            },
+            "previous_frontend": {
+              "cpu": 7231.0,
+              "wall": 7581.167
+            },
+            "current": {
+              "cpu": 5469.0,
+              "wall": 5844.416
+            }
+          }
+        },
+        {
+          "source": "benchmarks/long/generation/run.py",
+          "sha256": "f68230fa548d3248c70fcbc79c86ea1ae90a5e96296005746f9bb7afd20494a1",
+          "median_us": {
+            "previous_release": {
+              "cpu": 23643.0,
+              "wall": 27244.666
+            },
+            "always_scan": {
+              "cpu": 19382.0,
+              "wall": 22162.292
+            },
+            "previous_frontend": {
+              "cpu": 21492.0,
+              "wall": 24697.625
+            },
+            "current": {
+              "cpu": 15846.0,
+              "wall": 18360.417
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/run.py",
+          "sha256": "70405c00cb25cdd8276c29a131f11a1ccba27f38688b7f4f2d15bca60f5fe25c",
+          "median_us": {
+            "previous_release": {
+              "cpu": 10893.0,
+              "wall": 11423.5
+            },
+            "always_scan": {
+              "cpu": 11746.0,
+              "wall": 12254.792
+            },
+            "previous_frontend": {
+              "cpu": 9722.0,
+              "wall": 9981.5
+            },
+            "current": {
+              "cpu": 9073.0,
+              "wall": 9274.958
+            }
+          }
+        },
+        {
+          "source": "benchmarks/pilot/generation/collect.py",
+          "sha256": "104e3212d922f2cf18eb46de646aab10343719ee5adb3997e9253348ff859bdf",
+          "median_us": {
+            "previous_release": {
+              "cpu": 5884.0,
+              "wall": 5914.375
+            },
+            "always_scan": {
+              "cpu": 5064.0,
+              "wall": 5086.417
+            },
+            "previous_frontend": {
+              "cpu": 5069.0,
+              "wall": 5108.833
+            },
+            "current": {
+              "cpu": 3669.0,
+              "wall": 3673.084
+            }
+          }
+        },
+        {
+          "source": "benchmarks/pilot/runtime/run.py",
+          "sha256": "388dfc0db27ed632f450db4a7fead13571c7d925e36bf814e3859f90339db390",
+          "median_us": {
+            "previous_release": {
+              "cpu": 14748.0,
+              "wall": 14881.75
+            },
+            "always_scan": {
+              "cpu": 12537.0,
+              "wall": 12690.167
+            },
+            "previous_frontend": {
+              "cpu": 13193.0,
+              "wall": 13380.916
+            },
+            "current": {
+              "cpu": 9982.0,
+              "wall": 10129.375
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/summarize.py",
+          "sha256": "a239e6d3c07ffd31a02bfe68b24687d25950aded5aa4d31ff9eb2c9de0d9441f",
+          "median_us": {
+            "previous_release": {
+              "cpu": 8622.0,
+              "wall": 9283.083
+            },
+            "always_scan": {
+              "cpu": 7565.0,
+              "wall": 7928.5
+            },
+            "previous_frontend": {
+              "cpu": 7484.0,
+              "wall": 7847.375
+            },
+            "current": {
+              "cpu": 7557.0,
+              "wall": 8000.875
+            }
+          }
+        },
+        {
+          "source": "benchmarks/patterns/generation/features.py",
+          "sha256": "8f6603629043dbc2a2e20451a7f5adfb259388059313c8bf3efb84d44b1279f5",
+          "median_us": {
+            "previous_release": {
+              "cpu": 11357.0,
+              "wall": 11578.416
+            },
+            "always_scan": {
+              "cpu": 12180.0,
+              "wall": 12637.083
+            },
+            "previous_frontend": {
+              "cpu": 10095.0,
+              "wall": 10421.167
+            },
+            "current": {
+              "cpu": 9743.0,
+              "wall": 10046.667
+            }
+          }
+        }
+      ]
+    },
+    "examples": {
+      "sum_of_script_medians_us": {
+        "previous_release": {
+          "cpu": 3045.0,
+          "wall": 3128.209
+        },
+        "always_scan": {
+          "cpu": 2627.0,
+          "wall": 2690.918
+        },
+        "previous_frontend": {
+          "cpu": 2704.0,
+          "wall": 2830.917
+        },
+        "current": {
+          "cpu": 2645.0,
+          "wall": 2771.626
+        }
+      },
+      "programs": [
+        {
+          "source": "examples/goal_gap.ag",
+          "sha256": "9b7a0da45d869396c4805d3d2056a964227857d270ee839fc42fbbd4382c0159",
+          "median_us": {
+            "previous_release": {
+              "cpu": 468.0,
+              "wall": 470.084
+            },
+            "always_scan": {
+              "cpu": 432.0,
+              "wall": 450.292
+            },
+            "previous_frontend": {
+              "cpu": 447.0,
+              "wall": 460.416
+            },
+            "current": {
+              "cpu": 428.0,
+              "wall": 441.833
+            }
+          }
+        },
+        {
+          "source": "examples/terse/order_summary.ag",
+          "sha256": "be7104b3ec565c2a74ad8d36258e008d87a23763dff2e18ac332d03c8544a4f9",
+          "median_us": {
+            "previous_release": {
+              "cpu": 462.0,
+              "wall": 463.834
+            },
+            "always_scan": {
+              "cpu": 417.0,
+              "wall": 432.417
+            },
+            "previous_frontend": {
+              "cpu": 399.0,
+              "wall": 415.458
+            },
+            "current": {
+              "cpu": 399.0,
+              "wall": 401.625
+            }
+          }
+        },
+        {
+          "source": "examples/late_flights.ag",
+          "sha256": "a589da3d922db330400e0f226a9f9bfb83b41632669378856baedd5f00385ca9",
+          "median_us": {
+            "previous_release": {
+              "cpu": 539.0,
+              "wall": 590.291
+            },
+            "always_scan": {
+              "cpu": 405.0,
+              "wall": 406.667
+            },
+            "previous_frontend": {
+              "cpu": 460.0,
+              "wall": 462.667
+            },
+            "current": {
+              "cpu": 426.0,
+              "wall": 482.959
+            }
+          }
+        },
+        {
+          "source": "examples/terse/paid_total.ag",
+          "sha256": "9a2a476b159d7413ee61395a10e6392a7a1a2bbf9780eb35b08b110bab2fef06",
+          "median_us": {
+            "previous_release": {
+              "cpu": 356.0,
+              "wall": 357.791
+            },
+            "always_scan": {
+              "cpu": 350.0,
+              "wall": 358.292
+            },
+            "previous_frontend": {
+              "cpu": 329.0,
+              "wall": 365.75
+            },
+            "current": {
+              "cpu": 342.0,
+              "wall": 369.334
+            }
+          }
+        },
+        {
+          "source": "examples/sort_scores.ag",
+          "sha256": "cf12bed26e173ea398b8d9c5be19e30d13b0c496951b8d8abb457534ae4a87cc",
+          "median_us": {
+            "previous_release": {
+              "cpu": 205.0,
+              "wall": 211.667
+            },
+            "always_scan": {
+              "cpu": 142.0,
+              "wall": 146.041
+            },
+            "previous_frontend": {
+              "cpu": 171.0,
+              "wall": 171.959
+            },
+            "current": {
+              "cpu": 145.0,
+              "wall": 147.083
+            }
+          }
+        },
+        {
+          "source": "examples/terse/leaders.ag",
+          "sha256": "f008abd242eaf4a5b9c3867db2fea2157876852bb380b76a0611719e73af91c8",
+          "median_us": {
+            "previous_release": {
+              "cpu": 567.0,
+              "wall": 568.167
+            },
+            "always_scan": {
+              "cpu": 505.0,
+              "wall": 518.417
+            },
+            "previous_frontend": {
+              "cpu": 501.0,
+              "wall": 521.542
+            },
+            "current": {
+              "cpu": 506.0,
+              "wall": 517.75
+            }
+          }
+        },
+        {
+          "source": "examples/word_counts.ag",
+          "sha256": "a225efe1a1a5e322aea6a432e9b70c1729fe9b0854deec710b976a4dd06d3879",
+          "median_us": {
+            "previous_release": {
+              "cpu": 448.0,
+              "wall": 466.375
+            },
+            "always_scan": {
+              "cpu": 376.0,
+              "wall": 378.792
+            },
+            "previous_frontend": {
+              "cpu": 397.0,
+              "wall": 433.125
+            },
+            "current": {
+              "cpu": 399.0,
+              "wall": 411.042
+            }
+          }
+        }
+      ]
+    }
+  },
+  "paired_spelling_seed": 842097,
+  "current_spelling_comparison": {
+    "archive": {
+      "cpu": {
+        "sum_of_program_medians_us": {
+          "authored": 53302.0,
+          "combined": 58716.0
+        },
+        "median_program_ratio": 1.006622,
+        "median_program_difference_us": 19.0,
+        "slower_programs": 17
+      },
+      "wall": {
+        "sum_of_program_medians_us": {
+          "authored": 56441.542,
+          "combined": 61786.836
+        },
+        "median_program_ratio": 1.00561,
+        "median_program_difference_us": 7.229,
+        "slower_programs": 16
+      }
+    },
+    "tooling": {
+      "cpu": {
+        "sum_of_program_medians_us": {
+          "authored": 137259.0,
+          "combined": 146155.0
+        },
+        "median_program_ratio": 1.011935,
+        "median_program_difference_us": 90.0,
+        "slower_programs": 11
+      },
+      "wall": {
+        "sum_of_program_medians_us": {
+          "authored": 145291.624,
+          "combined": 154647.0
+        },
+        "median_program_ratio": 1.020489,
+        "median_program_difference_us": 196.918,
+        "slower_programs": 12
+      }
+    }
+  }
+}
