@@ -4,6 +4,7 @@ import ast
 import builtins
 import io
 import keyword
+import re
 import tokenize
 from functools import lru_cache
 from pathlib import Path
@@ -22,7 +23,19 @@ _STAGE_IMPORTS = {
 }
 
 _STAGES = set(_SHORT_STAGES.values())
+# A negative match rules out a statement rewrite. Positive matches, including
+# text inside strings and comments, still go through the token-based parser.
+# A backslash can join a separator and stage name across physical lines.
+_STATEMENT_MARKERS = re.compile(
+    rf"(?:^|;)[ \t\f]*(?:{'|'.join(_COMMANDS)})\b"
+    rf"|[:|][ \t\f]*(?:{'|'.join(sorted(_STAGES | _SHORT_STAGES.keys()))})\b"
+    r"|\\\r?\n", re.MULTILINE,
+)
 _TRIVIA = {tokenize.COMMENT, tokenize.INDENT, tokenize.DEDENT, tokenize.NL}
+_ATOM_END_TYPES = {tokenize.NAME, tokenize.NUMBER, tokenize.STRING}
+for _kind in ("FSTRING_END", "TSTRING_END"):
+    if hasattr(tokenize, _kind):
+        _ATOM_END_TYPES.add(getattr(tokenize, _kind))
 _NESTED_SCOPES = (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef, ast.Lambda,
                   ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp)
 if hasattr(ast, "TypeAlias"):
@@ -199,13 +212,14 @@ def compile_source(source, filename="<agentlang>"):
 
 def count_short_stages(source):
     """Count actual one-letter stages using the same parser as the compiler."""
-    _, count = _translate(source, "<agentlang>")
+    # This entry point has no subsequent Python parse to surface token errors.
+    _, count = _translate(source, "<agentlang>", force_scan=True)
     return count
 
 
 def _expand_fields(source, filename):
     """Expand postfix string keys and record literals, preserving other source text."""
-    if "$" not in source and "d{" not in source:
+    if "$" not in source and "?" not in source and "d{" not in source:
         return source
     offsets = [0]
     for line in io.StringIO(source):
@@ -219,37 +233,69 @@ def _expand_fields(source, filename):
 
     tokens = [t for t in tokenize.generate_tokens(io.StringIO(source).readline) if t.type not in _TRIVIA]
     changes = []
-    i = 0
-    while i + 1 < len(tokens):
-        token, following = tokens[i:i + 2]
-        if token.type in (tokenize.OP, tokenize.ERRORTOKEN) and token.string == "$":
+    depth = 0
+    record_levels = []
+    field_start = False
+    lambda_params = 0
+    last_key = None
+    for i, token in enumerate(tokens[:-1]):
+        following = tokens[i + 1]
+        name = token.string
+        if field_start:
+            field_start = False
+            if token.type == tokenize.NAME and not keyword.iskeyword(name):
+                if following.string == "=":
+                    changes.append((offset(token.start), offset(token.end), repr(name)))
+                    changes.append((offset(following.start), offset(following.end), ":"))
+                elif following.string in {",", "}"}:
+                    changes.append((offset(token.start), offset(token.end), f"{name!r}: {name}"))
+                else:
+                    bad("expected '=', ',' or '}' after record field", following)
+            elif name != "}":
+                bad("expected a variable name or name=expression in record literal", token)
+
+        if token.type in (tokenize.OP, tokenize.ERRORTOKEN) and name in {"$", "?"}:
             previous = tokens[i - 1] if i else None
             if (previous is None or previous.end != token.start or token.end != following.start
                     or following.type != tokenize.NAME):
-                bad("use value$field for a literal string key", token)
-            ends_atom = (previous.type in (tokenize.NAME, tokenize.NUMBER, tokenize.STRING)
-                         or previous.string in (")", "]", "}")
-                         or previous.type == getattr(tokenize, "FSTRING_END", -1))
-            if not ends_atom or (previous.type == tokenize.NAME and keyword.iskeyword(previous.string)
-                                 and previous.string not in {"True", "False", "None"}):
-                bad("a field lookup needs a value before '$'", token)
-            changes.append((offset(token.start), offset(following.end), f"[{following.string!r}]"))
-        elif (token.type == tokenize.NAME and token.string == "d" and following.string == "{"
-              and token.end == following.start):
-            changes.append((offset(token.start), offset(token.end), ""))
-            i += 2
-            while tokens[i].string != "}":
-                field = tokens[i]
-                if field.type != tokenize.NAME or keyword.iskeyword(field.string):
-                    bad("d{...} takes comma-separated variable names", field)
-                changes.append((offset(field.start), offset(field.end), f"{field.string!r}: {field.string}"))
-                i += 1
-                if tokens[i].string == "}":
-                    break
-                if tokens[i].string != ",":
-                    bad("expected ',' or '}' in record literal", tokens[i])
-                i += 1
-        i += 1
+                bad(f"use value{name}field for a literal string key", token)
+            ends_atom = previous.type in _ATOM_END_TYPES or previous.string in (")", "]", "}", "...")
+            bare_keyword = (previous.type == tokenize.NAME and keyword.iskeyword(previous.string)
+                            and previous.string not in {"True", "False", "None"} and previous is not last_key)
+            if not ends_atom or bare_keyword:
+                bad(f"a field lookup needs a value before '{name}'", token)
+            last_key = following
+            key = repr(following.string)
+            replacement = f"[{key}]" if name == "$" else f".get({key})"
+            if name == "?" and previous.type == tokenize.NUMBER:
+                replacement = " " + replacement  # Keep the dot out of an integer literal.
+            changes.append((offset(token.start), offset(following.end), replacement))
+
+        if token.type == tokenize.OP and name in {"(", "[", "{"}:
+            depth += 1
+            previous = tokens[i - 1] if i else None
+            if (name == "{" and previous is not None and previous.type == tokenize.NAME
+                    and previous.string == "d" and previous.end == token.start):
+                changes.append((offset(previous.start), offset(previous.end), ""))
+                record_levels.append((depth, lambda_params))
+                lambda_params = 0
+                field_start = True
+        elif token.type == tokenize.OP and name in {")", "]", "}"}:
+            if record_levels and depth == record_levels[-1][0]:
+                _, lambda_params = record_levels.pop()
+            depth -= 1
+        elif record_levels and depth == record_levels[-1][0]:
+            # Commas in an unparenthesized lambda's parameter list belong to
+            # the expression. A lambda used as a default can nest another one.
+            if token.type == tokenize.NAME and token is not last_key:
+                if name == "lambda":
+                    lambda_params += 1
+                elif name == "for":
+                    bad("enclose a comprehension or generator used as a record value", token)
+            elif token.type == tokenize.OP and name == ":" and lambda_params:
+                lambda_params -= 1
+            elif token.type == tokenize.OP and name == "," and not lambda_params:
+                field_start = True
     pieces = []
     start = 0
     for left, right, replacement in changes:
@@ -259,12 +305,14 @@ def _expand_fields(source, filename):
     return "".join(pieces)
 
 
-def _translate(source, filename):
+def _translate(source, filename, *, force_scan=False):
     try:
         source = _expand_fields(source, filename)
     except tokenize.TokenError as exc:
         message, (line, col) = exc.args
         raise SyntaxError(message, (filename, line, col + 1, "")) from None
+    if not force_scan and not _STATEMENT_MARKERS.search(source):
+        return source, 0
     offsets = [0]
     for line in io.StringIO(source):
         offsets.append(offsets[-1] + len(line))

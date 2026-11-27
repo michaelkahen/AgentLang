@@ -1,0 +1,892 @@
+{
+  "python": "3.12.4",
+  "platform": "macOS-14.8.2-arm64-arm-64bit",
+  "baseline_revision": "8a5b5c538912000a18eedb100cb4402da5960d7c",
+  "compiler_sha256": "ab6f9279581fd596168c413b65fdc909f6ad561933a7ef0b3efbae60e7e58915",
+  "seed": 842097,
+  "measured_pairs_per_program": 21,
+  "warmup_pairs": 2,
+  "archive": {
+    "program_count": 32,
+    "summary": {
+      "cpu": {
+        "sum_of_program_medians_us": {
+          "authored": 93309.0,
+          "combined": 112048.0
+        },
+        "median_program_ratio": 1.226628,
+        "median_program_difference_us": 680.0,
+        "slower_programs": 27
+      },
+      "wall": {
+        "sum_of_program_medians_us": {
+          "authored": 117099.836,
+          "combined": 146371.625
+        },
+        "median_program_ratio": 1.316058,
+        "median_program_difference_us": 1066.583,
+        "slower_programs": 26
+      }
+    },
+    "programs": [
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r1-a1.py",
+        "sha256": {
+          "authored": "cce32ee070e86ffc8416b76115203f0d3fb97a92763574559eead5e28ea3521b",
+          "combined": "1bc3dbc9be888a0ead67e6ca1ab551685b5ff81e80fd5e1c7e2297ee5be830cf"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3213.0,
+            "combined": 3752.0
+          },
+          "wall": {
+            "authored": 5322.834,
+            "combined": 6468.875
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r4-a1.py",
+        "sha256": {
+          "authored": "c285f73a13fe063b53717f46eacf8b4bdf77acdba621df6aae54bb35da7e4087",
+          "combined": "a379a1a135e69d776aa093d8c5af63e0ed02fe2baf965bd918956fb225994d62"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2574.0,
+            "combined": 3310.0
+          },
+          "wall": {
+            "authored": 3746.584,
+            "combined": 6163.292
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r3-a1.py",
+        "sha256": {
+          "authored": "efeb2fdc76dbe4be39727f6624144625219b7c95fd236c15e02a4f4a2040fe35",
+          "combined": "9f857c48379bd96bf41b71ce32d21ae6dc2b7ae68ddac5ec7564c23386a0ce0c"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2774.0,
+            "combined": 3434.0
+          },
+          "wall": {
+            "authored": 5423.417,
+            "combined": 4278.292
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r3-a1.py",
+        "sha256": {
+          "authored": "3f8fcc4d80768a1c949e797866fae0196a01c68f993d1beadf8fb33e8f3d94b2",
+          "combined": "c731263efac2bd7d93e8f5b8a71674b65c9216e1d376916c535e135592454a31"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3113.0,
+            "combined": 3591.0
+          },
+          "wall": {
+            "authored": 4246.042,
+            "combined": 6311.625
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+        "sha256": {
+          "authored": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c",
+          "combined": "5102c7dc25c8a7596f88398ab8149dde121c24567fbef2cfc92edb018a9fa263"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2942.0,
+            "combined": 3494.0
+          },
+          "wall": {
+            "authored": 3424.666,
+            "combined": 4543.083
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/fixture_pack-python-r2-a1.py",
+        "sha256": {
+          "authored": "fa787ba0f7566bdc97ba54bcb0714c0384dd86310a92e15d60e047b61e78e83e",
+          "combined": "ba8124d083b7873b718ad0546e1f26c8fbdeb5d20b48394710602ce5d9cbbf23"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2164.0,
+            "combined": 3267.0
+          },
+          "wall": {
+            "authored": 2339.875,
+            "combined": 3781.75
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r4-a1.ag",
+        "sha256": {
+          "authored": "149879de549d7c4f003fdede7131ca26bae975601c33c3e6b68f70cab1c82cb6",
+          "combined": "243fce769b5942136f49eded441f5f13e02a7a9b6ff78934f30ba57ea3514fb4"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3618.0,
+            "combined": 3725.0
+          },
+          "wall": {
+            "authored": 3714.333,
+            "combined": 5228.0
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/movie_credits-compact-r1-a1.ag",
+        "sha256": {
+          "authored": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7",
+          "combined": "a429dad29f7494ac9ca58432cdd963240f93565b0a3b3814d7922ef668db8395"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3894.0,
+            "combined": 4754.0
+          },
+          "wall": {
+            "authored": 4228.5,
+            "combined": 6739.625
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r2-a1.py",
+        "sha256": {
+          "authored": "b1d307fd5edd48cf0c7631b33faace17f5fb02079dbdc95345351ca5aa0afe41",
+          "combined": "86692f18355ba8cf7d330f95ebf0df0a762798a0a6b642720b5808ba034955e7"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2358.0,
+            "combined": 3313.0
+          },
+          "wall": {
+            "authored": 2709.25,
+            "combined": 3692.041
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+        "sha256": {
+          "authored": "18c43a4a11dc1e043ce77a454ed45351cf28d6dd3c56ef47bbf109a5c07f1022",
+          "combined": "8e77148fdb806f3719273cc041cd174c8e078f7dd54d6d5dea01935d5a44fdf2"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3164.0,
+            "combined": 2928.0
+          },
+          "wall": {
+            "authored": 3179.334,
+            "combined": 3183.042
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+        "sha256": {
+          "authored": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c",
+          "combined": "6291d5b6f499f31f5a1b1271385c7eedacdd788abab9f37a1e802f1dbb461857"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2735.0,
+            "combined": 3435.0
+          },
+          "wall": {
+            "authored": 2937.125,
+            "combined": 3863.958
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+        "sha256": {
+          "authored": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd",
+          "combined": "c64664a9f4338ae8d2d36fd01dc8e72f61433ec45da8d96bd6e8ed2351ea3e7e"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2291.0,
+            "combined": 3063.0
+          },
+          "wall": {
+            "authored": 2699.292,
+            "combined": 3843.667
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/movie_credits-python-r2-a1.py",
+        "sha256": {
+          "authored": "7c50ff0baf1d3ea323dda900d98e79790aa772b774e4ceba3b5e7798858e1905",
+          "combined": "a483a531997767f6e654e390083a29c5ea85c1e4c3c865363f1ebfa95b6c0b5a"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3000.0,
+            "combined": 3485.0
+          },
+          "wall": {
+            "authored": 3311.375,
+            "combined": 4105.0
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r4-a1.py",
+        "sha256": {
+          "authored": "512d2fe1d0e7744e28b7fc56b48062e239b85d3bf342924940677ccdb8e57ebe",
+          "combined": "28862cbb8ebf33a282b6f64fb70adc4372d0770ae1d590ef3476ed322aff6310"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2545.0,
+            "combined": 3591.0
+          },
+          "wall": {
+            "authored": 2727.209,
+            "combined": 3963.458
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r3-a1.ag",
+        "sha256": {
+          "authored": "52548ebd1c03a6a017c5de72515fa6ce198303b9931b46167328fb06658d2d85",
+          "combined": "5a4ed37b5e5b985cc9d7add32bd3b8200704093ddee872bc5396fd7c541c71b2"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3426.0,
+            "combined": 3200.0
+          },
+          "wall": {
+            "authored": 4050.166,
+            "combined": 3326.834
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/movie_credits-compact-r2-a1.ag",
+        "sha256": {
+          "authored": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49",
+          "combined": "88c5d7ff5485988b189b30425ce0781faedf460d31562186fccd19296aed8d01"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3023.0,
+            "combined": 3594.0
+          },
+          "wall": {
+            "authored": 3503.75,
+            "combined": 4380.667
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/knn_grid-python-r3-a1.py",
+        "sha256": {
+          "authored": "dc1a347be4418decc19fe3815740445e57f47f242e3c5d9959788abbd233f69c",
+          "combined": "cce785082e31996acc09358e7f184566e5444419a50d92270a5e77dc7ddaa7b7"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 7130.0,
+            "combined": 8752.0
+          },
+          "wall": {
+            "authored": 8012.541,
+            "combined": 9739.625
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r1-a1.py",
+        "sha256": {
+          "authored": "9ee826056dfd0317669d12101b05ba1bc547f374219ded10da0e75f2ed274764",
+          "combined": "ee6d0d0dc8b6e1c1ecd6785b80188bf4a9fcfb0bc242a9693bb69e9a50d9c95a"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2671.0,
+            "combined": 3463.0
+          },
+          "wall": {
+            "authored": 3054.084,
+            "combined": 3842.375
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r3-a1.py",
+        "sha256": {
+          "authored": "63f1c3148e8f39479bde6545967609c0bfaa61ea32d0f78ece641eed7bdd1846",
+          "combined": "5488dc6d639f082f686853ca871e813a4e1c4960ca687e40427f4cc011f80a9d"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2485.0,
+            "combined": 3461.0
+          },
+          "wall": {
+            "authored": 3419.208,
+            "combined": 4501.584
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+        "sha256": {
+          "authored": "c51ae59f767f464d7e9aa784e9f251e614155e67587998a44c7403131b373761",
+          "combined": "34629159cda840b17396c36ca8d7a7c03828a2a0ef391087825faaf9f17b7dc2"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2922.0,
+            "combined": 2950.0
+          },
+          "wall": {
+            "authored": 3422.375,
+            "combined": 3390.5
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/required/sources/movie_credits-python-r1-a1.py",
+        "sha256": {
+          "authored": "8381e42f9c39c20f59e172102e119c3a962d44ca6f5f7d9586953b60c11af70e",
+          "combined": "1dcdf26b1912f720ed8c8260fea92b6753ed679fb3de406c1300d7e5747b4d17"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2238.0,
+            "combined": 3065.0
+          },
+          "wall": {
+            "authored": 2672.167,
+            "combined": 3815.583
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+        "sha256": {
+          "authored": "498fa34a99f79e15b661d3a34389b6fb292d2d400791adcab219f7a3686fd79d",
+          "combined": "5b311585677f7e9c10e538f03df0d955ae0118668f5b52e47d4d803b9c5d88f3"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2544.0,
+            "combined": 2635.0
+          },
+          "wall": {
+            "authored": 3360.584,
+            "combined": 3598.0
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r2-a1.py",
+        "sha256": {
+          "authored": "e15313a473a4847a2f79eaa672aa2878bc53cdb92ec3c02388f2a64f5b65fe48",
+          "combined": "8d4c9d151b48dd5e6e62e35b98ad174f441b4a69bed3d29b0e2f77e567cd9053"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2047.0,
+            "combined": 2530.0
+          },
+          "wall": {
+            "authored": 3644.25,
+            "combined": 4336.833
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r4-a1.ag",
+        "sha256": {
+          "authored": "2ba800b2754f41bdc39d03bcab6fecf8256b04f00a17f78b88929401b9e5717a",
+          "combined": "c3b562a5ee1926df31098fed055b08ad1ae6f6e3c9e88d748cabaf312d98689c"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2547.0,
+            "combined": 2522.0
+          },
+          "wall": {
+            "authored": 2924.875,
+            "combined": 2892.917
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r1-a1.ag",
+        "sha256": {
+          "authored": "15661b35d6b5f630546aef2288537365d617c27bfe0c6efea5783dead7765912",
+          "combined": "9725a8bdd036d4bbcc33480a5740c804dc9dc9a2bdd0f9e40ecdb47cc49eca17"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3383.0,
+            "combined": 3299.0
+          },
+          "wall": {
+            "authored": 4121.75,
+            "combined": 3751.333
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r2-a1.ag",
+        "sha256": {
+          "authored": "37598f05aa8c4816072dafde564ee4f1b5908c7b197e8a4997ee9d22d8fddd17",
+          "combined": "0690e3c2b23a222dd5576f74d9f8be4f98d55642748e18d6a6f88b97a68ab4b6"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3368.0,
+            "combined": 3220.0
+          },
+          "wall": {
+            "authored": 4089.5,
+            "combined": 3980.708
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/movie_credits-python-r1-a1.py",
+        "sha256": {
+          "authored": "33f7a5bf30c4d8dba2033c402bcebcb6b5708bc0716c974e22d819300639574f",
+          "combined": "a9d15f8d0443f3c68acee48ceca0d0fe97d6291bea0444c19889791c3fbcc66b"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2730.0,
+            "combined": 3336.0
+          },
+          "wall": {
+            "authored": 3418.708,
+            "combined": 3972.833
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+        "sha256": {
+          "authored": "58379d98124ea8e849f1ef099ca2711bff71451a77a6c29a4c61c2179c7cf085",
+          "combined": "9f847119b96685fc2db96203c3f392b6b459833502910026ccba44a3fe0cff2e"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 1994.0,
+            "combined": 3015.0
+          },
+          "wall": {
+            "authored": 2418.291,
+            "combined": 3852.625
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+        "sha256": {
+          "authored": "05374116dbae654ba4a8abb88b4897958398991f43bc5d3596e060571b5807ec",
+          "combined": "6a1ffbec2ad87dbc93a0b021dccbffef9d5155cdcbef8ead3dac3701a854bded"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2259.0,
+            "combined": 3158.0
+          },
+          "wall": {
+            "authored": 2872.958,
+            "combined": 4563.416
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/observations/sources/replay_trace-python-r3-a1.py",
+        "sha256": {
+          "authored": "0967f7979f45a852c3b34fea60a1faea41ae118463ddfdeaf344da1617d66675",
+          "combined": "ddab288733f05bc60fb588a3a042b8b26655b1f4f7c686ffc0b5feaf1a5d337e"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2533.0,
+            "combined": 3395.0
+          },
+          "wall": {
+            "authored": 3607.459,
+            "combined": 4908.334
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/movie_credits-python-r2-a1.py",
+        "sha256": {
+          "authored": "268e183e2be2e5e0d4722f2754001627570175d6f24a79da3c1405922b0e4f56",
+          "combined": "1528547e8f1f7adbfdbd2d87a76e6f52d29a353e2b4f1222294308da744fb0cd"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3198.0,
+            "combined": 3920.0
+          },
+          "wall": {
+            "authored": 5413.334,
+            "combined": 7216.959
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/observations/sources/fixture_pack-python-r2-a1.py",
+        "sha256": {
+          "authored": "5887816bd726502c84e38826c640cf5ef75bf0396fa35787cb81734e13e90981",
+          "combined": "6f38b281f3dc7224bff87fd628bd30f77a1cdff63f99205d1c791c6de2d392a4"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 2426.0,
+            "combined": 3391.0
+          },
+          "wall": {
+            "authored": 3084.0,
+            "combined": 4134.791
+          }
+        }
+      }
+    ]
+  },
+  "tooling": {
+    "program_count": 17,
+    "summary": {
+      "cpu": {
+        "sum_of_program_medians_us": {
+          "authored": 235004.0,
+          "combined": 281752.0
+        },
+        "median_program_ratio": 1.224795,
+        "median_program_difference_us": 2279.0,
+        "slower_programs": 15
+      },
+      "wall": {
+        "sum_of_program_medians_us": {
+          "authored": 763726.293,
+          "combined": 943517.999
+        },
+        "median_program_ratio": 1.198256,
+        "median_program_difference_us": 2341.041,
+        "slower_programs": 13
+      }
+    },
+    "programs": [
+      {
+        "path": "benchmarks/patterns/summarize.py",
+        "sha256": {
+          "authored": "f0cdf98ceeeb7ac4626bd7c6c84656e1a2851544b4f7e885194d25f05579a16b",
+          "combined": "a239e6d3c07ffd31a02bfe68b24687d25950aded5aa4d31ff9eb2c9de0d9441f"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 9323.0,
+            "combined": 11033.0
+          },
+          "wall": {
+            "authored": 14489.041,
+            "combined": 14075.875
+          }
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/verify.py",
+        "sha256": {
+          "authored": "638a1a48e5e4625915733faa697803c3d0f6a8b0e6252a18d88546e986f54962",
+          "combined": "73601be15152f3e49d834e2156b1e12112dfb74041659d9d964e3eaa2de590e3"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 9534.0,
+            "combined": 11431.0
+          },
+          "wall": {
+            "authored": 15363.5,
+            "combined": 16051.75
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/summarize.py",
+        "sha256": {
+          "authored": "c7da6f8cba4681b7b0b3d8181446c36676c7351cee5d80274eb2766229517563",
+          "combined": "34704c529de52c2bc227da9722fde40bef11ba03666cfe0628ae8d07132b1290"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 5785.0,
+            "combined": 6847.0
+          },
+          "wall": {
+            "authored": 9992.417,
+            "combined": 9928.5
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/runtime/run.py",
+        "sha256": {
+          "authored": "77eb9c82c94e5d7d49eadf1e4e68ed2fa9ae0a7671674853ca6c3ca6804965e9",
+          "combined": "f5116ea87154291e47467d729f9d1a88c5ed9349079f4fdac17ea412084b7b72"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 27057.0,
+            "combined": 33729.0
+          },
+          "wall": {
+            "authored": 64286.833,
+            "combined": 69656.708
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/client.py",
+        "sha256": {
+          "authored": "bfb1a3a665c1e1a3695a2546766f679c39dc181755a78857211b6aad2eec61c4",
+          "combined": "61f26f8ae186102fdf3e0cf485add6e5564b9345074e11b96b42fe39517dcb04"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 3816.0,
+            "combined": 4447.0
+          },
+          "wall": {
+            "authored": 5278.125,
+            "combined": 7619.166
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/run.py",
+        "sha256": {
+          "authored": "a398d0fdf30085bfb28d0738371fb46a04ab72ae7b5a279e27f295e9454e10ea",
+          "combined": "e499b552b18437f297950a332705869e5c46f484db651a08fbc5ebcc3cc8bc4b"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 11531.0,
+            "combined": 11460.0
+          },
+          "wall": {
+            "authored": 19876.0,
+            "combined": 21505.875
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/evaluation/profile.py",
+        "sha256": {
+          "authored": "63f37bdec7e49a55affb7b93b9e2393e165fb55cd5a4ad4f6285381154ab8598",
+          "combined": "973bafe534b114a89eda3766ab3458e0cdecd6ce51859a3de497e1cd01378afd"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 11133.0,
+            "combined": 15031.0
+          },
+          "wall": {
+            "authored": 17430.334,
+            "combined": 23660.375
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/batch/verify.py",
+        "sha256": {
+          "authored": "1127918f08b3a983206aeab756a34076945f6e2c166c88b9253755b40ae9f105",
+          "combined": "c9ead559053f1eca6bc962776f8e7bd4fc34483176701b75b1a8cf76c2a220e5"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 17045.0,
+            "combined": 17019.0
+          },
+          "wall": {
+            "authored": 59785.75,
+            "combined": 54165.375
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/run.py",
+        "sha256": {
+          "authored": "fdf268e54ca5c6a15f2daaed1003844cafca1640232146f6d07f7012e91ad1eb",
+          "combined": "70405c00cb25cdd8276c29a131f11a1ccba27f38688b7f4f2d15bca60f5fe25c"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 12973.0,
+            "combined": 16189.0
+          },
+          "wall": {
+            "authored": 41687.5,
+            "combined": 29857.625
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/runtime/native.py",
+        "sha256": {
+          "authored": "75d8d9fe23d97c6fc275b2af925314d2772e91ede38b354938ace39d5b141129",
+          "combined": "ce27f4d6b021074d5e00904c2d061f59109aba4af149eac92ce47118c22cc299"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 985.0,
+            "combined": 1287.0
+          },
+          "wall": {
+            "authored": 1182.417,
+            "combined": 1538.833
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/workloads/cases.py",
+        "sha256": {
+          "authored": "5d1abdb6f8788fe1624a3bee7507ac04b9e88d03744199471cb2eb76027c6c8c",
+          "combined": "d3574ff3c4486fab7ace8e90a7b17320472012f46fe6b6eebbe530665bf6ffac"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 25005.0,
+            "combined": 30626.0
+          },
+          "wall": {
+            "authored": 108950.5,
+            "combined": 130550.583
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/evaluation/cases.py",
+        "sha256": {
+          "authored": "500b985fe3c1b0a7dbd9393a01d85734b228a86b782132f7b6a3554f793af539",
+          "combined": "03d35f6a9e3f3277a386913850774e91e525b0b9a85d5ed8ee1b6127d387a8dd"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 9515.0,
+            "combined": 12179.0
+          },
+          "wall": {
+            "authored": 21310.083,
+            "combined": 53756.0
+          }
+        }
+      },
+      {
+        "path": "benchmarks/patterns/generation/features.py",
+        "sha256": {
+          "authored": "32c055543a01583b1b72411888ca518a2c5c38eca5dbfe0b67cd7b0fdc757bc7",
+          "combined": "8f6603629043dbc2a2e20451a7f5adfb259388059313c8bf3efb84d44b1279f5"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 15657.0,
+            "combined": 15922.0
+          },
+          "wall": {
+            "authored": 44842.042,
+            "combined": 45097.209
+          }
+        }
+      },
+      {
+        "path": "benchmarks/pilot/runtime/run.py",
+        "sha256": {
+          "authored": "74c157bf99a9bb28550f44bc4c436182a476f144719c8fc6f9dd9552bcab95b8",
+          "combined": "388dfc0db27ed632f450db4a7fead13571c7d925e36bf814e3859f90339db390"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 18704.0,
+            "combined": 23759.0
+          },
+          "wall": {
+            "authored": 46206.167,
+            "combined": 58807.583
+          }
+        }
+      },
+      {
+        "path": "benchmarks/pilot/generation/collect.py",
+        "sha256": {
+          "authored": "ff2d7c5d97905125ddf41ea23910d36e36b1956f6b61fbb54fecf2a20837aceb",
+          "combined": "104e3212d922f2cf18eb46de646aab10343719ee5adb3997e9253348ff859bdf"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 7198.0,
+            "combined": 9477.0
+          },
+          "wall": {
+            "authored": 13615.125,
+            "combined": 18257.792
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/spellings.py",
+        "sha256": {
+          "authored": "8dd7c0038d29afa229dccc3f27243248d18fa6cf980bc312281f16130003d158",
+          "combined": "b3f6bc9ee651583c55635cc260ce5c43a633307ef0492a126d253173a4afcd47"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 26129.0,
+            "combined": 31891.0
+          },
+          "wall": {
+            "authored": 163359.459,
+            "combined": 207105.833
+          }
+        }
+      },
+      {
+        "path": "benchmarks/long/generation/run.py",
+        "sha256": {
+          "authored": "d7f9f4939bbad4003e2c7d5f3b0c33094429d283ece850267b49679cdfaef773",
+          "combined": "f68230fa548d3248c70fcbc79c86ea1ae90a5e96296005746f9bb7afd20494a1"
+        },
+        "median_us": {
+          "cpu": {
+            "authored": 23614.0,
+            "combined": 29425.0
+          },
+          "wall": {
+            "authored": 116071.0,
+            "combined": 181882.917
+          }
+        }
+      }
+    ]
+  }
+}

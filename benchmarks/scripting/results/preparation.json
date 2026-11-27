@@ -1,0 +1,744 @@
+{
+  "python": "3.12.4",
+  "platform": "macOS-14.8.2-arm64-arm-64bit",
+  "seed": 22791,
+  "measured_rounds_per_script": 60,
+  "warmup_rounds": 2,
+  "unit": "microseconds",
+  "sum_of_script_medians_us": {
+    "median_wall_us": {
+      "always": 255001.315,
+      "any_command_name": 231827.044,
+      "command_at_statement_start": 244479.977
+    },
+    "median_cpu_us": {
+      "always": 136407.0,
+      "any_command_name": 127028.5,
+      "command_at_statement_start": 125613.5
+    }
+  },
+  "sources": [
+    {
+      "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+      "sha256": "58379d98124ea8e849f1ef099ca2711bff71451a77a6c29a4c61c2179c7cf085",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 17353.48,
+        "any_command_name": 4790.208,
+        "command_at_statement_start": 4490.833
+      },
+      "median_cpu_us": {
+        "always": 3666.0,
+        "any_command_name": 2507.0,
+        "command_at_statement_start": 2614.5
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r2-a1.ag",
+      "sha256": "d7b43bc0608f3da44eca23d90ea4c7b234cd2ef0dccb1df2591e6c96027c7cbf",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 7232.313,
+        "any_command_name": 7318.25,
+        "command_at_statement_start": 3278.062
+      },
+      "median_cpu_us": {
+        "always": 3337.5,
+        "any_command_name": 2413.5,
+        "command_at_statement_start": 2413.5
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+      "sha256": "05374116dbae654ba4a8abb88b4897958398991f43bc5d3596e060571b5807ec",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 7387.333,
+        "any_command_name": 3432.666,
+        "command_at_statement_start": 5794.729
+      },
+      "median_cpu_us": {
+        "always": 3131.0,
+        "any_command_name": 2264.5,
+        "command_at_statement_start": 2298.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/knn_grid-compact-r1-a1.ag",
+      "sha256": "df09b07b23645f1e247446604762736a05496a1dab735ee9921b6da062cfe353",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 13064.333,
+        "any_command_name": 12428.104,
+        "command_at_statement_start": 14524.729
+      },
+      "median_cpu_us": {
+        "always": 7247.0,
+        "any_command_name": 7464.0,
+        "command_at_statement_start": 7185.5
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/knn_grid-compact-r2-a1.ag",
+      "sha256": "cb5f600754f3028d0f27418bf7d4f5fe548771f782ddee1e41fcab729029e7fe",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 13700.166,
+        "any_command_name": 15788.188,
+        "command_at_statement_start": 13681.396
+      },
+      "median_cpu_us": {
+        "always": 5614.0,
+        "any_command_name": 5492.0,
+        "command_at_statement_start": 5618.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/knn_grid-compact-r3-a1.ag",
+      "sha256": "442e6b111ab1c47acb44270f03bbf927581ed73bb75f979c46de8d4487da45f4",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 13162.5,
+        "any_command_name": 12115.875,
+        "command_at_statement_start": 19666.438
+      },
+      "median_cpu_us": {
+        "always": 5575.0,
+        "any_command_name": 5643.5,
+        "command_at_statement_start": 5833.5
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+      "sha256": "493a4d5ca6d2ca2a7f499d0a225f68059bd8a969894292e9732e00b57fcba4dd",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 4842.417,
+        "any_command_name": 3190.312,
+        "command_at_statement_start": 3286.188
+      },
+      "median_cpu_us": {
+        "always": 3168.0,
+        "any_command_name": 2323.0,
+        "command_at_statement_start": 2299.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+      "sha256": "3f69b87b464406ef6e2d5804161bfaf586fa2a52686d4e40841ad02a70396d0c",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 5217.938,
+        "any_command_name": 5020.417,
+        "command_at_statement_start": 4571.979
+      },
+      "median_cpu_us": {
+        "always": 2866.0,
+        "any_command_name": 2935.0,
+        "command_at_statement_start": 2941.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+      "sha256": "ca0e174f48c28fdfa275911ad084b6d64a9fbee2f53f29caf875f44bb75cd75c",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 2967.271,
+        "any_command_name": 3084.771,
+        "command_at_statement_start": 2906.251
+      },
+      "median_cpu_us": {
+        "always": 2718.5,
+        "any_command_name": 2829.5,
+        "command_at_statement_start": 2784.5
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/fixture_pack-compact-r1-a1.ag",
+      "sha256": "34709a1caa172feab70ecf59f356c1222ea11bac180d64eef29e1d0dc79a265e",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 3453.334,
+        "any_command_name": 3850.771,
+        "command_at_statement_start": 3517.416
+      },
+      "median_cpu_us": {
+        "always": 3143.5,
+        "any_command_name": 3233.0,
+        "command_at_statement_start": 3193.5
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/fixture_pack-compact-r2-a1.ag",
+      "sha256": "c2418f47b20d9af34fbe91674234d40e1877e4ed6f6fa9c8b7a7da96b89532a3",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 3320.146,
+        "any_command_name": 3591.667,
+        "command_at_statement_start": 3479.999
+      },
+      "median_cpu_us": {
+        "always": 3147.0,
+        "any_command_name": 3199.5,
+        "command_at_statement_start": 3297.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/knn_grid-compact-r1-a1.ag",
+      "sha256": "f32af592e7aef312c5949ab6ce087285dee91fe99f1f4d64475399ad6f3c219b",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 9725.917,
+        "any_command_name": 8697.666,
+        "command_at_statement_start": 13061.25
+      },
+      "median_cpu_us": {
+        "always": 5928.0,
+        "any_command_name": 5955.0,
+        "command_at_statement_start": 5952.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/knn_grid-compact-r2-a1.ag",
+      "sha256": "3bfeceec9e13a3ff836307b87de25fa23a0bd02b52c43a973beae692b5a18747",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 19242.396,
+        "any_command_name": 15026.875,
+        "command_at_statement_start": 19742.625
+      },
+      "median_cpu_us": {
+        "always": 5763.5,
+        "any_command_name": 5767.5,
+        "command_at_statement_start": 5632.0
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/movie_credits-compact-r1-a1.ag",
+      "sha256": "5fe820367fdd1485872d553ce98877bb1c6ba55391c17dd37f7797d8389811f7",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 7446.875,
+        "any_command_name": 11350.646,
+        "command_at_statement_start": 10281.271
+      },
+      "median_cpu_us": {
+        "always": 3993.5,
+        "any_command_name": 4268.0,
+        "command_at_statement_start": 4101.5
+      }
+    },
+    {
+      "source": "benchmarks/long/generation/required/sources/movie_credits-compact-r2-a1.ag",
+      "sha256": "cd3f5e47201ddb8eae83ff9440abb122292dd5fced8ab1b31915186c5ba97c49",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 6787.855,
+        "any_command_name": 11184.334,
+        "command_at_statement_start": 12588.354
+      },
+      "median_cpu_us": {
+        "always": 3603.5,
+        "any_command_name": 3693.5,
+        "command_at_statement_start": 3723.5
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r1-a1.ag",
+      "sha256": "a9931777c355f70d9deaa67ad09218c2f46d70449c534fbf63dfb49452688f28",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 7651.541,
+        "any_command_name": 10781.479,
+        "command_at_statement_start": 6775.938
+      },
+      "median_cpu_us": {
+        "always": 3434.0,
+        "any_command_name": 3672.5,
+        "command_at_statement_start": 2731.5
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r2-a1.ag",
+      "sha256": "737613c7c6654ab434d9237b1f73362f9d7352b9929d3ef6e95a9653df08dce6",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 7420.313,
+        "any_command_name": 7110.751,
+        "command_at_statement_start": 6843.896
+      },
+      "median_cpu_us": {
+        "always": 3478.5,
+        "any_command_name": 3434.5,
+        "command_at_statement_start": 3513.5
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r3-a1.ag",
+      "sha256": "19b56f10a950d99ee194a9c00466b7eb970b945511a0adef3b390d7411b852ce",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 6578.854,
+        "any_command_name": 5746.855,
+        "command_at_statement_start": 6682.104
+      },
+      "median_cpu_us": {
+        "always": 3615.0,
+        "any_command_name": 2825.0,
+        "command_at_statement_start": 2954.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/fixture_pack-compact-r4-a1.ag",
+      "sha256": "85d4eef9bb55b7abb013aa793ff2ec9d9d641653a166a41e1f8d37d1a327db2f",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 6824.542,
+        "any_command_name": 4112.979,
+        "command_at_statement_start": 4258.895
+      },
+      "median_cpu_us": {
+        "always": 3270.0,
+        "any_command_name": 2439.0,
+        "command_at_statement_start": 2433.5
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r1-a1.ag",
+      "sha256": "1b90cdbfe63dd7ed5795912a1dd1f644f1ca968c0a40946f32812958295e6b64",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 13103.375,
+        "any_command_name": 13295.812,
+        "command_at_statement_start": 11099.771
+      },
+      "median_cpu_us": {
+        "always": 6312.5,
+        "any_command_name": 6340.5,
+        "command_at_statement_start": 6200.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r2-a1.ag",
+      "sha256": "7141d9e8a4c5936f1f0d0d947619b67214c86e017016202ffc77816d084d9e59",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 7378.062,
+        "any_command_name": 7641.062,
+        "command_at_statement_start": 7390.875
+      },
+      "median_cpu_us": {
+        "always": 5630.5,
+        "any_command_name": 5683.0,
+        "command_at_statement_start": 5635.5
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r3-a1.ag",
+      "sha256": "b8b7635212722aaff7001e6bc912993e6599589e0ebdabeb0981167a7cb2ed5d",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 6531.458,
+        "any_command_name": 6691.583,
+        "command_at_statement_start": 7005.083
+      },
+      "median_cpu_us": {
+        "always": 5276.0,
+        "any_command_name": 5275.5,
+        "command_at_statement_start": 5267.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/knn_grid-compact-r4-a1.ag",
+      "sha256": "0cbae38de043fc7e7fe754ef3789c0b6a9b71b8b0bc4a1e8752df33fd6163ae0",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 7427.083,
+        "any_command_name": 6601.583,
+        "command_at_statement_start": 6738.27
+      },
+      "median_cpu_us": {
+        "always": 4411.0,
+        "any_command_name": 4393.5,
+        "command_at_statement_start": 4467.5
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r1-a1.ag",
+      "sha256": "18c43a4a11dc1e043ce77a454ed45351cf28d6dd3c56ef47bbf109a5c07f1022",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 5740.583,
+        "any_command_name": 6843.542,
+        "command_at_statement_start": 10307.521
+      },
+      "median_cpu_us": {
+        "always": 3529.0,
+        "any_command_name": 3843.5,
+        "command_at_statement_start": 3788.5
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r2-a1.ag",
+      "sha256": "498fa34a99f79e15b661d3a34389b6fb292d2d400791adcab219f7a3686fd79d",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 5903.021,
+        "any_command_name": 4735.48,
+        "command_at_statement_start": 5163.125
+      },
+      "median_cpu_us": {
+        "always": 3743.0,
+        "any_command_name": 3082.5,
+        "command_at_statement_start": 3024.5
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r3-a1.ag",
+      "sha256": "c51ae59f767f464d7e9aa784e9f251e614155e67587998a44c7403131b373761",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 6484.063,
+        "any_command_name": 7627.938,
+        "command_at_statement_start": 6864.958
+      },
+      "median_cpu_us": {
+        "always": 3866.5,
+        "any_command_name": 3235.5,
+        "command_at_statement_start": 3184.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/movie_credits-compact-r4-a1.ag",
+      "sha256": "2ba800b2754f41bdc39d03bcab6fecf8256b04f00a17f78b88929401b9e5717a",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 9596.5,
+        "any_command_name": 6150.146,
+        "command_at_statement_start": 7527.145
+      },
+      "median_cpu_us": {
+        "always": 3994.0,
+        "any_command_name": 3388.5,
+        "command_at_statement_start": 3306.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r1-a1.ag",
+      "sha256": "15661b35d6b5f630546aef2288537365d617c27bfe0c6efea5783dead7765912",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 8140.208,
+        "any_command_name": 6529.438,
+        "command_at_statement_start": 4328.917
+      },
+      "median_cpu_us": {
+        "always": 4848.0,
+        "any_command_name": 3879.0,
+        "command_at_statement_start": 3809.0
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r2-a1.ag",
+      "sha256": "37598f05aa8c4816072dafde564ee4f1b5908c7b197e8a4997ee9d22d8fddd17",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 6802.917,
+        "any_command_name": 4460.458,
+        "command_at_statement_start": 5977.812
+      },
+      "median_cpu_us": {
+        "always": 4613.0,
+        "any_command_name": 3624.5,
+        "command_at_statement_start": 3734.5
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r3-a1.ag",
+      "sha256": "52548ebd1c03a6a017c5de72515fa6ce198303b9931b46167328fb06658d2d85",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 4846.354,
+        "any_command_name": 3785.229,
+        "command_at_statement_start": 4089.959
+      },
+      "median_cpu_us": {
+        "always": 4554.5,
+        "any_command_name": 3629.0,
+        "command_at_statement_start": 3656.5
+      }
+    },
+    {
+      "source": "benchmarks/patterns/generation/observations/sources/replay_trace-compact-r4-a1.ag",
+      "sha256": "149879de549d7c4f003fdede7131ca26bae975601c33c3e6b68f70cab1c82cb6",
+      "scanned": {
+        "always": true,
+        "any_command_name": false,
+        "command_at_statement_start": false
+      },
+      "median_wall_us": {
+        "always": 5266.104,
+        "any_command_name": 4479.917,
+        "command_at_statement_start": 4168.458
+      },
+      "median_cpu_us": {
+        "always": 4835.5,
+        "any_command_name": 4164.0,
+        "command_at_statement_start": 3914.5
+      }
+    },
+    {
+      "source": "examples/goal_gap.ag",
+      "sha256": "9b7a0da45d869396c4805d3d2056a964227857d270ee839fc42fbbd4382c0159",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 913.562,
+        "any_command_name": 906.188,
+        "command_at_statement_start": 905.875
+      },
+      "median_cpu_us": {
+        "always": 823.0,
+        "any_command_name": 828.5,
+        "command_at_statement_start": 820.5
+      }
+    },
+    {
+      "source": "examples/late_flights.ag",
+      "sha256": "a589da3d922db330400e0f226a9f9bfb83b41632669378856baedd5f00385ca9",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 840.792,
+        "any_command_name": 767.77,
+        "command_at_statement_start": 791.375
+      },
+      "median_cpu_us": {
+        "always": 728.0,
+        "any_command_name": 698.5,
+        "command_at_statement_start": 681.5
+      }
+    },
+    {
+      "source": "examples/sort_scores.ag",
+      "sha256": "cf12bed26e173ea398b8d9c5be19e30d13b0c496951b8d8abb457534ae4a87cc",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 183.292,
+        "any_command_name": 184.375,
+        "command_at_statement_start": 184.417
+      },
+      "median_cpu_us": {
+        "always": 182.0,
+        "any_command_name": 183.0,
+        "command_at_statement_start": 183.0
+      }
+    },
+    {
+      "source": "examples/terse/leaders.ag",
+      "sha256": "f008abd242eaf4a5b9c3867db2fea2157876852bb380b76a0611719e73af91c8",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 598.333,
+        "any_command_name": 596.438,
+        "command_at_statement_start": 590.438
+      },
+      "median_cpu_us": {
+        "always": 592.5,
+        "any_command_name": 594.5,
+        "command_at_statement_start": 589.0
+      }
+    },
+    {
+      "source": "examples/terse/order_summary.ag",
+      "sha256": "be7104b3ec565c2a74ad8d36258e008d87a23763dff2e18ac332d03c8544a4f9",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 735.938,
+        "any_command_name": 737.25,
+        "command_at_statement_start": 746.062
+      },
+      "median_cpu_us": {
+        "always": 653.0,
+        "any_command_name": 672.5,
+        "command_at_statement_start": 677.5
+      }
+    },
+    {
+      "source": "examples/terse/paid_total.ag",
+      "sha256": "9a2a476b159d7413ee61395a10e6392a7a1a2bbf9780eb35b08b110bab2fef06",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 498.854,
+        "any_command_name": 525.083,
+        "command_at_statement_start": 514.105
+      },
+      "median_cpu_us": {
+        "always": 496.0,
+        "any_command_name": 514.5,
+        "command_at_statement_start": 506.0
+      }
+    },
+    {
+      "source": "examples/word_counts.ag",
+      "sha256": "a225efe1a1a5e322aea6a432e9b70c1729fe9b0854deec710b976a4dd06d3879",
+      "scanned": {
+        "always": true,
+        "any_command_name": true,
+        "command_at_statement_start": true
+      },
+      "median_wall_us": {
+        "always": 631.292,
+        "any_command_name": 644.938,
+        "command_at_statement_start": 653.458
+      },
+      "median_cpu_us": {
+        "always": 619.5,
+        "any_command_name": 638.5,
+        "command_at_statement_start": 649.0
+      }
+    }
+  ]
+}

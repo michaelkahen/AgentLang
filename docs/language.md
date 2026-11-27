@@ -32,7 +32,9 @@ Filter, map, and flat-map are lazy. Collect the result with `:l` before JSON ser
 
 `obj$field` means `obj["field"]`. Lookups can be chained or used in comprehensions, assignment targets, and pipeline expressions. The key must be an identifier touching the dollar sign on both sides (`row$person$name`). Use ordinary subscripts for dynamic keys, non-identifier keys, or integer indices. Inside formatted-string expressions, the shorthand requires Python 3.12 or later.
 
-`d{a,b}` constructs `{"a": a, "b": b}`. Fields are variable names in insertion order. For computed values, assign a variable first or use an ordinary dictionary.
+`obj?field` calls `obj.get("field")` once. For a dictionary, a missing key returns `None`. The receiver must supply a `get` method. Use `row.get("count", 0)` for an explicit default. Both `?` and `$` touch the receiver and the identifier key, and accept keyword spellings. In a chain such as `order$customer?email`, each operator applies to the preceding result.
+
+`d{a,b}` constructs `{"a": a, "b": b}`. Mix local variables with computed fields using `name=expression`. For example, `d{total,orders=len(rows)}` expands to `{"total": total, "orders": len(rows)}`. Entries evaluate from left to right. Field names follow Python's variable naming rules. Use ordinary dictionary syntax for dynamic keys and unpacking.
 
 ```text
 rows = r()
@@ -47,7 +49,7 @@ j d{best,top_ids}
 | Compact | Long | Behavior |
 | --- | --- | --- |
 | `r()`, `r(path)` | `readjson()`, `readjson(path)` | Parse standard input or a UTF-8 JSON file. |
-| `c(path)` | `csvrows(path)` | Read a UTF-8 CSV into a list of dictionaries using the header as keys. |
+| `c(path)` | `csvrows(path)` | Read a UTF-8 CSV into a list of dictionaries using the header as keys. Blank rows are skipped, missing cells become `None`, and extra cells are collected under the `None` key. |
 | `wj(x)` | `writejson(x)` | Print one value using Python's default JSON formatting. |
 | `p expr` | `emit expr` | Print the result of an expression or pipeline. |
 | `j expr` | `jsonout expr` | Print the result as JSON. |
@@ -61,7 +63,7 @@ Use the short helper names in function calls. The same functions are importable 
 
 ## Compilation
 
-The compiler expands record expressions, identifies outer pipeline boundaries, and lowers stages to Python generator expressions, built-ins, or standard-library calls. The `compile` command embeds the helper definitions in a standalone Python file. The `run` command compiles in memory and binds those functions directly, which avoids emitting and reparsing an intermediate file.
+The compiler expands record expressions, then checks for possible stage or output-command markers. When a marker is present, the statement parser identifies pipeline boundaries and lowers stages to Python generator expressions, built-ins, or standard-library calls. The `compile` command embeds the helper definitions in a standalone Python file. The `run` command compiles in memory and binds those functions directly, which avoids emitting and reparsing an intermediate file.
 
 ```sh
 python3 -m agentlang compile examples/terse/paid_total.ag

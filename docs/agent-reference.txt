@@ -1,7 +1,7 @@
-Python + one-line pipelines. x = SRC:op EXPR:op, return SRC:op, p SRC:op (print), j SRC:op (JSON).
-_ = current item. w=filter m=map f=flat-map n=count u=sum a=mean s=stable-sort c N=most-common pairs h=first l=list.
-u/a/s take an optional item expression. w/m/f are lazy. Use :l before emitting an iterable as JSON.
-r() reads stdin JSON, r(path) reads JSON file, c(path) reads CSV dict rows, wj(x) prints JSON.
-p r():w _["paid"]:u _["cents"]
-obj$field = obj["field"]. d{a,b} = {"a":a,"b":b}. :k/:x EXPR select min/max by key. :t N,EXPR selects N smallest.
-v(text,default=None) parses JSON then a Python literal. b(value) gives default JSON + LF as UTF-8 bytes. h(data) gives SHA-256 hex.
+Python. Write x = SRC:op or return SRC:op. p prints, j emits JSON.
+p r():w _?paid:u _$cents
+_ is the item. w filter, m map and f flat-map yield lazily. n count, u sum, a mean, s stable sort, h first, l list, c N most-common pairs. Use :l before JSON on lazy results.
+k min, x max. u/a/s/k/x accept an optional item expression. t N[,key] takes up to N smallest in stable order.
+r() stdin JSON, r(path) JSON file, c(path) CSV dict rows, wj(x) prints JSON.
+o$f = o["f"]. o?f = o.get("f"). d{x,y=expr} = {"x":x,"y":expr}.
+v(text,default=None) tries JSON then Python literals. b(x) default JSON + LF as UTF-8 bytes. h(data) SHA-256 hex.

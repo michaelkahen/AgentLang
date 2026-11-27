@@ -35,6 +35,18 @@ An ordinary Python statement can host a pipeline. The compiler binds `_` to the 
 
 The compile command embeds the helper functions it needs in the output. The run command binds those functions in memory. Plain Python can also import these functions directly from `agentlang.helpers`. The benchmark preloads the same functions for both languages. [Language reference](docs/language.md) · [Short reference for agent prompts](docs/agent-reference.txt)
 
+## Latest scripting results
+
+Use `row?paid` for `row.get("paid")`. A record can now combine locals and computed fields. This script reads orders, totals the paid ones and reports how many orders it saw.
+
+```text
+rows = r()
+total = rows:w _?paid:u _$cents
+j d{total,orders=len(rows)}
+```
+
+The two additions together used **6.60% fewer source tokens** on 6,144 generated data-processing fragments with the `o200k_base` tokenizer. On complete programs, the savings were **0.84%** across 76 archived submissions and **0.50%** across 29 repository tools. The update also speeds up CSV loading and lets scripts without pipeline or output-command markers skip a compiler pass. Using the shorter forms added a median 0.68 ms of preparation CPU time on the 32 affected archived scripts. [Findings and reproduction instructions](benchmarks/scripting/README.md) · [Runnable example](examples/terse/order_summary.ag)
+
 ## What took the tokens?
 
 We profiled 30 earlier agent-written programs. Operators and punctuation used **34.2%** of their 13,187 source tokens, identifiers **29.6%**, and string literals **15.2%**. Repeated constructs included bracketed field names, key functions for ranking, dictionary fields copied from local variables, and JSON serialization followed by a hash.
@@ -61,6 +73,7 @@ The earlier [long-script study](benchmarks/long/README.md) found 7.6% fewer sour
 | Path | What to look at |
 | --- | --- |
 | [Compiler](agentlang/compiler.py) | Stage recognition, Python translation and helper injection |
+| [Scripting study](benchmarks/scripting/README.md) | Syntax comparisons on two tokenizers, CSV and compiler alternatives, and before/after CLI timings |
 | [Pattern study](benchmarks/patterns/README.md) | Token inventory, fixed-source substitutions, live matched trials, batching and process measurements |
 | [Long-script study](benchmarks/long/README.md) | Workloads, paired trials, repair budgets, independent verification and resource profiles |
 | [Short-script pilot](benchmarks/pilot/README.md) | The original four-task experiment, including the Python helper control |

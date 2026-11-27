@@ -1,0 +1,3 @@
+rows = r()
+total = rows:w _?paid:u _$cents
+j d{total,orders=len(rows)}

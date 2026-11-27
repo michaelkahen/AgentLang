@@ -6,9 +6,22 @@ import builtins as _ag_builtins
 def csvrows(path):
     """Read a UTF-8 CSV into a list of dictionaries, using its header as keys."""
     import csv
+    from itertools import zip_longest
 
     with _ag_builtins.open(path, encoding="utf-8", newline="") as stream:
-        return _ag_builtins.list(csv.DictReader(stream))
+        reader = csv.reader(stream)
+        fields = _ag_builtins.next(reader, [])
+        width = _ag_builtins.len(fields)
+        result = []
+        for row in reader:
+            if row:
+                if _ag_builtins.len(row) > width:
+                    record = _ag_builtins.dict(_ag_builtins.zip(fields, row))
+                    record[None] = row[width:]
+                else:
+                    record = _ag_builtins.dict(zip_longest(fields, row))
+                result.append(record)
+        return result
 
 
 def readjson(path=None):
